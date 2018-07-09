@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201710020040</property>
+    <property name="units">in</property>
+    <property name="theme">mapcloud.mapcloud</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/mapcloud.rptlibrary</property>
+            <property name="namespace">mapcloud</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Rec Data Source" id="686">
+            <property name="datamartURL">Data Objects/MarketingCampaign</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Keywords Cloud Weekly DM" id="701">
+            <property name="dataSource">Rec Data Source</property>
+            <property name="dataObject">Keywords Cloud Weekly DM</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="USElectionsSimpleMasterPage" id="7" extends="mapcloud.USElectionsSimpleMasterPage"/>
+    </page-setup>
+    <body>
+        <label id="279">
+            <property name="backgroundColor">#F5F3F3</property>
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">36pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#411818</property>
+            <text-property name="text">Most popular words</text-property>
+        </label>
+        <label id="280">
+            <property name="backgroundColor">#F5F3F3</property>
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">18pt</property>
+            <property name="color">#411818</property>
+            <expression name="bookmark" type="javascript">"loopVizTitle"</expression>
+            <text-property name="text">Week of</text-property>
+        </label>
+        <grid id="697">
+            <property name="backgroundColor">#F5F3F3</property>
+            <property name="height">5.541666666666667in</property>
+            <column id="698"/>
+            <row id="699">
+                <property name="height">5.541666666666667in</property>
+                <cell id="700">
+                    <extended-item extensionName="HTMLControl" id="4">
+                        <method name="clientOnCreate"><![CDATA[var config = {
+	wordColumn : "keyword5",
+	wordSize: "total10",
+	min:100000000,
+	max:0,
+	
+	/* the total number of word to display */
+//	wordCount : 40 
+	wordCount : 30
+};
+var vizHeight = 480;
+
+// If data binding is used, the data should be saved and transformed in order
+// to fit the Word Cloud Chart map.
+function dataTransfrom(cursor) {
+	var rows = [];
+	var count = 0;
+	while (cursor.hasNext()) {
+		if(config.wordCount != null &amp;&amp; count >= config.wordCount){
+			break;
+		}
+		var dataObj = cursor.next();
+		rows.push({word: dataObj[config.wordColumn], value: dataObj[config.wordSize]});
+		count++;
+		if (config.min> dataObj[config.wordSize])
+			config.min = dataObj[config.wordSize];
+		if (config.max < dataObj[config.wordSize])
+			config.max = dataObj[config.wordSize];
+	}
+	return rows;
+}
+
+var containerId = this.getId();
+
+var data = dataTransfrom(this.getDataCursor());
+
+window["__draw_word_cloud"] = function(containerId, data, min, max) {
+//	var colors = ["#4D4D4D", "#989898","#b8b8b8"];
+	var colors = ["#411818", "#a28686","#d9d1d1"];
+//	var typeSize = [14, 18, 24, 32, 40, 48, 60, 72, 96, 128, 144];
+	var typeSize = [14, 18, 24, 32, 40, 48, 60, 72, 96];
+	var containerWidth = $("#" + containerId).width();
+	var containerHeight = vizHeight;
+	
+//	var fill = colors[0];
+//	if (min == max) 
+	var fill = d3.scale.linear()
+              .domain([max, max * 0.3, min])
+              .range(colors);
+
+	d3.layout.cloud().size([ containerWidth, containerHeight ]).words(
+			data.map(function(row) {
+				var idx = (row.value == max) ? typeSize.length : Math.floor(row.value / ((max - min) / typeSize.length));
+				return {
+					text : row.word,
+					size : typeSize[idx - 1]
+				};
+			})).padding(5).rotate(function() {
+		return 0;
+	}).font("Lato").fontSize(function(d) {
+		return d.size;
+	}).on("end", draw).start();
+
+
+	function draw(words) {
+		$("#" + containerId + " svg").remove();
+		d3.select("#" + containerId).append("svg")
+				.attr("width", containerWidth).attr("height", containerHeight).attr("class","wordcloud")
+				.append("g").attr(
+						"transform",
+						"translate(" + containerWidth / 2 + ","
+								+ containerHeight / 2 + ")").selectAll("text")
+				.data(words).enter().append("text").style("font-size", function(d) {
+							return d.size + "px";
+						}).style("font-family", "Lato").style("font-size",function(d){
+							return d.size + "px";
+						}).style("fill", function(d, i) {
+							return fill(data[i].value);
+						}).attr("text-anchor", "middle").attr("transform", function(d) {
+							return "translate(" + [ d.x, d.y ] + ") rotate("
+									+ d.rotate + ")";
+						}).text(function(d) {
+					return d.text;
+				});
+	}
+}
+
+window["__data"] = data;
+window["__containerId"] = containerId;
+
+var downloadURL = 'js/d3-cloud-master/d3.layout.cloud.js';
+head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL), function() {
+	__draw_word_cloud(containerId, data, config.min, config.max);
+});
+]]></method>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">data["total10"]</expression>
+                                <property name="direction">desc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">top-n</property>
+                                <expression name="expr" type="javascript">row["weeknum"]</expression>
+                                <simple-property-list name="value1">
+                                    <value>1</value>
+                                </simple-property-list>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="height">480px</property>
+                        <property name="width">980px</property>
+                        <expression name="bookmark" type="javascript">"MovingWordCloud"</expression>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">weeknum</property>
+                                <text-property name="displayName">weeknum</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["weeknum"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">keyword5</property>
+                                <text-property name="displayName">keyword</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["keyword"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total10</property>
+                                <text-property name="displayName">total</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Keywords Cloud Weekly DM</property>
+                    </extended-item>
+                    <extended-item extensionName="HTMLControl" id="47">
+                        <property name="html">&lt;div style="width:900px;">
+	&lt;button class="loopVizButton loopVizPlayPause">&amp;#9658;&lt;/button>
+	&lt;div style="width:820px; float:right">
+		&lt;div id="loopVizProgressBar" class="loopVizProgressBar">&lt;span id="loopVizProgressBarVal" style="width:0%">&lt;/span>&lt;/div>
+	&lt;/div>
+&lt;/div></property>
+                        <property name="css">.loopVizProgressBar { 
+	height: 30px; 
+	position: relative;
+	background: #ddd;
+	cursor: pointer;	
+}
+
+.loopVizProgressBar > span {
+	display: block;
+	height: 100%;
+	background-color: #411818;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;	
+}
+
+.loopVizProgressBar > span.maxed {}
+
+.loopVizButton {
+    height: 30px;
+    width: 50px;
+	background-color: #411818;
+	border: none;
+	color: white;
+	margin-left:5px;
+	text: false;
+	font-size:16px !important;
+	cursor: pointer;
+}</property>
+                        <method name="clientOnCreate"><![CDATA[var loopSpeed = 2000; //loop speed in milliseconds
+var wordCol = 0; 
+var valueCol = 1;
+var dateCol = 2; 
+var titleCol = 3; 
+
+
+// variables
+var allData = {};
+var dates = [];
+var titles = {};
+var viewerId = this.getViewer().getId();
+var currentDateIndex = 0;
+var $this = $("#" + this.getId());
+var $progress = $this.find(".loopVizProgressBar > span");
+var $title = $("#" + this.getViewer().getId() + "_loopVizTitle");
+
+if (window["loopVizInterval"] === undefined)
+	window.loopVizInterval = null;
+
+// setup data
+var rows = this.getData().rows;
+var curDate;
+$.each(rows, function(i, row) {
+	if (row[dateCol] != curDate) {
+		curDate = row[dateCol];
+		dates.push(curDate);
+		allData[curDate] = [];
+		titles[curDate] = row[titleCol];
+	}
+	allData[curDate].push({word: row[wordCol], value: row[valueCol]});
+});
+
+
+// set initial title
+$title.html(titles[dates[dates.length - 1]]);
+	
+	
+// main implementation.  Called when new map data is going to be replaced into view
+function changeVisualData (key) {
+	var containerId = viewerId + "_MovingWordCloud";
+	
+	var min = Number.MAX_VALUE;
+	var max = Number.MIN_VALUE;
+	for (var i = 0; i < allData[key].length; i++) {
+		var val = allData[key][i].value;
+		if (min > val)
+			min = val;
+		if (max < val)
+			max = val;
+	}
+	
+	__draw_word_cloud(containerId, allData[key], min, max);
+	
+	$title.html(titles[key]);	
+	var pct = (currentDateIndex / (dates.length - 1) * 100);
+	setProgressValue(pct);
+};
+
+
+// Framework code
+function setProgressValue(pct) {
+	if (pct == 100) {
+		$progress.addClass("maxed");
+	} else {
+		$progress.removeClass("maxed");
+	}
+	$progress.width(pct + "%");
+}
+
+$this.find(".loopVizPlayPause").click(function() {
+    var $playPause = $(this);
+    $playPause.toggleClass("active");
+    
+    if($playPause.hasClass("active")){
+        $playPause.text("\u2161");     
+        
+        	if (loopVizInterval)
+			return;
+		
+		currentDateIndex++;
+		if (currentDateIndex >= dates.length)
+			currentDateIndex = 0;
+	
+		changeVisualData(dates[currentDateIndex]);
+	
+		loopVizInterval = setInterval(function() {
+			currentDateIndex++;			
+			if (currentDateIndex >= dates.length)
+				currentDateIndex = 0;
+				
+			changeVisualData(dates[currentDateIndex]);
+		}, loopSpeed);
+        
+    } else {
+        $playPause.text("\u25ba");
+        
+		clearInterval(loopVizInterval);
+		loopVizInterval = null;        
+    }
+});
+
+$this.find(".loopVizProgressBar").click(function(e) {
+	var $progressBar = $(this);
+	$this.find(".loopVizPlayPause").removeClass("active").text("\u25ba");
+        
+	clearInterval(loopVizInterval);
+	loopVizInterval = null;     
+			
+	currentDateIndex = Math.round(e.offsetX / $progressBar.width() * dates.length) - 1
+	changeVisualData(dates[currentDateIndex]);
+});
+]]></method>
+                        <property name="groups">
+                            <data-group>
+                                <property name="groupName">Date Group</property>
+                                <expression name="keyExpr" type="javascript">data["weeknum"]</expression>
+                                <property name="interval">none</property>
+                                <property name="sortDirection">asc</property>
+                            </data-group>
+                        </property>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">data["total10"]</expression>
+                                <property name="direction">desc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <property name="height">30px</property>
+                        <property name="width">980px</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">keyword5</property>
+                                <text-property name="displayName">keyword</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["keyword"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total10</property>
+                                <text-property name="displayName">total</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">weeknum</property>
+                                <text-property name="displayName">weeknum</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["weeknum"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">title</property>
+                                <text-property name="displayName">title</text-property>
+                                <expression name="expression" type="javascript">reportContext.getPageVariable("SubTitleText_en") + Formatter.format(dataSetRow["weeknum"], "MMMM d");</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Keywords Cloud Weekly DM</property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="SubTitleText_en">
+            <expression name="value" type="javascript">"Week of "</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

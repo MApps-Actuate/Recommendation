@@ -1,0 +1,12 @@
+/* DELETE FROM acl t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30'); */
+DELETE FROM ca_category t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_concept t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_document_sentiments t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_sentence_sentiments t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_subterm t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_summary t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_term t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM ca_term_attribute t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM language t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM urls t WHERE t.doc_id IN (select w.doc_id from web w where w.web_crawler_job_id = '30');
+DELETE FROM web WHERE web_crawler_job_id = '30'

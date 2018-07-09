@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Pipeline Postgres Data Source" id="2">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://mag-pipeline:5432/magellan</property>
+            <property name="odaUser">maguser</property>
+            <encrypted-property name="odaPassword" encryptionID="jce">ed692c756ac318b4caab65efdde92e0b</encrypted-property>
+            <property name="OdaConnProfileName">Pipeline Postgres Data Source</property>
+            <property name="OdaConnProfileStorePath">C:\workspace\.metadata\.plugins\org.eclipse.datatools.connectivity\ServerProfiles.dat</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.excel" name="Innovate Data Source" id="56">
+            <property name="URI">Data Objects/Innovate.xlsx</property>
+            <property name="INCLCOLUMNNAME">yes</property>
+            <property name="INCLTYPELINE">no</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Keywords Cloud Weekly" id="3">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">weeknum</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">weeknum</text-property>
+                    <text-property name="heading">weeknum</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">keyword</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">keyword</text-property>
+                    <text-property name="heading">keyword</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">total</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total</text-property>
+                    <text-property name="heading">total</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">rank</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">rank</text-property>
+                    <text-property name="heading">rank</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">weeknum</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">keyword</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">total</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">rank</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Pipeline Postgres Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">weeknum</property>
+                    <property name="nativeName">weeknum</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">keyword</property>
+                    <property name="nativeName">keyword</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">total</property>
+                    <property name="nativeName">total</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">rank</property>
+                    <property name="nativeName">rank</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT * FROM (
+	SELECT weeknum
+	, keyword
+	, total
+	, row_number() over (partition by weeknum order by sum(total) desc) as rank
+	FROM (
+		SELECT date_trunc('week', t.twitter_created_at) as weeknum  /* First date of week */
+		, co.name as keyword
+		, count(cc.doc_id) as total
+		, row_number() over (partition by date_trunc('week', t.twitter_created_at) order by sum(cc.doc_id) desc) as rank
+		FROM public.ca_category cc, public.ca_term ct, public.tweets t, public.ca_concept co
+		where
+		ct.doc_id = t.doc_id
+		and cc.doc_id = t.doc_id
+		and co.doc_id = t.doc_id
+		and t.twitter_crawler_group_name = 'Recommendation Finance'
+		and ct.cartridge = 'WealthManagement'
+		group by weeknum, co.name
+		union all
+		SELECT date_trunc('week', w.web_created_at) as weeknum
+		, co.name as keyword
+		, count(cc.doc_id) as total
+		, row_number() over (partition by date_trunc('week', w.web_created_at) order by sum(cc.doc_id) desc) as rank
+		FROM public.ca_category cc, public.ca_term ct, public.web w, public.ca_concept co
+		where
+		ct.doc_id = w.doc_id
+		and cc.doc_id = w.doc_id
+		and co.doc_id = w.doc_id
+		and w.web_crawler_group_name = 'Recommendation Finance'
+		and ct.cartridge = 'WealthManagement'
+		group by weeknum, co.name
+		order by weeknum, rank asc
+	) tmp
+	group by weeknum, keyword, total
+	order by weeknum, rank
+) tmp2
+where rank <= 50]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>weeknum</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>weeknum</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>weeknum</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>keyword</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>keyword</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>keyword</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>total</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rank</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>rank</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rank</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Country Sentiment Heatmap" id="11">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">country</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">country</text-property>
+                    <text-property name="heading">country</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">total</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">total</text-property>
+                    <text-property name="heading">total</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">positive</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">positive</text-property>
+                    <text-property name="heading">positive</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">negative</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">negative</text-property>
+                    <text-property name="heading">negative</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">neutral</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">neutral</text-property>
+                    <text-property name="heading">neutral</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">country</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">total</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">positive</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">negative</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">neutral</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Pipeline Postgres Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">country</property>
+                    <property name="nativeName">country</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">total</property>
+                    <property name="nativeName">total</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">positive</property>
+                    <property name="nativeName">positive</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">negative</property>
+                    <property name="nativeName">negative</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">neutral</property>
+                    <property name="nativeName">neutral</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT * from (
+	SELECT ct.main_term_value as country
+		, count(cc.doc_id) as total
+		, sum(case when cds.tone='positive' then 1 else 0 end) as positive
+		, sum(case when cds.tone='negative' then 1 else 0 end) as negative
+		, sum(case when cds.tone='neutral' then 1 else 0 end) as neutral
+		FROM public.ca_category cc, public.ca_document_sentiments cds, public.ca_term ct, public.tweets t
+		where
+		ct.doc_id = t.doc_id
+		and cc.doc_id = t.doc_id
+		and cc.doc_id = cds.doc_id
+		and t.twitter_crawler_group_name = 'Recommendation Finance'
+		and ct.cartridge = 'G7L'
+		group by country
+	UNION ALL
+	SELECT ct.main_term_value as country
+		, count(cc.doc_id) as total
+		, sum(case when cds.tone='positive' then 1 else 0 end) as positive
+		, sum(case when cds.tone='negative' then 1 else 0 end) as negative
+		, sum(case when cds.tone='neutral' then 1 else 0 end) as neutral
+		FROM public.ca_category cc, public.ca_document_sentiments cds, public.ca_term ct, public.web w
+		where
+		ct.doc_id = w.doc_id
+		and cc.doc_id = w.doc_id
+		and cc.doc_id = cds.doc_id
+		and w.web_crawler_group_name = 'Recommendation Finance'
+		and ct.cartridge = 'G7L'
+		group by country
+) tmp
+order by 1]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>country</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>country</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>country</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>total</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>positive</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>positive</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>positive</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>negative</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>negative</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>negative</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>neutral</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>neutral</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>neutral</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Top Products" id="12">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">company</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">company</text-property>
+                    <text-property name="heading">company</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">count</text-property>
+                    <text-property name="heading">count</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">positive</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">positive</text-property>
+                    <text-property name="heading">positive</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">neutral</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">neutral</text-property>
+                    <text-property name="heading">neutral</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">negative</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">negative</text-property>
+                    <text-property name="heading">negative</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">company</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">positive</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">neutral</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">negative</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Pipeline Postgres Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">company</property>
+                    <property name="nativeName">company</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">count</property>
+                    <property name="nativeName">count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">positive</property>
+                    <property name="nativeName">positive</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">neutral</property>
+                    <property name="nativeName">neutral</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">negative</property>
+                    <property name="nativeName">negative</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ct.main_term_value as company, cc.name
+, count(cc.doc_id) as count 
+, sum(case when ct.tone = 'positive' then 1 else 0 end) as positive
+, sum(case when ct.tone = 'neutral' then 1 else 0 end) as neutral
+, sum(case when ct.tone = 'negative' then 1 else 0 end) as negative
+from tweets t, ca_category cc, ca_term ct
+where
+t.doc_id = cc.doc_id
+and t.doc_id = ct.doc_id
+and ct.cartridge = 'WealthManagement'
+and twitter_crawler_group_name = 'Recommendation Finance'
+and cc.kb_name = 'BusinessFinance'
+and cc.name in ('Mutual Funds', 'Structured Products','Investment ISAs','Stocks','ETFs','Government Bonds','Secured Lending','Corporate Bonds',
+			    'Advisory Services','Traditional IRAs','Roth IRAs','401K','529 College Fund',
+			    'Insurance Advisory Services','Long-term Disability Insurance','Life Insurance','Property','Medical &amp; Dental Insurance','Unemployment Insurance',
+			    'Credit','Checking','Savings','Mortgage','Loan','Tax Services')
+group by 1, 2
+order by 1, 3 desc]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>256</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>256</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>count</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>count</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>count</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>positive</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>positive</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>positive</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>neutral</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>neutral</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>neutral</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>negative</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>negative</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>negative</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.excel.dataSet" name="Innovate Data Set" id="57">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">company</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">company</text-property>
+                    <text-property name="heading">company</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <text-property name="heading">name</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">count</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">count</text-property>
+                    <text-property name="heading">count</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">positive</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">positive</text-property>
+                    <text-property name="heading">positive</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">neutral</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">neutral</text-property>
+                    <text-property name="heading">neutral</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">negative</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">negative</text-property>
+                    <text-property name="heading">negative</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">company</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">count</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">positive</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">neutral</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">negative</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Innovate Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">company</property>
+                    <property name="nativeName">company</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">count</property>
+                    <property name="nativeName">count</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">positive</property>
+                    <property name="nativeName">positive</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">neutral</property>
+                    <property name="nativeName">neutral</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">negative</property>
+                    <property name="nativeName">negative</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "company", "name", "count", "positive", "neutral", "negative" from "/C:/workspace/Recommendation Finance/Data Objects/Innovate.xlsx" : {"company","company",STRING;"name","name",STRING;"count","count",STRING;"positive","positive",STRING;"neutral","neutral",STRING;"negative","negative",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>company</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>company</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>company</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>count</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>count</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>count</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>positive</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>positive</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>positive</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>neutral</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>neutral</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>neutral</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>negative</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>negative</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>negative</design:label>
+            <design:formattingHints>
+              <design:displaySize>0</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="WORKSHEETS">Sheet1</property>
+        </oda-data-set>
+        <derived-data-set extensionID="com.actuate.birt.data.union" name="Products Union" id="58">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">company</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">company</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">name</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">count</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">positive</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">positive</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">neutral</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">neutral</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">negative</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">negative</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">company</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">positive</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">neutral</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">negative</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="inputDataSets">
+                <value>Top Products</value>
+                <value>Innovate Data Set</value>
+            </simple-property-list>
+            <xml-property name="queryText"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tns:Union xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.actuate.com/birt/dataset_union.xsd" xmlns:tns="http://schemas.actuate.com/">
+<tns:DataSet Index="0" name="Top Products">
+<tns:Column name="company"/>
+<tns:Column name="name"/>
+<tns:Column name="count"/>
+<tns:Column name="positive"/>
+<tns:Column name="neutral"/>
+<tns:Column name="negative"/>
+</tns:DataSet>
+<tns:DataSet Index="1" name="Innovate Data Set">
+<tns:Column name="company"/>
+<tns:Column name="name"/>
+<tns:Column name="count"/>
+<tns:Column name="positive"/>
+<tns:Column name="neutral"/>
+<tns:Column name="negative"/>
+</tns:DataSet>
+</tns:Union>]]></xml-property>
+        </derived-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <linked-data-model name="Keywords Cloud Weekly DM" id="4">
+            <property name="aliasDataSets">
+                <alias-data-set name="Keywords Cloud Weekly" id="10">
+                    <property name="originDataSet">Keywords Cloud Weekly</property>
+                </alias-data-set>
+            </property>
+            <property name="categories">
+                <category name="Keywords Cloud Weekly" id="5">
+                    <property name="categoryColumns">
+                        <category-column name="weeknum" id="6">
+                            <property name="aliasDataSet">Keywords Cloud Weekly DM/Keywords Cloud Weekly</property>
+                            <property name="resultSetColumnName">weeknum</property>
+                        </category-column>
+                        <category-column name="keyword" id="7">
+                            <property name="aliasDataSet">Keywords Cloud Weekly DM/Keywords Cloud Weekly</property>
+                            <property name="resultSetColumnName">keyword</property>
+                        </category-column>
+                        <category-column name="total" id="8">
+                            <property name="aliasDataSet">Keywords Cloud Weekly DM/Keywords Cloud Weekly</property>
+                            <property name="resultSetColumnName">total</property>
+                        </category-column>
+                        <category-column name="rank" id="9">
+                            <property name="aliasDataSet">Keywords Cloud Weekly DM/Keywords Cloud Weekly</property>
+                            <property name="resultSetColumnName">rank</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+            <property name="pushDown">true</property>
+        </linked-data-model>
+        <linked-data-model name="Country Sentiment Heatmap DM" id="13">
+            <property name="aliasDataSets">
+                <alias-data-set name="Country Sentiment Heatmap" id="32">
+                    <property name="originDataSet">Country Sentiment Heatmap</property>
+                </alias-data-set>
+            </property>
+            <property name="categories">
+                <category name="Country Sentiment Heatmap" id="19">
+                    <property name="categoryColumns">
+                        <category-column name="country" id="20">
+                            <property name="aliasDataSet">Country Sentiment Heatmap DM/Country Sentiment Heatmap</property>
+                            <property name="resultSetColumnName">country</property>
+                        </category-column>
+                        <category-column name="total1" id="21">
+                            <property name="aliasDataSet">Country Sentiment Heatmap DM/Country Sentiment Heatmap</property>
+                            <property name="resultSetColumnName">total</property>
+                        </category-column>
+                        <category-column name="positive" id="22">
+                            <property name="aliasDataSet">Country Sentiment Heatmap DM/Country Sentiment Heatmap</property>
+                            <property name="resultSetColumnName">positive</property>
+                        </category-column>
+                        <category-column name="negative" id="23">
+                            <property name="aliasDataSet">Country Sentiment Heatmap DM/Country Sentiment Heatmap</property>
+                            <property name="resultSetColumnName">negative</property>
+                        </category-column>
+                        <category-column name="neutral" id="24">
+                            <property name="aliasDataSet">Country Sentiment Heatmap DM/Country Sentiment Heatmap</property>
+                            <property name="resultSetColumnName">neutral</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+            <property name="pushDown">true</property>
+        </linked-data-model>
+        <linked-data-model name="Top Products DM" id="34">
+            <property name="aliasDataSets">
+                <alias-data-set name="Products Union" id="67">
+                    <property name="originDataSet">Products Union</property>
+                </alias-data-set>
+            </property>
+            <property name="categories">
+                <category name="Products Union" id="68">
+                    <property name="categoryColumns">
+                        <category-column name="company" id="69">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">company</property>
+                        </category-column>
+                        <category-column name="name" id="70">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="count" id="71">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">count</property>
+                        </category-column>
+                        <category-column name="positive" id="72">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">positive</property>
+                        </category-column>
+                        <category-column name="neutral" id="73">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">neutral</property>
+                        </category-column>
+                        <category-column name="negative" id="74">
+                            <property name="aliasDataSet">Top Products DM/Products Union</property>
+                            <property name="resultSetColumnName">negative</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+            <property name="pushDown">true</property>
+        </linked-data-model>
+    </property>
+</datamart>
