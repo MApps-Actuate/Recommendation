@@ -1,0 +1,190 @@
+<script src="..\apps\Innovate\js\jquery.min.js"</script>
+<script>
+/* 
+ * ***************************************************************
+ * Hide Widget (only in non-designer mode)
+ * ***************************************************************
+ */
+if (window.parent.document.location.search.indexOf("launchDesigner=true") < 0) {
+    $(window.parent.document).find("span").each(function(index) { 
+        if ($(this).text() == "Hidden_Script") {
+			$(this).parents(".actuate-dashboard-gadget-item").css("display","none")
+        }
+    }) 
+
+}
+/* 
+ * ***************************************************************
+ * Add style
+ * ***************************************************************
+ */
+$("<link href='/iportal/apps/Innovate/css/custom-dash.css' type='text/css' rel='stylesheet'>").appendTo(window.parent.document.head);
+/* 
+ * ***************************************************************
+ * Add Button
+ * ***************************************************************
+ */
+var myButton = ""; 
+myButton += "<div align=\"right\" style=\"float: right; width: 160px;height: 40px;overflow: hidden; margin-left: 0px;background: none repeat scroll 0 0 #FBFBFB;\">";
+myButton +=     "<a title='Initiate a new workflow' href='#'><img src='images/workflow.png' class='customButton' onClick='{";
+myButton +=  		"$(\"#sel1 option[value=default]\").prop(\"selected\",true);";
+myButton +=  		"$(\"#sel2 option[value=default]\").prop(\"selected\",true);";
+myButton +=  		"$(\"#sel3 option[value=default]\").prop(\"selected\",true);";
+myButton +=  		"$(\"#sel4\").val(\"\");";
+myButton +=  		"$(\"#sel4\").css(\"display\",\"none\");";
+myButton +=  		"$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\")";
+myButton +=  	"}'/></a>";
+myButton += "</div>";
+$(window.parent.document).find(".actuate-tab-panel").first().prepend(myButton)
+/* 
+ * ***************************************************************
+ * Add DIV
+ * - One for message
+ * - One for confirmation
+ * - One for selection
+ * ***************************************************************
+ */
+var myDiv = "";
+myDiv += "<div id='customDashboardMessageDiv' style='display:none'>";
+myDiv += 	"<div id='customDashboardMessageContent'>";
+myDiv += 	"</div>";
+myDiv += "</div>";
+myDiv += "<div id='customDashboardConfirmationDiv' class='isNotVisible'>";
+myDiv += 	"<div id='customDashboardConfirmationContent'>";
+myDiv +=         "<div style=\"padding:15px\">You are about to initiate a workflow.<br>Please confirm you would like to continue.</div>";
+myDiv +=    	     "<button class='btnCancel actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardConfirmationDiv\").toggleClass(\"isNotVisible\")'>Cancel</button>";
+myDiv +=        	 "<button class='btnOk actuate-widget-btn-text' type='button' onClick='{";
+myDiv +=          	"$(\"#customDashboardConfirmationDiv\").toggleClass(\"isNotVisible\");";
+myDiv +=          	"$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\");";
+myDiv +=          	"$(\"#customDashboardMessageContent\").html(\"Workflow has been initiated successfully and sent for approval.\");";
+myDiv +=          	"$(\"#customDashboardMessageDiv\").css(\"display\",\"block\");";
+myDiv +=          	"$(\"#customDashboardMessageDiv\").fadeOut(3500);";
+myDiv +=          	"}'>Ok</button>";
+myDiv += 		"</div>";
+myDiv += 	"</div>";
+myDiv += 	"<div id='customDashboardCustomDiv' class='isNotVisible myCustomDiv'>";
+myDiv += 	"<div id='customDashboardCustomContent'>";
+myDiv +=    	"<table style='width:100%' >";
+/* 
+ * ***************************************************************
+ * Label
+ *   ____ _   _    _    _   _  ____ _____   __  __ _____ 
+ *  / ___| | | |  / \  | \ | |/ ___| ____| |  \/  | ____|
+ * | |   | |_| | / _ \ |  \| | |  _|  _|   | |\/| |  _|  
+ * | |___|  _  |/ ___ \| |\  | |_| | |___  | |  | | |___ 
+ *  \____|_| |_/_/   \_\_| \_|\____|_____| |_|  |_|_____|
+ *      
+ * ***************************************************************
+ */
+myDiv +=         "<tr>";
+myDiv +=              "<td style='width:33%'>";
+myDiv +=                 "<form>";
+myDiv +=                     "<div class='form-group'>";
+myDiv +=						"<label for='sel1'>Department :</label>";
+myDiv +=                     "</div>";
+myDiv +=                 "</form>";
+myDiv +=              "</td>";
+myDiv +=              "<td style='width:33%'>";
+myDiv +=                 "<form>";
+myDiv +=                     "<div class='form-group'>";
+myDiv +=						"<label for='sel2'>Role :</label>";
+myDiv +=                     "</div>";
+myDiv +=                 "</form>";
+myDiv +=              "</td>";
+myDiv +=              "<td style='width:33%'>";
+myDiv +=                 "<form>";
+myDiv +=                     "<div class='form-group'>";
+myDiv +=						"<label for='sel3'>Improvement Suggestion :</label>";
+myDiv +=                     "</div>";
+myDiv +=                 "</form>";
+myDiv +=              "</td>";
+myDiv +=         "</tr>";
+myDiv +=         "<tr>";
+myDiv +=              "<td>";
+myDiv +=    			"<form>";
+myDiv +=        			"<div class='form-group'>";
+/* 
+ * ***************************************************************
+ * First selection group
+ *   ____ _   _    _    _   _  ____ _____   __  __ _____ 
+ *  / ___| | | |  / \  | \ | |/ ___| ____| |  \/  | ____|
+ * | |   | |_| | / _ \ |  \| | |  _|  _|   | |\/| |  _|  
+ * | |___|  _  |/ ___ \| |\  | |_| | |___  | |  | | |___ 
+ *  \____|_| |_/_/   \_\_| \_|\____|_____| |_|  |_|_____|
+ *      
+ * ***************************************************************
+*/
+myDiv +=					"<select class='form-control' id='sel1'>";
+myDiv +=					    "<option value='default'>Systems</option>";
+myDiv +=					    "<option>Web Team</option>";
+myDiv +=					"</select>";
+myDiv +=				"</div>";
+myDiv +=			"</form>";
+myDiv +=		"</td>";
+myDiv +=		"<td>";
+myDiv +=		    "<form>";
+myDiv +=		        "<div class='form-group'>";
+/* 
+ * ***************************************************************
+ * Second selection group
+ *   ____ _   _    _    _   _  ____ _____   __  __ _____ 
+ *  / ___| | | |  / \  | \ | |/ ___| ____| |  \/  | ____|
+ * | |   | |_| | / _ \ |  \| | |  _|  _|   | |\/| |  _|  
+ * | |___|  _  |/ ___ \| |\  | |_| | |___  | |  | | |___ 
+ *  \____|_| |_/_/   \_\_| \_|\____|_____| |_|  |_|_____|
+ *   
+ * ***************************************************************
+ */
+myDiv +=				"<select class='form-control' id='sel2'>";
+myDiv += 					"<option value='default'>Insurance</option>";
+myDiv += 					"<option>Systems Admin</option>";
+myDiv += 					"<option>Systems Developer</option>";
+myDiv += 					"<option>Web Admin</option>";
+myDiv += 					"<option>Web Developer</option>";
+myDiv +=				"</select>";
+myDiv +=        	"</div>";
+myDiv +=    	"</form>";
+myDiv += 	"</td>";
+myDiv += 	"<td>";
+myDiv +=    	"<form>";
+myDiv +=        	"<div class='form-group'>";
+/* 
+ * ***************************************************************
+ * Third selection group
+ *   ____ _   _    _    _   _  ____ _____   __  __ _____ 
+ *  / ___| | | |  / \  | \ | |/ ___| ____| |  \/  | ____|
+ * | |   | |_| | / _ \ |  \| | |  _|  _|   | |\/| |  _|  
+ * | |___|  _  |/ ___ \| |\  | |_| | |___  | |  | | |___ 
+ *  \____|_| |_/_/   \_\_| \_|\____|_____| |_|  |_|_____|
+ *   
+ * ***************************************************************
+ */
+myDiv +=				 "<select class='form-control' id='sel3' onChange='{";
+myDiv +=				 	"if ($(this).val() == \"Other\") {";
+myDiv +=				 			"$(\"#sel4\").val(\"\");";
+myDiv +=			 				"$(\"#sel4\").css(\"display\",\"block\")";
+myDiv +=				 	"} else {";
+myDiv +=			 				"$(\"#sel4\").css(\"display\",\"none\")";
+myDiv +=			 		"}}'>";
+myDiv +=			 			"<option value='default'>Bug Fix</option>";
+myDiv +=				 		"<option>Other</option>";
+myDiv +=					"</select>";
+myDiv +=    	    	"</div>";
+myDiv +=	    	"</form>";
+myDiv += 		"</td>";
+myDiv += 	"</tr>";
+myDiv += 	"<tr>";
+myDiv += 		"<td colspan='3'>";
+myDiv +=    		"<input id='sel4' type='text' style='display:none' placeholder='Type your entry here...'>";
+myDiv += 		"</td>";
+myDiv +=     "</tr>";
+myDiv +=   "</table>";
+myDiv +=  "<div>";
+myDiv +=  "<button class='btnCancel actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\")'>Cancel</button>";
+myDiv +=  "<button class='btnOk actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardConfirmationDiv\").toggleClass(\"isNotVisible\")'>Ok</button>";
+myDiv += "</div>";
+myDiv += "</div>";
+myDiv += "</div>";
+debugger;
+$(window.parent.document).find("#customDashboardSection").html(myDiv)
+</script>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="theme">defaultTheme</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <themes>
+        <theme name="defaultTheme" id="4">
+            <styles>
+                <style name="kpi_green" id="5">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="color">#1ABB9C</property>
+                </style>
+                <style name="kpi_orange_red" id="6">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="color">#E74C3C</property>
+                </style>
+                <style name="report" id="7">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">11pt</property>
+                    <property name="color">#73879C</property>
+                </style>
+                <style name="page" id="8">
+                    <property name="backgroundColor">#F7F7F7</property>
+                </style>
+                <style name="background_white" id="9">
+                    <property name="backgroundColor">#FFFFFF</property>
+                </style>
+            </styles>
+        </theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3"/>
+    </page-setup>
+</library>

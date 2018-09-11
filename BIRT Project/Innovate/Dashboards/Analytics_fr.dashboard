@@ -1,0 +1,2458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="NewDataMartDataSource" id="9">
+            <property name="datamartURL">Data Objects/Classic Models</property>
+            <property name="datamartVersion">-1</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <data-mart-data-source name="NewDataMartDataSource1" id="141">
+            <property name="datamartURL">Data Objects/KPI</property>
+            <property name="datamartVersion">-1</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <data-mart-data-source name="NewDataMartDataSource2" id="214">
+            <property name="datamartURL">Data Objects/Classic Models FR</property>
+            <property name="datamartVersion">-1</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="NewDataMartDataSource::Classic Models Data Model" id="13">
+            <property name="dataSource">NewDataMartDataSource</property>
+            <property name="dataObject">Classic Models Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <body>
+        <extended-item extensionName="Chart" name="Qté en stock_e5db3493-16b4-470a-8d32-9c372ad4e83c" id="124">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="SideBySide" orientation="0">
+  <block>
+   <children _type="TitleBlock" visible="false" auto="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="">
+      <font bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="true" orientation="1" position="3">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title visible="true">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.range.selector" value="false"/>
+  <extendedProperties name="jschart.navigator" value="false"/>
+  <extendedProperties name="jschart.scroll" value="true"/>
+  <extendedProperties name="keep.hierarchy.category" value="false"/>
+  <extendedProperties name="keep.hierarchy.series" value="false"/>
+  <extendedProperties name="enable.data.summarize" value="false"/>
+  <extendedProperties name="jschart.glass.style" value="false"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="QWER"/>
+   <orthogonalSampleData dataSetRepresentation="5" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="false" legendBehavior="1"/>
+  <emptyMessage visible="true">
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3" gapWidth="0.5" labelPosition="1" staggered="false" interval="1" categoryAxis="true">
+   <title visible="false">
+    <caption value="">
+     <font bold="false" italic="false" underline="false" rotation="90.0"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" labelPosition="2" staggered="false" primaryAxis="true" percent="false">
+    <title visible="false">
+     <caption value="">
+      <font bold="false" italic="false" underline="false" rotation="0.0"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="row[&quot;Product Line&quot;]"/>
+     <series _type="BarSeries" seriesIdentifier="QUANTITYINSTOCK" labelPosition="5" stacked="false">
+      <label>
+       <caption value="QUANTITYINSTOCK"/>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;Quantity in Stock&quot;]">
+       <grouping enabled="true"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="0"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="true">
+     <caption>
+      <font bold="false" italic="false" underline="false" rotation="0.0"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale step="0.0" stepNumber="1"/>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <series seriesIdentifier="ORDERDATE">
+     <label>
+      <caption value="ORDERDATE"/>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Order Date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupingUnit="7" groupType="1"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font bold="false" italic="false" underline="false" rotation="0.0"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">between</property>
+                    <expression name="expr">dataSetRow["Order Date"]["Year"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="constant">2011</value>
+                    </simple-property-list>
+                    <expression name="value2" type="constant">2013</expression>
+                    <property name="filterTarget">DataSet</property>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <property name="height">159pt</property>
+            <property name="width">921pt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Order Date</property>
+                    <text-property name="displayName">ORDERDATE</text-property>
+                    <expression name="expression">dataSetRow["Order Date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">Quantity in Stock</property>
+                    <text-property name="displayName">QUANTITYINSTOCK</text-property>
+                    <expression name="expression">dataSetRow["Quantity in Stock"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Product Line</property>
+                    <text-property name="displayName">PRODUCTLINE</text-property>
+                    <expression name="expression">dataSetRow["Product Line"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">ThemesReportItems.Demo 2018</property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">false</property>
+        </extended-item>
+        <extended-item extensionName="Chart" name="Evolution CA_a274efe1-d816-4e7c-b205-ad13d7259550" id="128">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Line Chart" subType="Overlay" orientation="1">
+  <block>
+   <children _type="TitleBlock" visible="false" auto="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="">
+      <font bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="true" orientation="1" position="3">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title visible="true">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.range.selector" value="false"/>
+  <extendedProperties name="jschart.navigator" value="true"/>
+  <extendedProperties name="jschart.scroll" value="true"/>
+  <extendedProperties name="keep.hierarchy.category" value="true"/>
+  <extendedProperties name="keep.hierarchy.series" value="true"/>
+  <extendedProperties name="enable.data.summarize" value="false"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="QWER"/>
+   <orthogonalSampleData dataSetRepresentation="2.3" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="true" legendBehavior="1"/>
+  <emptyMessage visible="true">
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3" gapWidth="0.5" labelPosition="1" staggered="false" interval="1" categoryAxis="true">
+   <title visible="false">
+    <caption value="">
+     <font bold="false" italic="false" underline="false"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" labelPosition="2" primaryAxis="true" percent="false">
+    <title visible="false">
+     <caption value="">
+      <font bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="row[&quot;Product Line&quot;]"/>
+     <series _type="LineSeries" seriesIdentifier="Sales Amount" stacked="false" paletteLineColor="true">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;Sales Amount&quot;]">
+       <grouping enabled="true"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="0"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="true">
+     <caption>
+      <font bold="false" italic="false" underline="false" rotation="0.0"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale step="0.0" stepNumber="1"/>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <series seriesIdentifier="ORDERDATE">
+     <label>
+      <caption value="ORDERDATE"/>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Order Date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupingUnit="5" groupType="1"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font bold="false" italic="false" underline="false" rotation="0.0"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">between</property>
+                    <expression name="expr">dataSetRow["Order Date"]["Year"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="constant">2011</value>
+                    </simple-property-list>
+                    <expression name="value2" type="constant">2013</expression>
+                    <property name="filterTarget">DataSet</property>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <property name="height">174.75pt</property>
+            <property name="width">921pt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Order Date</property>
+                    <text-property name="displayName">ORDERDATE</text-property>
+                    <expression name="expression">dataSetRow["Order Date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">Sales Amount</property>
+                    <expression name="expression">dataSetRow["Sales Amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Product Line</property>
+                    <text-property name="displayName">PRODUCTLINE</text-property>
+                    <expression name="expression">dataSetRow["Product Line"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">ThemesReportItems.Demo 2018</property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <extended-item extensionName="FlashGadgets" name="Nb de commandes_41e7ed64-e763-45e8-9c5b-6411af1574e1" id="170">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showGlassStyle="false" showShadow="false" showValueAboveNeedle="false" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region color="fa4c4e" endValue="35.0" label="Low" startValue="0.0"/>
+  <region color="fee660" endValue="70.0" label="Medium" startValue="35.0"/>
+  <region color="4cf8c6" endValue="100.0" label="High" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="true" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major color="b7b7b7" height="8" width="1"/>
+   <minor color="b7b7b7" height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;Order Number&quot;]">
+   <aggregateDefinition aggregateFunction="Count"/>
+  </valueDefinition>
+  <meter showDialValue="true" showValueAboveNeedle="true">
+   <needles backgroundColor="353535" baseWidth="7" rearExtension="10" showValue="true" topWidth="0"/>
+   <needleBasePivot borderColor="999999" borderThickness="1" fillColor="353535" showBorder="true" size="15"/>
+  </meter>
+  <font color="#999999" font="Tahoma" size="12"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">153pt</property>
+            <property name="width">506.25pt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Order Number</property>
+                    <expression name="expression">dataSetRow["Order Number"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <extended-item extensionName="FlashGadgets" name="Nb de commandes annulées_d3b35a33-d4f3-40a7-b2a9-bf31b1f7625a" id="174">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showGlassStyle="false" showShadow="false" showValueAboveNeedle="false" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region color="4cf8c6" endValue="35.0" label="Low" startValue="0.0"/>
+  <region color="fee660" endValue="70.0" label="Medium" startValue="35.0"/>
+  <region color="fa4c4e" endValue="100.0" label="High" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="true" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major color="b7b7b7" height="8" width="1"/>
+   <minor color="b7b7b7" height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;Order Number&quot;]">
+   <aggregateDefinition aggregateFunction="Count"/>
+  </valueDefinition>
+  <meter showDialValue="true" showValueAboveNeedle="true">
+   <needles backgroundColor="353535" baseWidth="7" rearExtension="10" showValue="true" topWidth="0"/>
+   <needleBasePivot borderColor="999999" borderThickness="1" fillColor="353535" showBorder="true" size="15"/>
+  </meter>
+  <font color="#999999" font="Tahoma" size="12"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">148.5pt</property>
+            <property name="width">474.75pt</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr">dataSetRow["Status"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="constant">Cancelled</value>
+                    </simple-property-list>
+                    <property name="filterTarget">DataSet</property>
+                    <property name="type">slicer</property>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Order Number</property>
+                    <expression name="expression">dataSetRow["Order Number"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <extended-item extensionName="FlashGadgets" name="Nb de commandes expédiées_2688facb-3c46-4a75-b3b2-c04d9c669ccc" id="178">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showGlassStyle="false" showShadow="false" showValueAboveNeedle="false" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region color="fa4c4e" endValue="35.0" label="Low" startValue="0.0"/>
+  <region color="fee660" endValue="70.0" label="Medium" startValue="35.0"/>
+  <region color="4cf8c6" endValue="100.0" label="High" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="true" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major color="b7b7b7" height="8" width="1"/>
+   <minor color="b7b7b7" height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;Order Number&quot;]">
+   <aggregateDefinition aggregateFunction="Count"/>
+  </valueDefinition>
+  <meter showDialValue="true" showValueAboveNeedle="true">
+   <needles backgroundColor="353535" baseWidth="7" rearExtension="10" showValue="true" topWidth="0"/>
+   <needleBasePivot borderColor="999999" borderThickness="1" fillColor="353535" showBorder="true" size="15"/>
+  </meter>
+  <font color="#999999" font="Tahoma" size="12"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">149.25pt</property>
+            <property name="width">506.25pt</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr">dataSetRow["Status"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="constant">Shipped</value>
+                    </simple-property-list>
+                    <property name="filterTarget">DataSet</property>
+                    <property name="type">slicer</property>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Order Number</property>
+                    <expression name="expression">dataSetRow["Order Number"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <extended-item extensionName="FlashGadgets" name="Chiffre d'affaire_3575e675-042b-4e7e-a553-3e13741ffacf" id="186">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showGlassStyle="false" showShadow="false" showValueAboveNeedle="false" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region color="fa4c4e" endValue="3000000.0" label="Low" startValue="0.0"/>
+  <region color="fee660" endValue="7000000.0" label="Medium" startValue="3000000.0"/>
+  <region color="4cf8c6" endValue="1.0E7" label="High" startValue="7000000.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="true" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major color="b7b7b7" height="8" width="1"/>
+   <minor color="b7b7b7" height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;Sales Amount&quot;]">
+   <aggregateDefinition aggregateFunction="Sum"/>
+  </valueDefinition>
+  <meter showDialValue="true" showValueAboveNeedle="true">
+   <needles backgroundColor="353535" baseWidth="7" rearExtension="10" showValue="true" topWidth="0"/>
+   <needleBasePivot borderColor="999999" borderThickness="1" fillColor="353535" showBorder="true" size="15"/>
+  </meter>
+  <font color="#999999" font="Tahoma" size="12"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">154.5pt</property>
+            <property name="width">474.75pt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Sales Amount</property>
+                    <expression name="expression">dataSetRow["Sales Amount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <text name="4d3ca04f-ee8d-47a3-9dc8-c2f5725f0e29" id="212">
+            <text-property name="content"><![CDATA[http://developer.actuate.com/]]></text-property>
+        </text>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" name="Crosstab - Classic Models Data Model_69f0eb13-3b81-4b91-bab2-5f9a9c1289c0"
+ id="217">
+            <property name="measures">
+                <extended-item extensionName="ComputedMeasureView" name="Qty Ordered" id="477">
+                    <property name="measureName">Qty Ordered</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="478">
+                            <property name="aggregationOnRow">Customer Name/Customer Name</property>
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="backgroundColor">#FFFFFF</property>
+                            <property name="textAlign">right</property>
+                            <property name="content">
+                                <data id="481">
+                                    <property name="backgroundColor">#FFFFFF</property>
+                                    <structure name="numberFormat">
+                                        <property name="category">General Number</property>
+                                        <property name="pattern">General Number</property>
+                                    </structure>
+                                    <property name="textAlign">right</property>
+                                    <property name="resultSetColumn">Qty Ordered_Customer Name/Customer Name_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="500">
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="content">
+                                <data id="501">
+                                    <structure name="numberFormat">
+                                        <property name="category">General Number</property>
+                                        <property name="pattern">General Number</property>
+                                    </structure>
+                                    <property name="resultSetColumn">Qty Ordered_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="479">
+                            <property name="content">
+                                <label id="480">
+                                    <text-property name="text">Qty Ordered</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="ComputedMeasureView" name="Sales Amount" id="482">
+                    <property name="measureName">Sales Amount</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="483">
+                            <property name="aggregationOnRow">Customer Name/Customer Name</property>
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="backgroundColor">#FFFFFF</property>
+                            <property name="textAlign">right</property>
+                            <property name="content">
+                                <data id="486">
+                                    <property name="backgroundColor">#FFFFFF</property>
+                                    <structure name="numberFormat">
+                                        <property name="category">Currency</property>
+                                        <property name="pattern">$#,##0</property>
+                                    </structure>
+                                    <property name="textAlign">right</property>
+                                    <property name="resultSetColumn">Sales Amount_Customer Name/Customer Name_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="502">
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="content">
+                                <data id="503">
+                                    <structure name="numberFormat">
+                                        <property name="category">Currency</property>
+                                        <property name="pattern">$#,##0</property>
+                                    </structure>
+                                    <property name="resultSetColumn">Sales Amount_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="484">
+                            <property name="content">
+                                <label id="485">
+                                    <text-property name="text">Sales Amount</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="ComputedMeasureView" name="Profit" id="487">
+                    <property name="measureName">Profit</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="488">
+                            <property name="aggregationOnRow">Customer Name/Customer Name</property>
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="backgroundColor">#FFFFFF</property>
+                            <property name="textAlign">right</property>
+                            <property name="content">
+                                <data id="491">
+                                    <property name="backgroundColor">#FFFFFF</property>
+                                    <structure name="numberFormat">
+                                        <property name="category">Currency</property>
+                                        <property name="pattern">$#,##0</property>
+                                    </structure>
+                                    <property name="textAlign">right</property>
+                                    <property name="resultSetColumn">Profit_Customer Name/Customer Name_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="504">
+                            <property name="aggregationOnColumn">Order Date/Quarter</property>
+                            <property name="content">
+                                <data id="505">
+                                    <structure name="numberFormat">
+                                        <property name="category">Currency</property>
+                                        <property name="pattern">$#,##0</property>
+                                    </structure>
+                                    <property name="resultSetColumn">Profit_Order Date/Quarter</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="489">
+                            <property name="content">
+                                <label id="490">
+                                    <text-property name="text">Profit</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="417">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="499">
+                            <property name="content">
+                                <label id="506">
+                                    <text-property name="text">Grand Total</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="424">
+                            <property name="dimension">Country</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="425">
+                                    <property name="level">Country/Country</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="426">
+                                            <property name="content">
+                                                <data name="Country" id="427">
+                                                    <property name="resultSetColumn">Country</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                        <extended-item extensionName="DimensionView" id="492">
+                            <property name="dimension">Customer Name</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="493">
+                                    <property name="level">Customer Name/Customer Name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="494">
+                                            <property name="content">
+                                                <data name="Customer Name" id="497">
+                                                    <property name="resultSetColumn">Customer Name</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="418">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="419">
+                            <property name="dimension">Order Date</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="471">
+                                    <property name="level">Order Date/Quarter</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="472">
+                                            <property name="content">
+                                                <data name="Quarter" id="475">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Custom</property>
+                                                        <property name="pattern">Quarter 0</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">Order Date-Quarter</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="473"/>
+                <extended-item extensionName="CrosstabCell" id="474">
+                    <property name="content">
+                        <label id="476">
+                            <text-property name="text">Order Date-Quarter</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="452">
+                    <property name="content">
+                        <label id="454">
+                            <text-property name="text">Country</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="495">
+                    <property name="content">
+                        <label id="498">
+                            <text-property name="text">Customer Name</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="filter">
+                <filter-condition-element>
+                    <expression name="expr">dataSetRow["Order Date"]["Year"]</expression>
+                    <property name="operator">between</property>
+                    <simple-property-list name="value1">
+                        <value type="constant">2011</value>
+                    </simple-property-list>
+                    <expression name="value2" type="constant">2013</expression>
+                    <property name="filterTarget">DataSet</property>
+                    <property name="updateAggregation">true</property>
+                    <list-property name="userProperties">
+                        <structure>
+                            <property name="name">customValue</property>
+                            <property name="type">string</property>
+                        </structure>
+                    </list-property>
+                </filter-condition-element>
+            </property>
+            <property name="rowPageBreakInterval">40</property>
+            <property name="columnPageBreakInterval">10</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Country</property>
+                    <expression name="expression">dataSetRow["Country"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Order Date-Quarter</property>
+                    <expression name="expression">dataSetRow["Order Date"]["Quarter"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Qty Ordered_Customer Name/Customer Name_Order Date/Quarter</property>
+                    <text-property name="displayName">Qty Ordered</text-property>
+                    <expression name="expression">dataSetRow["Qty Ordered"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Customer Name/Customer Name</value>
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Sales Amount_Customer Name/Customer Name_Order Date/Quarter</property>
+                    <text-property name="displayName">Sales Amount</text-property>
+                    <expression name="expression">dataSetRow["Sales Amount"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Customer Name/Customer Name</value>
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Profit_Customer Name/Customer Name_Order Date/Quarter</property>
+                    <text-property name="displayName">Profit</text-property>
+                    <expression name="expression">dataSetRow["Profit"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Customer Name/Customer Name</value>
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Customer Name</property>
+                    <expression name="expression">dataSetRow["Customer Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Qty Ordered_Order Date/Quarter</property>
+                    <expression name="expression">data["Qty Ordered_Customer Name/Customer Name_Order Date/Quarter"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Sales Amount_Order Date/Quarter</property>
+                    <expression name="expression">data["Sales Amount_Customer Name/Customer Name_Order Date/Quarter"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">Profit_Order Date/Quarter</property>
+                    <expression name="expression">data["Profit_Customer Name/Customer Name_Order Date/Quarter"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Order Date/Quarter</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+            <property name="theme">ThemesReportItems.modern-crosstab</property>
+            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__DA_USE_DEFAULT_HYPERLINK</property>
+                    <property name="type">boolean</property>
+                </structure>
+                <structure>
+                    <property name="name">__DA_ENABLE_PAGEBREAK</property>
+                    <property name="type">boolean</property>
+                </structure>
+            </list-property>
+            <property name="__DA_USE_DEFAULT_HYPERLINK">true</property>
+            <property name="__DA_ENABLE_PAGEBREAK">true</property>
+        </extended-item>
+    </body>
+    <property name="dashboardView">
+        <dashboard id="2">
+            <property name="activeTab">cab07f3a-c2b3-44fa-b8c6-5b902a2124fc</property>
+            <property name="tabs">
+                <tab-element name="cab07f3a-c2b3-44fa-b8c6-5b902a2124fc" id="3">
+                    <property name="title">Stock &amp; Chiffre d'affaire</property>
+                    <property name="backgroundColor">auto</property>
+                    <property name="sections">
+                        <section id="4">
+                            <property name="width">18.607372732592157%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343" id="192">
+                                    <property name="title">Pays</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">73px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="193">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <dropdown-data-selector id="514">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Country</value>
+                                                <value>Country</value>
+                                            </simple-property-list>
+                                            <property name="allowTyping">false</property>
+                                            <property name="autoSuggest">false</property>
+                                            <property name="listLimit">1000</property>
+                                        </dropdown-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">2ee37ac9-f988-4e4e-a2a7-f7f6291ae03b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03" id="407">
+                                    <property name="title">Ville</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">290px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="409">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <list-data-selector id="408">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">in</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>City</value>
+                                                <value>City</value>
+                                            </simple-property-list>
+                                            <property name="allowMultiValue">true</property>
+                                            <property name="enableSearch">false</property>
+                                            <property name="listLimit">1000</property>
+                                        </list-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">2ee37ac9-f988-4e4e-a2a7-f7f6291ae03b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="2ee37ac9-f988-4e4e-a2a7-f7f6291ae03b" id="194">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="196">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Source Sans Pro"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">200</property>
+                                            <property name="color">#353535</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="195"/>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef" id="130">
+                                    <property name="title">Année</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">7</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">83px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="131">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <slider-data-selector id="133">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">between</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Order Date/Year</value>
+                                                <value>Order Date/Year</value>
+                                            </simple-property-list>
+                                            <simple-property-list name="selectedValues">
+                                                <value>2011</value>
+                                                <value>2013</value>
+                                            </simple-property-list>
+                                            <property name="orientation">horizontal</property>
+                                            <property name="thumbType">dual</property>
+                                            <property name="autoAdjustTickMarks">true</property>
+                                            <property name="tickInterval">1</property>
+                                            <property name="autoRange">true</property>
+                                            <property name="minValue">0</property>
+                                            <property name="maxValue">100</property>
+                                            <property name="showTickMarks">true</property>
+                                        </slider-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">2ee37ac9-f988-4e4e-a2a7-f7f6291ae03b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="5">
+                            <property name="width">81.39262726740783%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639" id="515">
+                                    <property name="title">Qté en stock</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">5</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">248px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="517">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="516">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Qté en stock_e5db3493-16b4-470a-8d32-9c372ad4e83c</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_0bc6a341-3b8f-4f5f-be94-3addbdcfe748" id="518">
+                                    <property name="title">Evolution du chiffre d'affaire</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">6</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">268px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="519">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="134">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Evolution CA_a274efe1-d816-4e7c-b205-ad13d7259550</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_bb3edc2d-e8fb-4f53-89f1-d9d5c607e343</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f8e01399-9431-4316-8ae3-78e8b1601b03</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6956a70f-0b97-4d88-99b9-c09e767f63ef</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_b763a824-1c1a-491e-9f3d-6b86cb93e639</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+                <tab-element name="3a17797f-577d-4b80-b492-8ce967b6c499" id="135">
+                    <property name="title">Performances</property>
+                    <property name="backgroundColor">auto</property>
+                    <property name="sections">
+                        <section id="520">
+                            <property name="width">9.645669291338582%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04" id="156">
+                                    <property name="title">Année</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">233px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="157">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <radio-data-selector id="158">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Order Date/Year</value>
+                                                <value>Order Date/Year</value>
+                                            </simple-property-list>
+                                            <property name="orientation">horizontal</property>
+                                            <property name="autoAdjust">true</property>
+                                            <property name="autoAdjustNumber">3</property>
+                                            <property name="listLimit">1000</property>
+                                        </radio-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">589c4814-dba9-407d-802a-03ea6856e39c</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0" id="142">
+                                    <property name="title">Région</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">239px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="143">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <radio-data-selector id="163">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Region</value>
+                                                <value>Region</value>
+                                            </simple-property-list>
+                                            <property name="orientation">horizontal</property>
+                                            <property name="autoAdjust">true</property>
+                                            <property name="autoAdjustNumber">3</property>
+                                            <property name="listLimit">1000</property>
+                                        </radio-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">589c4814-dba9-407d-802a-03ea6856e39c</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="521">
+                            <property name="width">43.803278688524586%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872" id="172">
+                                    <property name="title">Nb de commandes annulées</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">7</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">233px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="173">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="175">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Nb de commandes annulées_d3b35a33-d4f3-40a7-b2a9-bf31b1f7625a</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="589c4814-dba9-407d-802a-03ea6856e39c" id="138">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="140">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Source Sans Pro"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#000000</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="139"/>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168" id="184">
+                                    <property name="title">Chiffre d'affaire</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">9</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">241px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="185">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="197">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Chiffre d'affaire_3575e675-042b-4e7e-a553-3e13741ffacf</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="522">
+                            <property name="width">46.557377049180324%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c" id="176">
+                                    <property name="title">Nb de commandes expédiées</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">8</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">234px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="177">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="179">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Nb de commandes expédiées_2688facb-3c46-4a75-b3b2-c04d9c669ccc</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_6d022065-67a3-49b2-b3ba-9370de254c08</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_6d022065-67a3-49b2-b3ba-9370de254c08" id="168">
+                                    <property name="title">Nb de commandes</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">6</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">239px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="169">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="171">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Nb de commandes_41e7ed64-e763-45e8-9c5b-6411af1574e1</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_ae1e784d-23d6-4e80-9d2e-bd882bcdc872</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_5b12a78f-11f9-4ab9-9ac5-3d3772ea8168</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_c195f953-450a-4b7c-a84f-4d44ae1ee79c</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_90e54aa3-12f1-47c4-b518-bbb6b7cf5e04</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_889a7f92-2d55-42cd-b03d-a88aa3c9fdc0</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+                <tab-element name="46ffe17e-c51d-4418-aa1c-4d0da036ec3c" id="198">
+                    <property name="title">Analytics CT</property>
+                    <property name="backgroundColor">auto</property>
+                    <property name="sections">
+                        <section id="199">
+                            <property name="width">15.032679738562091%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953" id="326">
+                                    <property name="title">Pays</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">175px</property>
+                                    <property name="width">259px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="327">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <list-data-selector id="328">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">in</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Country</value>
+                                                <value>Country</value>
+                                            </simple-property-list>
+                                            <property name="allowMultiValue">true</property>
+                                            <property name="enableSearch">false</property>
+                                            <property name="listLimit">1000</property>
+                                        </list-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">6bfa95c5-731c-4247-bb9a-d436bd02f08b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_8f183a68-d5a5-4d63-b96e-e3713cdebd6d</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="6bfa95c5-731c-4247-bb9a-d436bd02f08b" id="201">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="203">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Source Sans Pro"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#000000</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="202"/>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14" id="413">
+                                    <property name="title">Ligne de produit</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">6</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">50px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="414">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <dropdown-data-selector id="415">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Product Line</value>
+                                                <value>Product Line</value>
+                                            </simple-property-list>
+                                            <property name="allowTyping">false</property>
+                                            <property name="autoSuggest">false</property>
+                                            <property name="listLimit">1000</property>
+                                        </dropdown-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">6bfa95c5-731c-4247-bb9a-d436bd02f08b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_8f183a68-d5a5-4d63-b96e-e3713cdebd6d</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_0373fca8-3488-4775-85f5-71bd946866f7" id="410">
+                                    <property name="title">Statut de la commande</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">5</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">50px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="411">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <dropdown-data-selector id="412">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Status</value>
+                                                <value>Status</value>
+                                            </simple-property-list>
+                                            <property name="allowTyping">false</property>
+                                            <property name="autoSuggest">false</property>
+                                            <property name="listLimit">1000</property>
+                                        </dropdown-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">6bfa95c5-731c-4247-bb9a-d436bd02f08b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_8f183a68-d5a5-4d63-b96e-e3713cdebd6d</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917" id="329">
+                                    <property name="title">Année</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">4</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">93px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="330">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Tahoma"</property>
+                                            <property name="fontSize">16pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#73879C</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <slider-data-selector id="331">
+                                            <property name="linkedDataModel">NewDataMartDataSource::Classic Models Data Model</property>
+                                            <property name="operator">between</property>
+                                            <simple-property-list name="columnNames">
+                                                <value>Order Date/Year</value>
+                                                <value>Order Date/Year</value>
+                                            </simple-property-list>
+                                            <simple-property-list name="selectedValues">
+                                                <value>2011</value>
+                                                <value>2013</value>
+                                            </simple-property-list>
+                                            <property name="orientation">horizontal</property>
+                                            <property name="thumbType">dual</property>
+                                            <property name="autoAdjustTickMarks">true</property>
+                                            <property name="tickInterval">1</property>
+                                            <property name="autoRange">true</property>
+                                            <property name="minValue">0</property>
+                                            <property name="maxValue">100</property>
+                                            <property name="showTickMarks">true</property>
+                                        </slider-data-selector>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">6bfa95c5-731c-4247-bb9a-d436bd02f08b</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_8f183a68-d5a5-4d63-b96e-e3713cdebd6d</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="200">
+                            <property name="width">84.9673202614379%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_8f183a68-d5a5-4d63-b96e-e3713cdebd6d" id="215">
+                                    <property name="title">Crosstab - Classic Models Data Model</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">true</property>
+                                    <property name="height">607px</property>
+                                    <property name="width">1421px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="216">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Source Sans Pro"</property>
+                                            <property name="fontSize">14pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="219">
+                                            <list-property name="userProperties">
+                                                <structure>
+                                                    <property name="name">showViewerToolbar</property>
+                                                    <property name="type">boolean</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="showViewerToolbar">false</property>
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Crosstab - Classic Models Data Model_69f0eb13-3b81-4b91-bab2-5f9a9c1289c0</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_9c2ab80c-bb1d-4ac2-90c1-f991c074f953</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_16d34f0c-aec2-420c-bee4-85bf19d1af14</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_0373fca8-3488-4775-85f5-71bd946866f7</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66e1e583-8526-4f7d-9d9d-c19b69688917</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+            </property>
+        </dashboard>
+    </property>
+</report>

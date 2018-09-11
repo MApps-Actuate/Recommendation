@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="pType" id="7">
+            <text-property name="promptText">Type</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">design</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">document</property>
+                    <property name="label">Document</property>
+                </structure>
+                <structure>
+                    <property name="value">design</property>
+                    <property name="label">Design</property>
+                </structure>
+                <structure>
+                    <property name="value">dashboard</property>
+                    <property name="label">Dashboard</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">false</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pName" id="8">
+            <text-property name="promptText">Nom / Name</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">salesOrderReport</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <data id="13">
+            <property name="fontFamily">"Courier New"</property>
+            <property name="fontSize">10pt</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">myString</property>
+                    <text-property name="displayName">myString</text-property>
+                    <expression name="expression" type="javascript">vars["myString"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">myString</property>
+        </data>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="myString">
+            <expression name="value" type="javascript">// For testing in BRDPro, change chart path to local&#13;
+if (!reportContext.getAppContext().get("ServerContext").getVolumeName()) {&#13;
+	var host = "http://test:8000";&#13;
+    var myHome = "/Home/test/";&#13;
+}&#13;
+else {&#13;
+	var host = reportContext.getAppContext().get("ServerURL");&#13;
+    var myHome = "/Home/" + reportContext.getAppContext().get("ServerUserName").toLowerCase() + "/";	&#13;
+};	&#13;
+var myApp = 'Demo 2018';&#13;
+&#13;
+var myString = "&lt;!DOCTYPE HTML>\n";&#13;
+myString += "&lt;html lang='en-US'>\n";&#13;
+myString += "&lt;head>\n";&#13;
+myString += "&lt;h1>&lt;/h1>\n";&#13;
+myString += "&lt;div id='acContainer1' style='border-width: 0px; border-style: solid;'>&lt;/div>\n\n\n\n";&#13;
+&#13;
+myString += "&lt;script type='text/javascript' language='JavaScript' src='" + host.replace("8000","8700")  + "/iportal/jsapi'>&lt;/script>\n";&#13;
+myString += "&lt;script type='text/javascript'>\n"&#13;
+&#13;
+if(params["pType"].value=="dashboard") {&#13;
+	myString += "actuate.load('dashboard');\n";&#13;
+	if (params["pName"].value.substring(0,2) == 'my') var dashboardName = myHome + params["pName"].value + '.dashboard';	&#13;
+	else var dashboardName = '/Applications/' + myApp + '/Dashboards/' + params["pName"].value + '.dashboard';&#13;
+};&#13;
+if (params["pType"].value == "design")  {&#13;
+	myString += "actuate.load('viewer');\n";&#13;
+	if (params["pName"].value.substring(0,2) == 'my') var designName = myHome + params["pName"].value + '.rptdesign';&#13;
+	else var designName = '/Applications/' + myApp + '/Report Designs/' + params["pName"].value + '.rptdesign';&#13;
+	&#13;
+};&#13;
+if (params["pType"].value == "document") {&#13;
+	myString += "actuate.load('viewer');\n";&#13;
+	if (params["pName"].value.substring(0,2) == 'my') var reportName = myHome + params["pName"].value + '.rptdocument';&#13;
+	else var reportName = '/Applications/' + myApp + '/Report Designs/' + params["pName"].value + '.rptdocument';&#13;
+};&#13;
+&#13;
+myString += "var reqOps = new actuate.RequestOptions( );\n";&#13;
+myString += "reqOps.setRepositoryType('Enterprise');\n";&#13;
+myString += "actuate.initialize( '" + host.replace("8000","8700") + "/iportal/', reqOps==undefined?null:reqOps, 'administrator', '', myInit);\n\n\n";&#13;
+&#13;
+myString += "function myInit(){\n";&#13;
+if (params["pType"].value != "dashboard") {&#13;
+		myString += "     var options = new actuate.viewer.UIOptions( );\n";&#13;
+};		&#13;
+if (params["pType"].value == "design" || params["pType"].value == "document") {&#13;
+	myString += "     options.enableToolBar(true);\n";&#13;
+};&#13;
+if (params["pType"].value == "design") {&#13;
+	myString += "     viewer = new actuate.Viewer( 'acContainer1' );\n";&#13;
+	myString += "     viewer.setReportDesign('"+ designName + "');\n";&#13;
+};&#13;
+if (params["pType"].value == "document") {&#13;
+	myString += "     viewer = new actuate.Viewer( 'acContainer1' );\n";&#13;
+	myString += "     viewer.setReportName('" + reportName + "');\n";&#13;
+};&#13;
+if (params["pType"].value == "dashboard") {&#13;
+	myString += "     viewer = new actuate.Dashboard( 'acContainer1' );\n";&#13;
+	myString += "     viewer.setDashboardName('" + dashboardName + "');\n";&#13;
+};&#13;
+	&#13;
+myString += "     viewer.setSize(1540,1000);\n";&#13;
+if (params["pType"].value != "dashboard") {&#13;
+	myString += "     viewer.setUIOptions( options );\n";&#13;
+};	&#13;
+myString += "     viewer.submit();\n";&#13;
+myString += "};\n";&#13;
+myString += "&lt;/script>\n";&#13;
+myString += "&lt;/head>\n";&#13;
+myString += "&lt;/html>";</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

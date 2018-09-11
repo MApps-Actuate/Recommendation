@@ -1,0 +1,47 @@
+.canvas_gauge {
+	width:200px !important;
+	height:100px !important;
+}
+button {
+	color:#73879C !important;
+}
+.edit_dashboard {
+    float: left;
+    margin: 0;
+    padding-top: 16px;
+    width: 70px
+}
+.edit_dashboard a {
+    padding: 15px 15px 0;
+    margin: 0;
+    cursor: pointer
+}
+.edit_dashboard a i {
+    font-size: 26px
+}
+.site_title i {
+    border: 0px !important;
+    padding: 0px !important;
+}
+.x_content {
+    padding: 0 0px 6px;
+}    
+.accordion .panel-heading {
+    background: #FFFFFF; 
+}
+.accordion .panel:hover {
+    background: #FFFFFF;
+}
+.top_nav .nav .open>a, .top_nav .nav .open>a:focus, .top_nav .nav .open>a:hover, .top_nav .nav>li>a:focus, .top_nav .nav>li>a:hover {
+    background: none;
+}
+.dropdown-menu {
+    margin: 15px 20px 0px;
+    min-width: 200px;    
+}
+.isNotVisible {
+	display: none;
+} 
+.top_nav .dropdown-menu li a {
+    width: auto;
+}

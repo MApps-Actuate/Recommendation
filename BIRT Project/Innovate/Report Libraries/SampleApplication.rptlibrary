@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="theme">defaultTheme</property>
+    <data-sources>
+        <data-mart-data-source name="ClassicModel FR" id="5">
+            <property name="datamartURL">Data Objects/Classic Models FR</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <data-mart-data-source name="ClassicModel EN" id="6">
+            <property name="datamartURL">Data Objects/Classic Models</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <data-mart-data-source name="KPI" id="422">
+            <property name="datamartURL">Data Objects/KPI</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <themes>
+        <theme name="defaultTheme" id="4"/>
+        <theme name="Demo 2015" id="180">
+            <styles>
+                <style name="LightBlue" id="181">
+                    <property name="backgroundColor">#00C0EF</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="color">#FFFFFF</property>
+                </style>
+                <style name="Green" id="182">
+                    <property name="backgroundColor">#00A65A</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="color">#FFFFFF</property>
+                </style>
+                <style name="Orange" id="183">
+                    <property name="backgroundColor">#F39C12</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="color">#FFFFFF</property>
+                </style>
+                <style name="LightRed" id="184">
+                    <property name="backgroundColor">#F56954</property>
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="color">#FFFFFF</property>
+                </style>
+                <style name="tableHeaderBlue" id="640">
+                    <property name="backgroundColor">#3692C5</property>
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#D0E5F4</property>
+                    <property name="borderBottomColor">#DDDDDD</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftColor">#DDDDDD</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightColor">#DDDDDD</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopColor">#DDDDDD</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                </style>
+                <style name="widgetGray" id="1025">
+                    <property name="backgroundColor">#2D2D2D</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                </style>
+                <style name="metroGreen" id="1092">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">large</property>
+                    <property name="fontWeight">600</property>
+                    <property name="color">#4CF8C6</property>
+                    <structure name="numberFormat">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </style>
+                <style name="metroRed" id="1093">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">large</property>
+                    <property name="fontWeight">600</property>
+                    <property name="color">#FA4C4E</property>
+                    <structure name="numberFormat">
+                        <property name="category">Fixed</property>
+                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                    </structure>
+                </style>
+                <style name="metroYellow" id="1094">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">large</property>
+                    <property name="fontWeight">600</property>
+                    <property name="color">#FEE660</property>
+                    <structure name="numberFormat">
+                        <property name="category">Fixed</property>
+                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                    </structure>
+                </style>
+                <style name="metroWhite" id="1161">
+                    <property name="fontFamily">"Tahoma"</property>
+                    <property name="fontSize">large</property>
+                    <property name="fontWeight">600</property>
+                    <property name="color">#F5F5F5</property>
+                    <structure name="numberFormat">
+                        <property name="category">Fixed</property>
+                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                    </structure>
+                </style>
+            </styles>
+        </theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Landscape" id="3">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0in</property>
+            <property name="rightMargin">0.1in</property>
+            <property name="headerHeight">68px</property>
+            <property name="footerHeight">0.3in</property>
+            <page-header>
+                <grid name="NewGrid" id="318">
+                    <property name="height">65px</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="339">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="341"/>
+                    <column id="712"/>
+                    <row id="321">
+                        <property name="height">65px</property>
+                        <cell id="338">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage" id="333">
+                                <property name="height">60px</property>
+                                <property name="width">120px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="340">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText" id="716"/>
+                        </cell>
+                        <cell id="710">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText3" id="713">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid1" id="342">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="343"/>
+                    <row id="344">
+                        <cell id="345">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage1" id="346">
+                                <property name="display">inline</property>
+                                <property name="height">14px</property>
+                                <property name="width">14px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage11" id="352">
+                                <property name="display">inline</property>
+                                <property name="height">14px</property>
+                                <property name="width">14px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage111" id="354">
+                                <property name="display">inline</property>
+                                <property name="height">14px</property>
+                                <property name="width">14px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage13" id="355">
+                                <property name="display">inline</property>
+                                <property name="height">14px</property>
+                                <property name="width">14px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Portrait" id="423">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="bottomMargin">0in</property>
+            <property name="headerHeight">95px</property>
+            <page-header>
+                <grid name="NewGrid2" id="904">
+                    <property name="height">0.8958333333333334in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="905">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="906"/>
+                    <column id="907"/>
+                    <row id="908">
+                        <property name="height">85px</property>
+                        <cell id="909">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage2" id="910">
+                                <property name="height">75px</property>
+                                <property name="width">150px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="911">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText1" id="912"/>
+                        </cell>
+                        <cell id="913">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText31" id="914">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid11" id="534">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="535"/>
+                    <row id="536">
+                        <cell id="537">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage12" id="538">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage112" id="539">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage1111" id="540">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage131" id="541">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Landscape - Confidential" id="432">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="bottomMargin">0in</property>
+            <property name="backgroundImage">images/confidential.png</property>
+            <property name="backgroundPositionX">60%</property>
+            <property name="backgroundPositionY">30%</property>
+            <property name="backgroundRepeat">no-repeat</property>
+            <property name="headerHeight">95px</property>
+            <page-header>
+                <grid name="NewGrid3" id="915">
+                    <property name="height">0.8958333333333334in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="916">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="917"/>
+                    <column id="918"/>
+                    <row id="919">
+                        <property name="height">85px</property>
+                        <cell id="920">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage3" id="921">
+                                <property name="height">75px</property>
+                                <property name="width">150px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="922">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText2" id="923"/>
+                        </cell>
+                        <cell id="924">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText32" id="925">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid12" id="542">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="543"/>
+                    <row id="544">
+                        <cell id="545">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage14" id="546">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage113" id="547">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage1112" id="548">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage132" id="549">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Landscape - Confidentiel" id="441">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="bottomMargin">0in</property>
+            <property name="backgroundImage">images/confidentiel.png</property>
+            <property name="backgroundPositionX">60%</property>
+            <property name="backgroundPositionY">30%</property>
+            <property name="backgroundRepeat">no-repeat</property>
+            <property name="headerHeight">95px</property>
+            <page-header>
+                <grid name="NewGrid4" id="926">
+                    <property name="height">0.8958333333333334in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="927">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="928"/>
+                    <column id="929"/>
+                    <row id="930">
+                        <property name="height">85px</property>
+                        <cell id="931">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage4" id="932">
+                                <property name="height">75px</property>
+                                <property name="width">150px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="933">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText4" id="934"/>
+                        </cell>
+                        <cell id="935">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText33" id="936">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid13" id="550">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="551"/>
+                    <row id="552">
+                        <cell id="553">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage15" id="554">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage114" id="555">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage1113" id="556">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage133" id="557">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Portrait - Confidential" id="450">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="bottomMargin">0in</property>
+            <property name="backgroundImage">images/confidential.png</property>
+            <property name="backgroundPositionX">125px</property>
+            <property name="backgroundPositionY">200px</property>
+            <property name="backgroundRepeat">no-repeat</property>
+            <property name="headerHeight">95px</property>
+            <page-header>
+                <grid name="NewGrid5" id="937">
+                    <property name="height">0.8958333333333334in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="938">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="939"/>
+                    <column id="940"/>
+                    <row id="941">
+                        <property name="height">85px</property>
+                        <cell id="942">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage5" id="943">
+                                <property name="height">75px</property>
+                                <property name="width">150px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="944">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText5" id="945"/>
+                        </cell>
+                        <cell id="946">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText34" id="947">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid14" id="558">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="559"/>
+                    <row id="560">
+                        <cell id="561">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage16" id="562">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage115" id="563">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage1114" id="564">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage134" id="565">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Confidentiel" id="451">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="bottomMargin">0in</property>
+            <property name="backgroundImage">images/confidentiel.png</property>
+            <property name="backgroundPositionX">125px</property>
+            <property name="backgroundPositionY">200px</property>
+            <property name="backgroundRepeat">no-repeat</property>
+            <property name="headerHeight">95px</property>
+            <page-header>
+                <grid name="NewGrid6" id="948">
+                    <property name="height">0.8958333333333334in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="949">
+                        <property name="width">1.75in</property>
+                    </column>
+                    <column id="950"/>
+                    <column id="951"/>
+                    <row id="952">
+                        <property name="height">85px</property>
+                        <cell id="953">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <image name="NewImage6" id="954">
+                                <property name="height">75px</property>
+                                <property name="width">150px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/Logo CM - 300x150.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="955">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText6" id="956"/>
+                        </cell>
+                        <cell id="957">
+                            <property name="borderBottomColor">#1C5985</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thick</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="paddingBottom">7pt</property>
+                            <property name="verticalAlign">bottom</property>
+                            <text name="NewText35" id="958">
+                                <property name="fontFamily">"Tahoma"</property>
+                                <property name="color">#666666</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Classic Models, Inc<BR>
+2207 Bridgepointe Parkway<BR>
+San Mateo, CA 94404]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid15" id="566">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">html</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <column id="567"/>
+                    <row id="568">
+                        <cell id="569">
+                            <property name="textAlign">center</property>
+                            <image name="NewImage17" id="570">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-facebook.png</expression>
+                            </image>
+                            <image name="NewImage116" id="571">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-googleplus-outline.png</expression>
+                            </image>
+                            <image name="NewImage1115" id="572">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-twitter.png</expression>
+                            </image>
+                            <image name="NewImage135" id="573">
+                                <property name="display">inline</property>
+                                <property name="height">30px</property>
+                                <property name="width">30px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">images/social-vimeo.png</expression>
+                            </image>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Classic Models FR" id="7">
+            <property name="dataSource">ClassicModel FR</property>
+            <property name="dataObject">Classic Models Data Model</property>
+        </data-mart-linked-data-model>
+        <data-mart-linked-data-model name="Classic Models EN" id="113">
+            <property name="dataSource">ClassicModel EN</property>
+            <property name="dataObject">Classic Models Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+</library>

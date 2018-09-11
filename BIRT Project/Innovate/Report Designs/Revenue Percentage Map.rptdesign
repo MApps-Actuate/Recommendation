@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <data-mart-data-source name="Map Data Source" id="267">
+            <property name="datamartURL">Data Objects/FS Data Object</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Map Data Model" id="268">
+            <property name="dataSource">Map Data Source</property>
+            <property name="dataObject">Map Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <property name="headerHeight">0.2in</property>
+            <property name="footerHeight">0.2in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="8">
+            <property name="height">5.46875in</property>
+            <expression name="bookmark" type="javascript">"myMap"</expression>
+            <column id="270">
+                <property name="width">0.35in</property>
+            </column>
+            <column id="9"/>
+            <row id="10">
+                <property name="height">5.46875in</property>
+                <cell id="269"/>
+                <cell id="11">
+                    <extended-item extensionName="Map" id="6">
+                        <xml-property name="xmlRepresentation"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<Maps:MapModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Maps="http://www.birt.actuate.com/Maps">
+  <Maps:Type>World with Countries</Maps:Type>
+  <Maps:AreaDefinition>
+    <Maps:ShowShadow>false</Maps:ShowShadow>
+    <Maps:Border/>
+  </Maps:AreaDefinition>
+  <Maps:MapDefinition>
+    <Maps:IncludeNameInLabels>false</Maps:IncludeNameInLabels>
+    <Maps:IncludeValueInLabels>false</Maps:IncludeValueInLabels>
+    <Maps:Border>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>233</Red>
+        <Green>233</Green>
+        <Blue>233</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Maps:Border>
+    <Maps:Background>
+      <Transparency>255</Transparency>
+      <Red>241</Red>
+      <Green>236</Green>
+      <Blue>235</Blue>
+    </Maps:Background>
+    <Maps:ConnectorLine>
+      <Transparency>255</Transparency>
+      <Red>216</Red>
+      <Green>216</Green>
+      <Blue>216</Blue>
+    </Maps:ConnectorLine>
+    <Maps:UseHoverColor>true</Maps:UseHoverColor>
+    <Maps:HoverColor>
+      <Transparency>255</Transparency>
+      <Red>192</Red>
+      <Green>192</Green>
+      <Blue>192</Blue>
+    </Maps:HoverColor>
+    <Maps:EntityQuery>
+      <Definition>row[&quot;Country1&quot;]</Definition>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </Maps:EntityQuery>
+    <Maps:ValueQuery>
+      <Definition>row[&quot;PercentChange &quot;]</Definition>
+      <Grouping>
+        <Enabled>false</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression xsi:nil="true"/>
+      </Grouping>
+    </Maps:ValueQuery>
+    <Maps:Tooltip>
+      <Text></Text>
+      <Delay>200</Delay>
+    </Maps:Tooltip>
+    <Maps:Hyperlink>
+      <BaseUrl></BaseUrl>
+      <Target></Target>
+      <BaseParameterName></BaseParameterName>
+      <ValueParameterName></ValueParameterName>
+    </Maps:Hyperlink>
+    <Maps:InvokeScript>
+      <Script></Script>
+    </Maps:InvokeScript>
+  </Maps:MapDefinition>
+  <Maps:LegendDefinition>
+    <Maps:Show>false</Maps:Show>
+  </Maps:LegendDefinition>
+  <Maps:FormatDefinition>
+    <Maps:DecimalNumber>2</Maps:DecimalNumber>
+  </Maps:FormatDefinition>
+  <Maps:BaseFontDefinition>
+    <Value></Value>
+    <Font>
+      <Name>Tahoma</Name>
+      <Alignment/>
+    </Font>
+    <Color>
+      <Transparency>255</Transparency>
+      <Red>100</Red>
+      <Green>100</Green>
+      <Blue>100</Blue>
+    </Color>
+  </Maps:BaseFontDefinition>
+  <Maps:ColorRange>
+    <Maps:Elements>
+      <Maps:MinValue>-1.0</Maps:MinValue>
+      <Maps:MaxValue>0.0</Maps:MaxValue>
+      <Maps:DisplayValue></Maps:DisplayValue>
+      <Maps:Color>
+        <Transparency>255</Transparency>
+        <Red>241</Red>
+        <Green>236</Green>
+        <Blue>235</Blue>
+      </Maps:Color>
+    </Maps:Elements>
+    <Maps:Elements>
+      <Maps:MinValue>0.0</Maps:MinValue>
+      <Maps:MaxValue>1.0</Maps:MaxValue>
+      <Maps:DisplayValue></Maps:DisplayValue>
+      <Maps:Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>128</Green>
+        <Blue>0</Blue>
+      </Maps:Color>
+    </Maps:Elements>
+    <Maps:Gradient>true</Maps:Gradient>
+    <Maps:Color>
+      <Transparency>255</Transparency>
+      <Red>255</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </Maps:Color>
+    <Maps:StartLabel></Maps:StartLabel>
+  </Maps:ColorRange>
+  <Maps:Script>handleMap: function(map)&#xD;
+{&#xD;
+    map.mapLeftMargin='-80';&#xD;
+    map.mapRightMargin='-100';&#xD;
+    map.mapBottomMargin='-5';&#xD;
+    map.mapTopMargin='-15';&#xD;
+ },</Maps:Script>
+</Maps:MapModel>
+]]></xml-property>
+                        <property name="inheritColumns">true</property>
+                        <property name="height">3.5729166666666665in</property>
+                        <property name="width">7.5in</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Country1</property>
+                                <text-property name="displayName">Country1</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Country1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PercentChange </property>
+                                <text-property name="displayName">PercentChange </text-property>
+                                <expression name="expression" type="javascript">dataSetRow["PercentChange "]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Map Data Model</property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

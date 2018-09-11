@@ -1,0 +1,170 @@
+@media (min-width: 576px)
+.customDashboardCustomDiv {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: .2rem;
+}
+#customDashboardCustomDiv {
+	background:rgba( 255, 255, 255, .5 );
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 25px;
+	z-index: 990;
+}
+#customDashboardCustomContent {
+	background:#fff;
+	width: 35%;
+	padding:20px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5%;
+	border: 1px solid #ddd;
+	border-radius: 3px;	
+}
+#customDashboardConfirmationDiv {
+	background:rgba( 255, 255, 255, .3 );
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 25px;
+	z-index: 991;
+}
+#customDashboardConfirmationContent {
+	background:#fff;
+	width: 35%;
+	padding:20px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 6%;
+	border: 1px solid #ddd;
+	border-radius: 3px;	
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333333;
+}
+#customDashboardMessageDiv {
+	background:rgba( 255, 255, 255, .5 );
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 25px;
+	z-index: 998;
+}
+#customDashboardMessageContent {
+	background:rgba(0, 114, 170);
+	width: 30%;
+	padding:20px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5%;
+	border: 2px solid rgba(0, 114, 170);
+	border-radius: 3px;	
+    color: white;
+    font-weight: bold;
+    font-size: large;	
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.customButton {
+	width: 22px;
+	height: 22px;
+	padding: 3px;
+	margin-right: 10px;
+	margin-top: 8px;
+}
+.customButton:hover {
+	background-color: #E1E1E1
+} 
+form {
+    margin: 5px 3px 5px;
+    padding: 0px;
+}
+select {
+    width: 100%;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555555;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333333;
+}    
+input {
+	display: block;
+    width: 100%;
+    height: 24px;
+    padding-left: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.btnOk{
+	padding: 7px 21px; 
+	border-radius: 21px; 
+	color: rgb(255, 255, 255); 
+	border: 1px solid rgb(0, 114, 170); 
+	background-color: rgb(0, 114, 170); 
+	line-height: 20px;	
+	margin: 0px 5px;
+}
+.btnOk:hover{
+	color: rgb(0, 114, 170); 
+	background-color: rgb(255, 255, 255); 
+}
+.btnCancel:hover{
+	color: rgb(255, 255, 255); 
+	background-color: rgb(0, 114, 170); 
+}
+.btnCancel{
+	padding: 7px 21px; 
+	border-radius: 21px; 
+	color: rgb(0, 114, 170); 
+	border: 1px solid rgb(0, 114, 170); 
+	background-color: rgb(255, 255, 255); 
+	line-height: 20px;
+	margin: 0px 5px;	
+}

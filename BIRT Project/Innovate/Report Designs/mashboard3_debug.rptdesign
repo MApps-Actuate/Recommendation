@@ -1,0 +1,3405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <simple-property-list name="includeResource">
+        <value>Magellan_mashboard</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[rowNb=0;]]></method>
+    <property name="theme">demo 2018.defaultTheme</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/demo 2018.rptlibrary</property>
+            <property name="namespace">demo 2018</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Data object" id="7">
+            <property name="datamartURL">Data Objects/Toronto Trip Data</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <oda-data-source extensionID="com.actuate.data.oda.static" name="Static Data Source" id="1903"/>
+    </data-sources>
+    <data-sets>
+        <data-mart-data-set name="Monitoring Data Set" id="1825">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">now</property>
+                    <expression name="expression" type="javascript">BirtDateTime.now()</expression>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="name">elapsedTime</property>
+                    <expression name="expression" type="javascript">row["RandomNumber1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">StartTime</property>
+                    <expression name="expression" type="javascript">BirtDateTime.addSecond(BirtDateTime.now(),row["elapsedTime"]*-1)</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">elapsedTimeMSS</property>
+                    <expression name="expression" type="javascript">BirtDateTime.diffMinute(row["StartTime"],BirtDateTime.now()) + ":" +&#13;
+BirtStr.right("0" + BirtMath.mod(row["elapsedTime"],60) , 2)</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">info</property>
+                    <expression name="expression" type="javascript">"&lt;div align='left'>" +&#13;
+"&lt;table style='width:100%'> " +&#13;
+"&lt;tr>" +&#13;
+"&lt;td colspan = '3' >&lt;b>Customer: " + row["CustomerName1"] + "&lt;/b>&lt;/td>" +&#13;
+"&lt;td colspan = '2'>&lt;a href='http://web.skype.com' target='_blank'>Contact via Skype   -&lt;/a>&lt;a href='http://process.eimdemo.com:8080/home/system/app/processExperience/web/perform/items/000D3A11A65811E7E51E974BBAD850E1.1/000D3A11A65811E7E51EB063F99AD0E1/6550dfdcfc863508a5afbc5ceff0a9de/R2VyYWxkIEJhbm5pc2g%253D' target='_blank'>-    Launch Process&lt;/a>&lt;/td>" + &#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td colspan = '3' >&lt;b>&lt;font color='#f7cb09'>Vehicle information&lt;/td>&lt;td colspan = '2' >&lt;/b>&lt;font color='#f7cb09'>Trip information&lt;/font>&lt;/b>&lt;/td>" +&#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td>&lt;b>Car type: &lt;/b>&lt;/td>  " +&#13;
+"&lt;td>" +  row["CarType1"]  + "&lt;/td>" +&#13;
+"&lt;td rowspan='3'>&lt;img src=  " + encodeURI("http://analytics.eimdemo.com/iportal/servlet/DownloadFile?name=/Applications/CityTaxi/Images/"+ row["VehicleID"] + ".jpg" + "&amp;showBanner=false&amp;userid=administrator")  + ">&lt;/td> " +&#13;
+"&lt;td>&lt;font color='#f7cb09'>Time Start: &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  Formatter.format(row["StartTime"],"hh:mm:ss") +  "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td>&lt;b>Vehicle: &lt;/b>&lt;/td>  " +&#13;
+"&lt;td> " + row["VehicleMake"] + "&lt;/td> " +&#13;
+"&lt;td>&lt;font color='#f7cb09'>GPS Start Lat/Lng) : &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  row["StartLocationLat1"] + "/" + row["StartLocationLong1"] + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td style='font-size: 16px'>&lt;b>Failure Prediction:&amp;nbsp;&lt;/b>&lt;/td>  " +&#13;
+"&lt;td style='font-size: 16px'> " + Formatter.format(row["pred_Failure"],"0.00%") + "&lt;/td> " +&#13;
+&#13;
+"&lt;td>&lt;font color='#f7cb09'>Elapsed time: &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" + row["elapsedTimeMSS"]  + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;/table> " +  &#13;
+"&lt;/div>"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CurrentLat</property>
+                    <expression name="expression" type="javascript">row["StartLocationLat1"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">CurrentLong</property>
+                    <expression name="expression" type="javascript">row["StartLocationLong1"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">info2</property>
+                    <expression name="expression" type="javascript">"&lt;div align='left'>" +&#13;
+"&lt;table style='width:100%'> " +&#13;
+"&lt;tr>" +&#13;
+"&lt;td style='font-size: 16px' colspan = '3'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? " Clients : " : "Customer: ") + "&lt;/b>" + row["CustomerName1"] + "&lt;/td>" +&#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td colspan = '3' style='color:#f7cb09'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Véhicule" : "Vehicle information") + "&lt;/b>&lt;/td>" +&#13;
+"&lt;td colspan = '2' style='color:#f7cb09'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Information de voyage" : "Trip information") + "&lt;/b>&lt;/td>" +&#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Type de véhicule : " : "Car type: ") + "&lt;/b>&lt;/td>  " +&#13;
+"&lt;td>" +  row["CarType1"]  + "&lt;/td>" +&#13;
+"&lt;td rowspan='3'>&lt;img src=  " + encodeURI("http://@@host@@:8700/iportal/servlet/DownloadFile?name=/Applications/@@app@@/images/" + row["VehicleID"] + ".jpg" + "&amp;showBanner=false&amp;userid=administrator")  + ">&lt;/td> " +&#13;
+"&lt;td>&lt;style='color:#f7cb09'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Départ : " : "Time Start:") + "&lt;/b>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  Formatter.format(row["StartTime"],"hh:mm:ss") +  "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Véhicule : " : "Vehicle:") + "&lt;/b>&lt;/td>  " +&#13;
+"&lt;td> " + row["VehicleMake"] + "&lt;/td> " +&#13;
+"&lt;td>&lt;style='color:#f7cb09'>&lt;b>GPS Lat/Lng : &lt;/b>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  row["StartLocationLat1"] + "/" + row["StartLocationLong1"] + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Prédiction de panne : " : "Failure Prediction: ") + "&lt;/b>&lt;/td>  " +&#13;
+"&lt;td> " + Formatter.format(row["pred_Failure"],"0.00%") + "&lt;/td> " +&#13;
+"&lt;td>&lt;style='color:#f7cb09'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Temps écoulé : " : "Elapsed time:") + "&lt;/b>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" + row["elapsedTimeMSS"]  + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;/table> " +  &#13;
+"&lt;/div>"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">VehicleID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">VehicleID</text-property>
+                    <text-property name="heading">VehicleID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VehicleMake</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">VehicleMake</text-property>
+                    <text-property name="heading">VehicleMake</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">pred_Failure</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">pred_Failure</text-property>
+                    <text-property name="heading">pred_Failure</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">City1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">City</text-property>
+                    <text-property name="heading">City</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TripDate1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TripDate</text-property>
+                    <text-property name="heading">TripDate</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartTime1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">StartTime</text-property>
+                    <text-property name="heading">StartTime</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">EndTime1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EndTime</text-property>
+                    <text-property name="heading">EndTime</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CustomerName1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CustomerName</text-property>
+                    <text-property name="heading">CustomerName</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CustomerType1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CustomerType</text-property>
+                    <text-property name="heading">CustomerType</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CarType1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CarType</text-property>
+                    <text-property name="heading">CarType</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartLocationLat1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">StartLocationLat</text-property>
+                    <text-property name="heading">StartLocationLat</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartLocationLong1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">StartLocationLong</text-property>
+                    <text-property name="heading">StartLocationLong</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Distance1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Distance</text-property>
+                    <text-property name="heading">Distance</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Status1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Status</text-property>
+                    <text-property name="heading">Status</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Satisfaction1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Satisfaction</text-property>
+                    <text-property name="heading">Satisfaction</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CommentID2</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CommentID</text-property>
+                    <text-property name="heading">CommentID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">now</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RandomNumber1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">RandomNumber</text-property>
+                    <text-property name="heading">RandomNumber</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">elapsedTime</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartTime</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">elapsedTimeMSS</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+                <structure>
+                    <property name="columnName">info</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CurrentLat</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CurrentLong</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">info2</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VehicleID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">VehicleMake</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">pred_Failure</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">City1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TripDate1</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">StartTime1</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">EndTime1</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CustomerName1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">CustomerType1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CarType1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">StartLocationLat1</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">StartLocationLong1</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Distance1</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Status1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">Satisfaction1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">CommentID2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">RandomNumber1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">now</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">elapsedTime</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">StartTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">elapsedTimeMSS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">info</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">CurrentLat</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">CurrentLong</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">info2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data object</property>
+            <property name="dataObject">Monitoring</property>
+            <list-property name="selectedColumns">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VehicleID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">VehicleMake</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">pred_Failure</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">City1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TripDate1</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">StartTime1</property>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">EndTime1</property>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CustomerName1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">CustomerType1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CarType1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">StartLocationLat1</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">StartLocationLong1</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">Distance1</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">Status1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">Satisfaction1</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">CommentID2</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">RandomNumber1</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+        </data-mart-data-set>
+        <oda-data-set extensionID="com.actuate.data.oda.static.dataSet" name="Gauge" id="1904">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VALUE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">VALUE</text-property>
+                    <text-property name="heading">VALUE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MAX</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">MAX</text-property>
+                    <text-property name="heading">MAX</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLOR</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLOR</text-property>
+                    <text-property name="heading">COLOR</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">VALUE</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">MAX</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">COLOR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Static Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">VALUE</property>
+                    <property name="nativeName">VALUE</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">MAX</property>
+                    <property name="nativeName">MAX</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">COLOR</property>
+                    <property name="nativeName">COLOR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[{"Columns":["ID","VALUE","MAX","COLOR"],"Types":[1,4,3,1]}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>-1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Value</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>Value</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Value</design:label>
+            <design:formattingHints>
+              <design:displaySize>-1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>DATA</name>
+                    <value>[["Gauge1","90","125","gray"],["Gauge2","170","240","green"],["Gauge3","103","125","orange"],["Gauge4","8","10","red"],["Gauge5","4.7","5","green"]]</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">10px</property>
+            <property name="leftMargin">10px</property>
+            <property name="bottomMargin">10px</property>
+            <property name="rightMargin">10px</property>
+            <property name="height">1000px</property>
+            <property name="width">1500px</property>
+            <property name="headerHeight">1px</property>
+            <property name="footerHeight">1px</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1826">
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <column id="1827"/>
+            <column id="1829">
+                <property name="width">22%</property>
+            </column>
+            <row id="1830">
+                <cell id="1831">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <grid id="1898">
+                        <property name="borderBottomColor">#E6E9ED</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#E6E9ED</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#E6E9ED</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#E6E9ED</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <column id="1899"/>
+                        <row id="1900">
+                            <property name="height">450px</property>
+                            <cell id="1901">
+                                <property name="backgroundColor">white</property>
+                                <extended-item extensionName="HTMLControl" id="471">
+                                    <method name="clientOnCreate"><![CDATA[// This example demonstrates how create the map and markers using Google Map JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+	/*
+	 * The Google map key. You should provide your own key to use the Google Map
+	 * JSAPI. This is Mica Block's developer key.
+	 */
+	googleMapKey : "AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A",
+
+	/*
+	 * Provide the column binding names as shown below. If not all
+	 * column names are specified, the template will use the sample data instead.
+	 */
+
+	/* Specify the column name as it appears in the data set.
+	* Example: 
+	* 	latitudeColumn : "LATITUDE"
+	*/
+
+	/* the column name for marker latitude value */
+	latitudeColumn : "CurrentLat",
+	/* the column name for marker longitude value */
+	longitudeColumn : "CurrentLong",
+	/* the column name for marker label text */
+	markerLabelColumn : "info2",
+	/* the column name for marker latitude value */
+	carType : "CarType1",
+	/* the column name for marker latitude value */
+	customerName : "CustomerName1",
+	/* specify the default center coornidates for the map */
+	mapCenter : {
+		/* the latitude for the center */
+		lat : 43.656067,
+		/* the longitude for the center */
+		lng : -79.380257
+	},
+	/* the column name for prediction value */
+	prediction : "pred_Failure",
+	/* specify elapsed time for alert condition */
+	elapsedTime: "elapsedTime"
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+// The Google Map jsapi url. You may provide your own api key and callback
+// function name.
+var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?key="
+		+ config.googleMapKey + "&amp;sensor=false&amp;callback=initialize";
+
+// get the container id
+var id = this.getId();
+var map = null;
+var lastInfowindow = null;
+var customViz = this;
+customViz.setPrintTimeOut(5000);
+var data = this.getData();
+//debugger;
+
+
+config.testMode = !data || !data.columns || data.columns.length == 0;
+
+function getMarkerData() {
+
+	if (config.testMode) {
+
+		// use sample data
+		return [ [ 36.169202, -115.140597, 'Las&amp;nbsp;Vegas' ],
+				[ 37.78008, -122.420168, 'San&amp;nbsp;Francisco' ],
+				[ 37.334807, -121.888128, 'San&amp;nbsp;Jose' ],
+				[ 32.71576, -117.163817, 'San&amp;nbsp;Diego' ],
+				[ 34.052238, -118.243344, 'Los&amp;nbsp;Angeles' ],
+				[ 40.713054, -74.007228, 'NYC' ],
+				[ 42.358894, -71.056742, 'Boston' ],
+				[ 39.951061, -75.16562, 'Philadelphia' ],
+				[ 41.308252, -72.924161, 'New&amp;nbsp;Haven' ],
+				[ 40.731507, -74.174388, 'Newark' ] ];
+	} else {
+
+		// use data bindings, make sure the column names in config is properly
+		// set
+		var data = customViz.getData();
+
+		if (!data || !data.rows || !data.columns) {
+			return [];
+		}
+
+		// gets the index for columns
+		var i1 = -1, i2 = -1, i3 = -1, i4 = -1, i5 = -1, i6 = -1;
+		for (var i = 0; i < data.columns.length; i++) {
+			if (data.columns[i] == config.latitudeColumn) {
+				i1 = i;
+			} else if (data.columns[i] == config.longitudeColumn) {
+				i2 = i;
+			} else if (data.columns[i] == config.markerLabelColumn) {
+				i3 = i;
+			} else if (data.columns[i] == config.carType) {
+				i4 = i;
+			} else if (data.columns[i] == config.customerName) {
+				i5 = i;
+			} else if (data.columns[i] == config.elapsedTime) {
+			    i6 = i;
+			} else if (data.columns[i] == config.prediction) {
+			    i7 = i;
+			}
+		}
+
+		if (i1 < 0 || i2 < 0 || i3 < 0 || i4 < 0 || i5 < 0 || i6 < 0 || i7 < 0) {
+			return [];
+		}
+
+		// populate marker data by column index
+		var markerData = [];
+		for (var i = 0; i < data.rows.length; i++) {
+			var row = data.rows[i];
+			markerData.push([ row[i1], row[i2], row[i3], row[i4], row[i5], row[i6], row[i7] ]);
+		}
+
+		return markerData;
+	}
+}
+
+// load map jsapi
+function loadMap(scriptUrl) {
+
+	if (window.mapApiLoaded) {
+		return;
+	}
+
+	// mark the flag to prevent duplicate loading
+	window.mapApiLoaded = true;
+
+	// make sure we only load the jsapi once
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+	document.body.appendChild(script);
+}
+
+// create the map
+function createMap() {
+	var mapOptions = {
+		zoom : 12,
+		center : new google.maps.LatLng(config.mapCenter.lat,
+				config.mapCenter.lng),
+		scrollwheel : false,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		navigationControlOptions : {
+			style : google.maps.NavigationControlStyle.SMALL,
+			position : google.maps.ControlPosition.TOP_RIGHT
+		}
+	};
+	map = new google.maps.Map(document.getElementById(id), mapOptions);
+//    var trafficLayer = new google.maps.TrafficLayer();
+//    trafficLayer.setMap(map);
+	createMarker();
+	customViz.setDelegate(map);
+	// CreateMarker() calls google api that has untrackable async js call itself. 
+	// It is not safe to call setPrintReady() here rather we need a timer to control it.
+	window.setTimeout(function(){customViz.setPrintReady()} , 3000);
+}
+
+// create markers
+function createMarker() {
+	var data = getMarkerData();
+//debugger;
+	if (!data || data.length == 0) {
+		return;
+	}
+    var host = location.hostname;
+    var path = location.pathname.replace('%20', ' ').replace('main.html', '').replace('iportal/apps','Applications');
+    var app = location.pathname.split('/')[3]
+
+	for (var i = 0; i < data.length; i++) {
+	    var myURL;
+	    var alertStatus = "";
+	    if (data[i][6] > 0.6 &amp;&amp; data[i][6] < 0.8) alertStatus = "Alert2"; // Check elapsedTime for alert conditions
+	    else if (data[i][6] > 0.8) alertStatus = "Alert1";
+    	myURL = encodeURI("http://" + host + ":8700/iportal/servlet/DownloadFile?name=" + path + "images/" +  data[i][3] + alertStatus + ".png&amp;showBanner=false&amp;userid=administrator");
+		var image = {
+    		url: myURL,
+    		size: new google.maps.Size(35, 47),
+	    	origin: new google.maps.Point(0, 0),
+    		anchor: new google.maps.Point(0, 32),
+    		scaledSize: new google.maps.Size(35, 47)
+	    };
+	    var myInfo = data[i][2];    
+	   	myInfo = myInfo.replace("@@host@@",host);
+	   	myInfo = myInfo.replace("@@app@@",app);
+    	var myInfoWindow = new google.maps.InfoWindow({
+    		content: myInfo,
+	    	maxHeight: 100
+    	});
+	    var myLatLng = new google.maps.LatLng(data[i][0], data[i][1]);
+    	var marker = new google.maps.Marker({
+        	position: myLatLng,
+	        map: map,
+    	    icon: image,
+        	title: data[i][4],
+	        infowindow : myInfoWindow
+    	});
+    	
+	    google.maps.event.addListener(marker, 'mouseover', function() {
+    	    if (this.infowindow.getMap() == null)  {
+        		map.setZoom(12);
+//            map.setCenter(this.getPosition());
+            	this.infowindow.open(map, this); 
+	        }
+    	});
+	    google.maps.event.addListener(marker, 'mouseout', function() {
+		    this.infowindow.close(map, this);
+	    });
+	}
+}
+
+// create the popup info window for each marker
+function createMarkerInfoWindow(marker, info) {
+	var contentString = '<div><b>' + info + '</b></div>'
+	var infowindow = new google.maps.InfoWindow({
+		content : contentString
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		if (lastInfowindow != null) {
+			lastInfowindow.close();
+		}
+		infowindow.open(map, marker);
+		lastInfowindow = infowindow;
+	});
+}
+
+// check whether Google Map jsapi already loaded, duplicate loading may cause
+// issues.
+if (window.mapApiLoaded) {
+	// directly create the map
+	createMap();
+} else {
+
+	// due to the restriction of Google Map JSAPI, you must use a global
+	// callback function, here we use "initialize". change the name if there's
+	// any conflict
+	window.initialize = function() {
+		createMap();
+	};
+
+	// load jsapi and use callback to create the map
+	loadMap(googleMapScriptUrl);
+}
+]]></method>
+                                    <property name="height">450px</property>
+                                    <property name="width">100%</property>
+                                    <property name="dataSet">Monitoring Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">VehicleID</property>
+                                            <text-property name="displayName">VehicleID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["VehicleID"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">VehicleMake</property>
+                                            <text-property name="displayName">VehicleMake</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["VehicleMake"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">pred_Failure</property>
+                                            <text-property name="displayName">pred_Failure</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["pred_Failure"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">City1</property>
+                                            <text-property name="displayName">City</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["City1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">TripDate1</property>
+                                            <text-property name="displayName">TripDate</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["TripDate1"]</expression>
+                                            <property name="dataType">date</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">StartTime1</property>
+                                            <text-property name="displayName">StartTime</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["StartTime1"]</expression>
+                                            <property name="dataType">time</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">EndTime1</property>
+                                            <text-property name="displayName">EndTime</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["EndTime1"]</expression>
+                                            <property name="dataType">time</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CustomerName1</property>
+                                            <text-property name="displayName">CustomerName</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CustomerName1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CustomerType1</property>
+                                            <text-property name="displayName">CustomerType</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CustomerType1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CarType1</property>
+                                            <text-property name="displayName">CarType</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CarType1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">StartLocationLat1</property>
+                                            <text-property name="displayName">StartLocationLat</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["StartLocationLat1"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">StartLocationLong1</property>
+                                            <text-property name="displayName">StartLocationLong</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["StartLocationLong1"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Distance1</property>
+                                            <text-property name="displayName">Distance</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Distance1"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Status1</property>
+                                            <text-property name="displayName">Status</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Status1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Satisfaction1</property>
+                                            <text-property name="displayName">Satisfaction</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Satisfaction1"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CommentID2</property>
+                                            <text-property name="displayName">CommentID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CommentID2"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">RandomNumber1</property>
+                                            <text-property name="displayName">RandomNumber</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["RandomNumber1"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">now</property>
+                                            <text-property name="displayName">now</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["now"]</expression>
+                                            <property name="dataType">time</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">elapsedTime</property>
+                                            <text-property name="displayName">elapsedTime</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["elapsedTime"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">StartTime</property>
+                                            <text-property name="displayName">StartTime</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["StartTime"]</expression>
+                                            <property name="dataType">date-time</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">elapsedTimeMSS</property>
+                                            <text-property name="displayName">elapsedTimeMSS</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["elapsedTimeMSS"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">info</property>
+                                            <text-property name="displayName">info</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["info"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CurrentLat</property>
+                                            <text-property name="displayName">CurrentLat</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CurrentLat"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CurrentLong</property>
+                                            <text-property name="displayName">CurrentLong</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CurrentLong"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">info2</property>
+                                            <text-property name="displayName">info2</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["info2"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                </extended-item>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1833">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <grid id="1905">
+                        <column id="1906"/>
+                        <row id="1907">
+                            <cell id="1908">
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="1919">
+                                    <property name="backgroundColor">white</property>
+                                    <property name="borderBottomColor">#E6E9ED</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#E6E9ED</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#E6E9ED</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#E6E9ED</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <column id="1920">
+                                        <property name="width">125px</property>
+                                    </column>
+                                    <column id="1921">
+                                        <property name="width">185px</property>
+                                    </column>
+                                    <row id="1922">
+                                        <cell id="1923">
+                                            <property name="colSpan">2</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">medium</property>
+                                            <label id="1935">
+                                                <property name="fontSize">14pt</property>
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text" key="Maintenance Costs">Maintenance Costs</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="1925">
+                                        <cell id="1926">
+                                            <property name="paddingTop">5pt</property>
+                                            <property name="paddingLeft">5pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <extended-item extensionName="HTMLControl" id="1913">
+                                                <method name="clientOnCreate"><![CDATA[var config = {
+ 	idColumn : "ID",
+	valueColumn : "VALUE",
+	valueMaxColumn : "MAX",
+	colorColumn : "COLOR"
+};
+
+// set precision here
+// if none, default value
+var nbDec = 0;
+
+// Read data set 
+var cursor = this.getDataCursor();
+var rowId = [];
+var rowValue = [];
+var rowMax = [];
+var rowColor = [];
+
+while (cursor.hasNext()) {
+	var rowData = cursor.next();
+	rowId.push(rowData[config.idColumn]);
+	rowValue.push(rowData[config.valueColumn]);
+	rowMax.push(rowData[config.valueMaxColumn]);
+	rowColor.push(rowData[config.colorColumn]);
+};
+
+var customViz = this;
+	
+var callback = function() {
+	var containerId = customViz.getId();
+	myDiv = '<div style="position:relative">';
+	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
+	myDiv += '<span id="' + rowId[0] + '-lib" style="width:200px;position:absolute;left:-50px;text-align:center;top:25px;font-size:40px"></span>';
+	myDiv += '</div>';
+	$('#' + containerId).append(myDiv);
+		
+	var opts = {
+  		lines: 1, // The number of lines to draw
+  		angle: 0.2, // The length of each line
+  		lineWidth: 0.1, // The line thickness
+  		pointer: {
+    		length: 0.9, // The radius of the inner circle
+    		strokeWidth: 0.035, // The rotation offset
+		},
+  		limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+  		colorStop: rowColor[0],
+  		strokeColor: '#F0F3F3',   // to see which ones work best for you
+  		generateGradient: true,
+	};
+
+	var CustomTextRenderer = function(el){
+    	this.el = el;
+    	this.render = function(gauge){
+        	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
+    	}
+	}
+	CustomTextRenderer.prototype = new TextRenderer();
+
+	var target = document.getElementById(rowId[0]); // your canvas element
+	var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+	gauge.maxValue = rowMax[0],
+	gauge.animationSpeed = 15; // set animation speed (32 is default value)
+	gauge.set(rowValue[0]); // set actual value
+	gauge.setTextField(new CustomTextRenderer(document.getElementById(rowId[0] + "-lib")));
+
+}
+
+head.load(this.getBirtResourceURL('js/gauge.js'), callback);
+]]></method>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["ID"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>"Gauge1"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">100px</property>
+                                                <property name="width">100%</property>
+                                                <property name="dataSet">Gauge</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">ID</property>
+                                                        <text-property name="displayName">ID</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">VALUE</property>
+                                                        <text-property name="displayName">VALUE</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["VALUE"]</expression>
+                                                        <property name="dataType">float</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">MAX</property>
+                                                        <text-property name="displayName">MAX</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["MAX"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">COLOR</property>
+                                                        <text-property name="displayName">COLOR</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["COLOR"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="1927">
+                                            <grid id="1929">
+                                                <property name="height">100px</property>
+                                                <column id="1930"/>
+                                                <row id="1931">
+                                                    <property name="verticalAlign">middle</property>
+                                                    <cell id="1932">
+                                                        <label id="1928">
+                                                            <property name="fontSize">14pt</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <text-property name="text">x1000 CAD</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                                <row id="1933">
+                                                    <property name="verticalAlign">bottom</property>
+                                                    <property name="height">10%</property>
+                                                    <cell id="1934">
+                                                        <image id="369">
+                                                            <property name="display">inline</property>
+                                                            <property name="height">0.08403361344537816in</property>
+                                                            <property name="width">0.1092436974789916in</property>
+                                                            <property name="source">file</property>
+                                                            <expression name="uri" type="constant">images/arrow down green.png</expression>
+                                                        </image>
+                                                        <text id="72">
+                                                            <property name="style">kpi_green</property>
+                                                            <property name="display">inline</property>
+                                                            <property name="contentType">html</property>
+                                                            <text-property name="content"><![CDATA[ 4 %]]></text-property>
+                                                        </text>
+                                                        <label id="73">
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="display">inline</property>
+                                                            <text-property name="text" key="Decrease vs last year">Decrease vs last year</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="1909">
+                            <cell id="1910">
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="1936">
+                                    <property name="backgroundColor">white</property>
+                                    <property name="borderBottomColor">#E6E9ED</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#E6E9ED</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#E6E9ED</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#E6E9ED</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <column id="1937">
+                                        <property name="width">125px</property>
+                                    </column>
+                                    <column id="1938">
+                                        <property name="width">185px</property>
+                                    </column>
+                                    <row id="1939">
+                                        <cell id="1940">
+                                            <property name="colSpan">2</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">medium</property>
+                                            <label id="1941">
+                                                <property name="fontSize">14pt</property>
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text" key="Engine on Time">Engine on Time</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="1942">
+                                        <cell id="1943">
+                                            <property name="paddingTop">5pt</property>
+                                            <property name="paddingLeft">5pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <extended-item extensionName="HTMLControl" id="1944">
+                                                <method name="clientOnCreate"><![CDATA[var config = {
+ 	idColumn : "ID",
+	valueColumn : "VALUE",
+	valueMaxColumn : "MAX",
+	colorColumn : "COLOR"
+};
+
+// set precision here
+// if none, default value
+var nbDec = 0;
+
+// Read data set 
+var cursor = this.getDataCursor();
+var rowId = [];
+var rowValue = [];
+var rowMax = [];
+var rowColor = [];
+
+while (cursor.hasNext()) {
+	var rowData = cursor.next();
+	rowId.push(rowData[config.idColumn]);
+	rowValue.push(rowData[config.valueColumn]);
+	rowMax.push(rowData[config.valueMaxColumn]);
+	rowColor.push(rowData[config.colorColumn]);
+};
+
+var customViz = this;
+	
+var callback = function() {
+	debugger;
+	var containerId = customViz.getId();
+	myDiv = '<div style="position:relative">';
+	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
+	myDiv += '<span id="' + rowId[0] + '-lib" style="width:200px;position:absolute;left:-50px;text-align:center;top:25px;font-size:40px"></span>';
+	myDiv += '</div>';
+	$('#' + containerId).append(myDiv);
+		
+	var opts = {
+  		lines: 1, // The number of lines to draw
+  		angle: 0.2, // The length of each line
+  		lineWidth: 0.1, // The line thickness
+  		pointer: {
+    		length: 0.9, // The radius of the inner circle
+    		strokeWidth: 0.035, // The rotation offset
+		},
+  		limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+  		colorStop: rowColor[0],
+  		strokeColor: '#F0F3F3',   // to see which ones work best for you
+  		generateGradient: true,
+	};
+
+	var CustomTextRenderer = function(el){
+    	this.el = el;
+    	this.render = function(gauge){
+    		debugger;
+        	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
+    	}
+	}
+	CustomTextRenderer.prototype = new TextRenderer();
+
+	var target = document.getElementById(rowId[0]); // your canvas element
+	var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+	gauge.maxValue = rowMax[0],
+	gauge.animationSpeed = 15; // set animation speed (32 is default value)
+	gauge.set(rowValue[0]); // set actual value
+	gauge.setTextField(new CustomTextRenderer(document.getElementById(rowId[0] + "-lib")));
+
+}
+
+head.load(this.getBirtResourceURL('js/gauge.js'), callback);
+]]></method>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["ID"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>"Gauge2"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">100px</property>
+                                                <property name="width">100%</property>
+                                                <property name="dataSet">Gauge</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">ID</property>
+                                                        <text-property name="displayName">ID</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">VALUE</property>
+                                                        <text-property name="displayName">VALUE</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["VALUE"]</expression>
+                                                        <property name="dataType">float</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">MAX</property>
+                                                        <text-property name="displayName">MAX</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["MAX"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">COLOR</property>
+                                                        <text-property name="displayName">COLOR</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["COLOR"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="1945">
+                                            <grid id="1946">
+                                                <property name="height">100px</property>
+                                                <column id="1947"/>
+                                                <row id="1948">
+                                                    <property name="verticalAlign">middle</property>
+                                                    <cell id="1949">
+                                                        <label id="1950">
+                                                            <property name="fontSize">14pt</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <text-property name="text" key="Goal: below 240 minutes">Goal: below 240 minutes</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                                <row id="1951">
+                                                    <property name="verticalAlign">bottom</property>
+                                                    <property name="height">10%</property>
+                                                    <cell id="1952">
+                                                        <image id="1953">
+                                                            <property name="display">inline</property>
+                                                            <property name="height">0.10084033613445378in</property>
+                                                            <property name="width">0.12605042016806722in</property>
+                                                            <property name="source">file</property>
+                                                            <expression name="uri" type="constant">images/arrow up red.png</expression>
+                                                        </image>
+                                                        <text id="1975">
+                                                            <property name="style">kpi_green</property>
+                                                            <property name="color">#E74C3C</property>
+                                                            <property name="display">inline</property>
+                                                            <property name="contentType">html</property>
+                                                            <text-property name="content"><![CDATA[ 2 %]]></text-property>
+                                                        </text>
+                                                        <label id="1955">
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="display">inline</property>
+                                                            <text-property name="text" key="Increase vs last year">Increase vs last year</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="1911">
+                            <cell id="1912">
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="1956">
+                                    <property name="backgroundColor">white</property>
+                                    <property name="borderBottomColor">#E6E9ED</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#E6E9ED</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#E6E9ED</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#E6E9ED</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <column id="1957">
+                                        <property name="width">125px</property>
+                                    </column>
+                                    <column id="1958">
+                                        <property name="width">185px</property>
+                                    </column>
+                                    <row id="1959">
+                                        <cell id="1960">
+                                            <property name="colSpan">2</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">medium</property>
+                                            <label id="1961">
+                                                <property name="fontSize">14pt</property>
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text" key="Miles Driven">Miles Driven</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="1962">
+                                        <cell id="1963">
+                                            <property name="paddingTop">5pt</property>
+                                            <property name="paddingLeft">5pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <extended-item extensionName="HTMLControl" id="1964">
+                                                <method name="clientOnCreate"><![CDATA[var config = {
+ 	idColumn : "ID",
+	valueColumn : "VALUE",
+	valueMaxColumn : "MAX",
+	colorColumn : "COLOR"
+};
+
+// set precision here
+// if none, default value
+var nbDec = 0;
+
+// Read data set 
+var cursor = this.getDataCursor();
+var rowId = [];
+var rowValue = [];
+var rowMax = [];
+var rowColor = [];
+
+while (cursor.hasNext()) {
+	var rowData = cursor.next();
+	rowId.push(rowData[config.idColumn]);
+	rowValue.push(rowData[config.valueColumn]);
+	rowMax.push(rowData[config.valueMaxColumn]);
+	rowColor.push(rowData[config.colorColumn]);
+};
+
+var customViz = this;
+	
+var callback = function() {
+	debugger;
+	var containerId = customViz.getId();
+	myDiv = '<div style="position:relative">';
+	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
+	myDiv += '<span id="' + rowId[0] + '-lib" style="width:200px;position:absolute;left:-50px;text-align:center;top:25px;font-size:40px"></span>';
+	myDiv += '</div>';
+	$('#' + containerId).append(myDiv);
+		
+	var opts = {
+  		lines: 1, // The number of lines to draw
+  		angle: 0.2, // The length of each line
+  		lineWidth: 0.1, // The line thickness
+  		pointer: {
+    		length: 0.9, // The radius of the inner circle
+    		strokeWidth: 0.035, // The rotation offset
+		},
+  		limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+  		colorStop: rowColor[0],
+  		strokeColor: '#F0F3F3',   // to see which ones work best for you
+  		generateGradient: true,
+	};
+
+	var CustomTextRenderer = function(el){
+    	this.el = el;
+    	this.render = function(gauge){
+    		debugger;
+        	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
+    	}
+	}
+	CustomTextRenderer.prototype = new TextRenderer();
+
+	var target = document.getElementById(rowId[0]); // your canvas element
+	var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+	gauge.maxValue = rowMax[0],
+	gauge.animationSpeed = 15; // set animation speed (32 is default value)
+	gauge.set(rowValue[0]); // set actual value
+	gauge.setTextField(new CustomTextRenderer(document.getElementById(rowId[0] + "-lib")));
+
+}
+
+head.load(this.getBirtResourceURL('js/gauge.js'), callback);
+]]></method>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["ID"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>"Gauge3"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">100px</property>
+                                                <property name="width">100%</property>
+                                                <property name="dataSet">Gauge</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">ID</property>
+                                                        <text-property name="displayName">ID</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">VALUE</property>
+                                                        <text-property name="displayName">VALUE</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["VALUE"]</expression>
+                                                        <property name="dataType">float</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">MAX</property>
+                                                        <text-property name="displayName">MAX</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["MAX"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">COLOR</property>
+                                                        <text-property name="displayName">COLOR</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["COLOR"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="1965">
+                                            <grid id="1966">
+                                                <property name="height">100px</property>
+                                                <column id="1967"/>
+                                                <row id="1968">
+                                                    <property name="verticalAlign">middle</property>
+                                                    <cell id="1969">
+                                                        <label id="1970">
+                                                            <property name="fontSize">14pt</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <text-property name="text" key="Goal: above 100 miles">Goal: above 100 miles</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                                <row id="1971">
+                                                    <property name="verticalAlign">bottom</property>
+                                                    <property name="height">10%</property>
+                                                    <cell id="1972">
+                                                        <image id="1978">
+                                                            <property name="display">inline</property>
+                                                            <property name="height">0.08403361344537816in</property>
+                                                            <property name="width">0.1092436974789916in</property>
+                                                            <property name="source">file</property>
+                                                            <expression name="uri" type="constant">images/arrow down green.png</expression>
+                                                        </image>
+                                                        <text id="1979">
+                                                            <property name="style">kpi_green</property>
+                                                            <property name="display">inline</property>
+                                                            <property name="contentType">html</property>
+                                                            <text-property name="content"><![CDATA[ 7 %]]></text-property>
+                                                        </text>
+                                                        <label id="1974">
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="display">inline</property>
+                                                            <text-property name="text" key="Decrease vs last year">Decrease vs last year</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="1914">
+                            <cell id="1915">
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="1980">
+                                    <property name="backgroundColor">white</property>
+                                    <property name="borderBottomColor">#E6E9ED</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#E6E9ED</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#E6E9ED</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#E6E9ED</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <column id="1981">
+                                        <property name="width">125px</property>
+                                    </column>
+                                    <column id="1982">
+                                        <property name="width">185px</property>
+                                    </column>
+                                    <row id="1983">
+                                        <cell id="1984">
+                                            <property name="colSpan">2</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">medium</property>
+                                            <label id="1985">
+                                                <property name="fontSize">14pt</property>
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text" key="Speed Alerts">Speed Alerts</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="1986">
+                                        <cell id="1987">
+                                            <property name="paddingTop">5pt</property>
+                                            <property name="paddingLeft">5pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <extended-item extensionName="HTMLControl" id="1988">
+                                                <method name="clientOnCreate"><![CDATA[var config = {
+ 	idColumn : "ID",
+	valueColumn : "VALUE",
+	valueMaxColumn : "MAX",
+	colorColumn : "COLOR"
+};
+
+// set precision here
+// if none, default value
+var nbDec = 0;
+
+// Read data set 
+var cursor = this.getDataCursor();
+var rowId = [];
+var rowValue = [];
+var rowMax = [];
+var rowColor = [];
+
+while (cursor.hasNext()) {
+	var rowData = cursor.next();
+	rowId.push(rowData[config.idColumn]);
+	rowValue.push(rowData[config.valueColumn]);
+	rowMax.push(rowData[config.valueMaxColumn]);
+	rowColor.push(rowData[config.colorColumn]);
+};
+
+var customViz = this;
+	
+var callback = function() {
+	debugger;
+	var containerId = customViz.getId();
+	myDiv = '<div style="position:relative">';
+	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
+	myDiv += '<span id="' + rowId[0] + '-lib" style="width:200px;position:absolute;left:-50px;text-align:center;top:25px;font-size:40px"></span>';
+	myDiv += '</div>';
+	$('#' + containerId).append(myDiv);
+		
+	var opts = {
+  		lines: 1, // The number of lines to draw
+  		angle: 0.2, // The length of each line
+  		lineWidth: 0.1, // The line thickness
+  		pointer: {
+    		length: 0.9, // The radius of the inner circle
+    		strokeWidth: 0.035, // The rotation offset
+		},
+  		limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+  		colorStop: rowColor[0],
+  		strokeColor: '#F0F3F3',   // to see which ones work best for you
+  		generateGradient: true,
+	};
+
+	var CustomTextRenderer = function(el){
+    	this.el = el;
+    	this.render = function(gauge){
+    		debugger;
+        	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
+    	}
+	}
+	CustomTextRenderer.prototype = new TextRenderer();
+
+	var target = document.getElementById(rowId[0]); // your canvas element
+	var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+	gauge.maxValue = rowMax[0],
+	gauge.animationSpeed = 15; // set animation speed (32 is default value)
+	gauge.set(rowValue[0]); // set actual value
+	gauge.setTextField(new CustomTextRenderer(document.getElementById(rowId[0] + "-lib")));
+
+}
+
+head.load(this.getBirtResourceURL('js/gauge.js'), callback);
+]]></method>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["ID"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>"Gauge4"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">100px</property>
+                                                <property name="width">100%</property>
+                                                <property name="dataSet">Gauge</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">ID</property>
+                                                        <text-property name="displayName">ID</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">VALUE</property>
+                                                        <text-property name="displayName">VALUE</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["VALUE"]</expression>
+                                                        <property name="dataType">float</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">MAX</property>
+                                                        <text-property name="displayName">MAX</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["MAX"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">COLOR</property>
+                                                        <text-property name="displayName">COLOR</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["COLOR"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="1989">
+                                            <grid id="1990">
+                                                <property name="height">100px</property>
+                                                <column id="1991"/>
+                                                <row id="1992">
+                                                    <property name="verticalAlign">middle</property>
+                                                    <cell id="1993">
+                                                        <label id="1994">
+                                                            <property name="fontSize">14pt</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <text-property name="text" key="Goal: below 4 alerts">Goal: below 4 alerts</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                                <row id="1995">
+                                                    <property name="verticalAlign">bottom</property>
+                                                    <property name="height">10%</property>
+                                                    <cell id="1996">
+                                                        <image id="1997">
+                                                            <property name="display">inline</property>
+                                                            <property name="height">0.08403361344537816in</property>
+                                                            <property name="width">0.1092436974789916in</property>
+                                                            <property name="source">file</property>
+                                                            <expression name="uri" type="constant">images/arrow down green.png</expression>
+                                                        </image>
+                                                        <text id="1998">
+                                                            <property name="style">kpi_green</property>
+                                                            <property name="display">inline</property>
+                                                            <property name="contentType">html</property>
+                                                            <text-property name="content"><![CDATA[ 2 %]]></text-property>
+                                                        </text>
+                                                        <label id="1999">
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="display">inline</property>
+                                                            <text-property name="text" key="Decrease vs last year">Decrease vs last year</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="2000">
+                            <cell id="2001">
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="2002">
+                                    <property name="backgroundColor">white</property>
+                                    <property name="borderBottomColor">#E6E9ED</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#E6E9ED</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#E6E9ED</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#E6E9ED</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <column id="2003">
+                                        <property name="width">125px</property>
+                                    </column>
+                                    <column id="2004">
+                                        <property name="width">185px</property>
+                                    </column>
+                                    <row id="2005">
+                                        <cell id="2006">
+                                            <property name="colSpan">2</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">medium</property>
+                                            <label id="2007">
+                                                <property name="fontSize">14pt</property>
+                                                <property name="paddingTop">5pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">5pt</property>
+                                                <text-property name="text" key="General Customer Satisfaction">General Customer Satisfaction</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="2008">
+                                        <cell id="2009">
+                                            <property name="paddingTop">5pt</property>
+                                            <property name="paddingLeft">5pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <extended-item extensionName="HTMLControl" id="2010">
+                                                <method name="clientOnCreate"><![CDATA[var config = {
+ 	idColumn : "ID",
+	valueColumn : "VALUE",
+	valueMaxColumn : "MAX",
+	colorColumn : "COLOR"
+};
+
+// set precision here
+var nbDec = 1;
+
+// Read data set 
+var cursor = this.getDataCursor();
+var rowId = [];
+var rowValue = [];
+var rowMax = [];
+var rowColor = [];
+
+while (cursor.hasNext()) {
+	var rowData = cursor.next();
+	rowId.push(rowData[config.idColumn]);
+	rowValue.push(rowData[config.valueColumn]);
+	rowMax.push(rowData[config.valueMaxColumn]);
+	rowColor.push(rowData[config.colorColumn]);
+};
+
+var customViz = this;
+	
+var callback = function() {
+	debugger;
+	var containerId = customViz.getId();
+	myDiv = '<div style="position:relative">';
+	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
+	myDiv += '<span id="' + rowId[0] + '-lib" style="width:200px;position:absolute;left:-50px;text-align:center;top:25px;font-size:40px"></span>';
+	myDiv += '</div>';
+	$('#' + containerId).append(myDiv);
+		
+	var opts = {
+  		lines: 1, // The number of lines to draw
+  		angle: 0.2, // The length of each line
+  		lineWidth: 0.1, // The line thickness
+  		pointer: {
+    		length: 0.9, // The radius of the inner circle
+    		strokeWidth: 0.035, // The rotation offset
+		},
+  		limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+  		colorStop: rowColor[0],
+  		strokeColor: '#F0F3F3',   // to see which ones work best for you
+  		generateGradient: true,
+	};
+
+	var CustomTextRenderer = function(el){
+    	this.el = el;
+    	this.render = function(gauge){
+    		debugger;
+        	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
+    	}
+	}
+	CustomTextRenderer.prototype = new TextRenderer();
+
+	var target = document.getElementById(rowId[0]); // your canvas element
+	var gauge = new Donut(target).setOptions(opts); // create sexy gauge!
+	gauge.maxValue = rowMax[0],
+	gauge.animationSpeed = 15; // set animation speed (32 is default value)
+	gauge.set(rowValue[0]); // set actual value
+	gauge.setTextField(new CustomTextRenderer(document.getElementById(rowId[0] + "-lib")));
+
+}
+
+head.load(this.getBirtResourceURL('js/gauge.js'), callback);
+]]></method>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["ID"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>"Gauge5"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">100px</property>
+                                                <property name="width">100%</property>
+                                                <property name="dataSet">Gauge</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">ID</property>
+                                                        <text-property name="displayName">ID</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">VALUE</property>
+                                                        <text-property name="displayName">VALUE</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["VALUE"]</expression>
+                                                        <property name="dataType">float</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">MAX</property>
+                                                        <text-property name="displayName">MAX</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["MAX"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">COLOR</property>
+                                                        <text-property name="displayName">COLOR</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["COLOR"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="2011">
+                                            <grid id="2012">
+                                                <property name="height">100px</property>
+                                                <column id="2013"/>
+                                                <row id="2014">
+                                                    <property name="verticalAlign">middle</property>
+                                                    <cell id="2015">
+                                                        <label id="2016">
+                                                            <property name="fontSize">14pt</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <text-property name="text" key="Goal: over 4.5 stars">Goal: over 4.5 stars</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                                <row id="2017">
+                                                    <property name="verticalAlign">bottom</property>
+                                                    <property name="height">10%</property>
+                                                    <cell id="2018">
+                                                        <image id="2019">
+                                                            <property name="display">inline</property>
+                                                            <property name="height">0.08403361344537816in</property>
+                                                            <property name="width">0.1092436974789916in</property>
+                                                            <property name="source">file</property>
+                                                            <expression name="uri" type="constant">images/arrow up green.png</expression>
+                                                        </image>
+                                                        <text id="2020">
+                                                            <property name="style">kpi_green</property>
+                                                            <property name="display">inline</property>
+                                                            <property name="contentType">html</property>
+                                                            <text-property name="content"><![CDATA[ 2 %]]></text-property>
+                                                        </text>
+                                                        <label id="2021">
+                                                            <property name="paddingLeft">3pt</property>
+                                                            <property name="display">inline</property>
+                                                            <text-property name="text" key="Increase vs last year">Increase vs last year</text-property>
+                                                        </label>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="1838">
+                <cell id="1839">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <grid id="1882">
+                        <property name="backgroundColor">white</property>
+                        <property name="borderBottomColor">#E6E9ED</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#E6E9ED</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#E6E9ED</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#E6E9ED</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <column id="1883">
+                            <property name="width">100%</property>
+                        </column>
+                        <row id="1884">
+                            <cell id="1885">
+                                <property name="borderBottomColor">#ACB8C4</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <label id="123">
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="marginBottom">0pt</property>
+                                    <property name="paddingTop">5pt</property>
+                                    <property name="paddingLeft">3pt</property>
+                                    <property name="paddingBottom">5pt</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text" key="Current Cars">Current Cars</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1886">
+                            <cell id="1887">
+                                <property name="paddingTop">10px</property>
+                                <property name="paddingLeft">0pt</property>
+                                <property name="paddingRight">0pt</property>
+                                <table id="1842">
+                                    <property name="fontFamily">"Tahoma"</property>
+                                    <property name="dataSet">Monitoring Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">VehicleMake</property>
+                                            <text-property name="displayName">VehicleMake</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["VehicleMake"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">pred_Failure</property>
+                                            <text-property name="displayName">pred_Failure</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["pred_Failure"]</expression>
+                                            <property name="dataType">float</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CustomerName1</property>
+                                            <text-property name="displayName">CustomerName</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CustomerName1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">CarType1</property>
+                                            <text-property name="displayName">CarType</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["CarType1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Satisfaction1</property>
+                                            <text-property name="displayName">Satisfaction</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Satisfaction1"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Probable Cuae</property>
+                                            <expression name="expression" type="javascript">if (row["pred_Failure"]>0.8) {&#13;
+	"Excessive use of brakes"&#13;
+}&#13;
+else if (row["pred_Failure"]>0.6) {&#13;
+	"Loss of oil viscosity due to high speeds"&#13;
+}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="sort">
+                                        <structure>
+                                            <expression name="key" type="javascript">row["pred_Failure"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="1855">
+                                        <property name="textAlign">left</property>
+                                        <property name="width">2in</property>
+                                    </column>
+                                    <column id="1856">
+                                        <property name="textAlign">left</property>
+                                        <property name="width">1in</property>
+                                    </column>
+                                    <column id="1857">
+                                        <property name="textAlign">left</property>
+                                        <property name="width">1.6in</property>
+                                    </column>
+                                    <column id="1871">
+                                        <property name="textAlign">left</property>
+                                        <property name="width">2.7in</property>
+                                    </column>
+                                    <column id="1867">
+                                        <property name="width">270px</property>
+                                    </column>
+                                    <column id="1858">
+                                        <property name="width">0.7in</property>
+                                    </column>
+                                    <column id="1859"/>
+                                    <header>
+                                        <row id="1843">
+                                            <property name="borderBottomColor">#ACB8C4</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderLeftStyle">none</property>
+                                            <property name="borderRightStyle">none</property>
+                                            <property name="borderTopStyle">none</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <property name="height">35px</property>
+                                            <cell id="1828">
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1844">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <text-property name="text" key="Customer Name">Customer Name</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1845">
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1835">
+                                                    <text-property name="text" key="Car Type">Car Type</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1832">
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1846">
+                                                    <text-property name="text" key="Vehicle Make">Vehicle Make</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1868">
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1872">
+                                                    <text-property name="text" key="Probable Cause">Probable Cause</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1864">
+                                                <property name="colSpan">2</property>
+                                                <property name="rowSpan">1</property>
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1874">
+                                                    <property name="textAlign">center</property>
+                                                    <text-property name="text" key="Failure Prediction">Failure Prediction</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1836">
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="1837">
+                                                    <text-property name="text" key="Satisfaction">Satisfaction</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="1875">
+                                            <method name="onCreate"><![CDATA[rowNb++;]]></method>
+                                            <property name="borderBottomColor">#F5F5F5</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderLeftColor">#F5F5F5</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderRightColor">#F5F5F5</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderTopColor">#F5F5F5</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <list-property name="highlightRules">
+                                                <structure>
+                                                    <property name="operator">ne</property>
+                                                    <property name="backgroundColor">#FAFAFA</property>
+                                                    <expression name="testExpr" type="javascript">rowNb % 2</expression>
+                                                    <simple-property-list name="value1">
+                                                        <value type="javascript">0</value>
+                                                    </simple-property-list>
+                                                </structure>
+                                            </list-property>
+                                            <cell id="1876">
+                                                <data id="1877">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="resultSetColumn">CustomerName1</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1878">
+                                                <data id="1879">
+                                                    <property name="resultSetColumn">CarType1</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1880">
+                                                <data id="1840">
+                                                    <property name="resultSetColumn">VehicleMake</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1869">
+                                                <data id="1873">
+                                                    <property name="resultSetColumn">Probable Cuae</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1865">
+                                                <property name="textAlign">right</property>
+                                                <extended-item extensionName="Chart" id="1349">
+                                                    <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Percent Stacked" orientation="0">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot" horizontalSpacing="0" verticalSpacing="0">
+    <outline visible="false">
+     <color _nil="1"/>
+    </outline>
+    <background _body=",0,255,255,255"/>
+    <clientArea>
+     <background _body=",0,255,255,255"/>
+     <outline visible="false">
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,144.75,130.0"/>
+   <insets _body="0.0,0.0,0.0,0.0"/>
+   <outline visible="false">
+    <color _nil="1"/>
+   </outline>
+   <background _body=",255,255,255,255"/>
+   <cursor type="0"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value=""/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.animation" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+   <orthogonalSampleData dataSetRepresentation="12.0,8.0,24.0,16.0,20.0" seriesDefinitionIndex="1"/>
+   <orthogonalSampleData dataSetRepresentation="18.0,12.0,36.0,24.0,30.0" seriesDefinitionIndex="2"/>
+   <orthogonalSampleData dataSetRepresentation="24.0,16.0,48.0,32.0,40.0" seriesDefinitionIndex="3"/>
+  </sampleData>
+  <interactivity enable="false"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" primaryAxis="true" percent="true" aligned="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Low" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt;=0.8) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Middle" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt;0.6 &amp;&amp; row[&quot;pred_Failure&quot;] &lt;= 0.8 ) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Good" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &lt;0.6 ) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Series 4" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt; 100 ) 0&#13;&#10;else 1 - row[&quot;pred_Failure&quot;]">
+       <grouping aggregateExpression="Max"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,250,29,29"/>
+      <endColor _body=",255,226,2,2"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,226,216,82"/>
+      <endColor _body=",255,255,255,13"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,26,187,156"/>
+      <endColor _body=",255,23,159,133"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,226,226,226"/>
+      <endColor _body=",255,245,245,245"/>
+     </entries>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;CustomerName1&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                    <property name="outputFormat">PNG</property>
+                                                    <property name="inheritColumns">false</property>
+                                                    <property name="height">30px</property>
+                                                    <property name="width">250px</property>
+                                                    <list-property name="visibility">
+                                                        <structure>
+                                                            <property name="format">all</property>
+                                                            <expression name="valueExpr" type="javascript">rowNb % 2 == 0</expression>
+                                                        </structure>
+                                                    </list-property>
+                                                </extended-item>
+                                                <extended-item extensionName="Chart" id="1902">
+                                                    <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Percent Stacked" orientation="0">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot" horizontalSpacing="0" verticalSpacing="0">
+    <outline visible="false">
+     <color _nil="1"/>
+    </outline>
+    <background _body=",0,255,255,255"/>
+    <clientArea>
+     <background _body=",0,255,255,255"/>
+     <outline visible="false">
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,144.75,130.0"/>
+   <insets _body="0.0,0.0,0.0,0.0"/>
+   <outline visible="false">
+    <color _nil="1"/>
+   </outline>
+   <background _body=",255,250,250,250"/>
+   <cursor type="0"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value=""/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.animation" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+   <orthogonalSampleData dataSetRepresentation="12.0,8.0,24.0,16.0,20.0" seriesDefinitionIndex="1"/>
+   <orthogonalSampleData dataSetRepresentation="18.0,12.0,36.0,24.0,30.0" seriesDefinitionIndex="2"/>
+   <orthogonalSampleData dataSetRepresentation="24.0,16.0,48.0,32.0,40.0" seriesDefinitionIndex="3"/>
+  </sampleData>
+  <interactivity enable="false"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" primaryAxis="true" percent="true" aligned="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Low" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt;=0.8) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Middle" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt;0.6 &amp;&amp; row[&quot;pred_Failure&quot;] &lt;= 0.8 ) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Good" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &lt;0.6 ) row[&quot;pred_Failure&quot;]&#13;&#10;else 0">
+       <grouping enabled="true" aggregateExpression="Max"/>
+      </dataDefinition>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,226,226"/>
+       <endColor _body=",255,245,245,245"/>
+      </entries>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,250,29,29"/>
+       <endColor _body=",255,226,2,2"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,226,216,82"/>
+       <endColor _body=",255,255,255,13"/>
+      </entries>
+      <entries _type="Gradient" type="0" direction="-90.0">
+       <startColor _body=",255,26,187,156"/>
+       <endColor _body=",255,23,159,133"/>
+      </entries>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Series 4" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="if(row[&quot;pred_Failure&quot;] &gt; 100 ) 0&#13;&#10;else 1 - row[&quot;pred_Failure&quot;]">
+       <grouping aggregateExpression="Max"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <cursor type="0"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,250,29,29"/>
+      <endColor _body=",255,226,2,2"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,226,216,82"/>
+      <endColor _body=",255,255,255,13"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,26,187,156"/>
+      <endColor _body=",255,23,159,133"/>
+     </entries>
+     <entries _type="Gradient" type="0" direction="-90.0">
+      <startColor _body=",255,226,226,226"/>
+      <endColor _body=",255,245,245,245"/>
+     </entries>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;CustomerName1&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                    <property name="outputFormat">PNG</property>
+                                                    <property name="inheritColumns">false</property>
+                                                    <property name="height">30px</property>
+                                                    <property name="width">250px</property>
+                                                    <list-property name="visibility">
+                                                        <structure>
+                                                            <property name="format">all</property>
+                                                            <expression name="valueExpr" type="javascript">rowNb % 2 != 0</expression>
+                                                        </structure>
+                                                    </list-property>
+                                                </extended-item>
+                                            </cell>
+                                            <cell id="1881">
+                                                <text id="1330">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[<span style = "display: inline-block;
+min-width: 45px;
+padding: 3px 7px;
+font-size: 12px;
+font-weight: 700;
+line-height: 1;
+<VALUE-OF>if(row["pred_Failure"]<1) 'color: #3C3C3C;'</VALUE-OF>
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: 10px;
+background-color :  <VALUE-OF>if(row["pred_Failure"]<0.6) '#19B99A'
+else if(row["pred_Failure"]<0.8) '#fee660'
+else '#fa4c4e'</VALUE-OF>;">
+<VALUE-OF>Formatter.format(row["pred_Failure"],"0.0%")</VALUE-OF></span>]]></text-property>
+                                                </text>
+                                            </cell>
+                                            <cell id="1847">
+                                                <property name="textAlign">center</property>
+                                                <image id="1863">
+                                                    <property name="height">21px</property>
+                                                    <property name="source">file</property>
+                                                    <expression name="uri" type="javascript">"images/star " + row["Satisfaction1"] + ".png"</expression>
+                                                </image>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

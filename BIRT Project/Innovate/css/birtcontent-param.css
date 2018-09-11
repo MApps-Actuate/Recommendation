@@ -1,0 +1,13 @@
+.actuateParameterContainer .paramDisplayName {
+	font-weight: 500;
+    color: #5A738E;
+    font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
+    font-size: small;
+}
+.actuateParameterContainer .controlRadioFieldSet .radioField {
+    display: inline;
+}
+.accordion .panel {
+    margin-right: 10px;
+    border: 1px solid #dddddd;
+}

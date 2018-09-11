@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="NewDataMartDataSource1" id="12">
+            <property name="datamartURL">Data Objects/Classic Models</property>
+            <property name="datamartVersion">-1</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="dashboardView">
+        <dashboard id="2">
+            <property name="activeTab">e5804250-3cc1-4510-903a-9c3d032fb3ab</property>
+            <property name="tabs">
+                <tab-element name="e5804250-3cc1-4510-903a-9c3d032fb3ab" id="3">
+                    <property name="title">My KPI</property>
+                    <property name="sections">
+                        <section id="4">
+                            <property name="width">50%</property>
+                            <property name="gadgets">
+                                <gadget name="7f71471d-f367-4d1c-8a28-76204581d4cb" id="6">
+                                    <property name="height">150px</property>
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="8">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Source Sans Pro"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">200</property>
+                                            <property name="color">#353535</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="7"/>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="5">
+                            <property name="width">50%</property>
+                        </section>
+                    </property>
+                </tab-element>
+            </property>
+        </dashboard>
+    </property>
+</report>

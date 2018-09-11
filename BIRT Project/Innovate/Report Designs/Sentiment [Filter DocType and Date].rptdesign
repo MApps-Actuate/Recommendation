@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[//var logger = java.util.logging.Logger.getLogger("birt.report.logger");
+
+if (( params["pTerm"].value === null ) || ( params["pTerm"].value == '' )) {
+	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(0).setExpr("1");
+	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(0).setValue1("1");
+}
+
+if (( params["pDate"].value === null ) || ( params["pDate"].value == '' )) {
+	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(1).setExpr("1");
+	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(1).setValue1("1");
+}
+
+//if (( params["pCategory"].value === null ) || ( params["pCategory"].value == '' )) {
+//	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(2).setExpr("1");
+//	reportContext.getDesignHandle().findElement("myTable11").getListProperty("filter").get(2).setValue1("1");
+//}
+
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="pTerm" id="97">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pDate" id="211">
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">false</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["filter_date"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="linkedDataModelName">Text Analytics Data Model</property>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="Text Analytics Data Source" id="227">
+            <property name="datamartURL">Data Objects/Text Analytics Data</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Text Analytics Data Model" id="228">
+            <property name="dataSource">Text Analytics Data Source</property>
+            <property name="dataObject">Text Analytics Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="orientation">landscape</property>
+            <property name="height">2.5in</property>
+            <property name="width">13.5in</property>
+            <property name="showHeaderOnFirst">false</property>
+            <property name="showFooterOnLast">false</property>
+            <property name="headerHeight">0.01in</property>
+            <property name="footerHeight">0.01in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="myTable11" id="117">
+            <property name="fontFamily">"Segoe UI"</property>
+            <property name="fontSize">36pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#5B5B5B</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Term</property>
+                    <text-property name="displayName">Term</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["content_type"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Total Positive</property>
+                    <expression name="expression">measure["Total Positive Sentiment"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>All</value>
+                    </simple-property-list>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ShortDate</property>
+                    <text-property name="displayName">ShortDate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["filter_date"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Total Neutral</property>
+                    <expression name="expression">measure["Total Neutral Sentiment"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>All</value>
+                    </simple-property-list>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Total Negative</property>
+                    <expression name="expression">measure["Total Negative Sentiment"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>All</value>
+                    </simple-property-list>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <expression name="bookmark" type="javascript">'myTable11'</expression>
+            <property name="linkedDataModel">Text Analytics Data Model</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">in</property>
+                    <expression name="expr" type="javascript">row["Term"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">params["pTerm"].value</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+                <structure>
+                    <property name="operator">in</property>
+                    <expression name="expr" type="javascript">row["ShortDate"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">params["pDate"].value</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <column id="848">
+                <property name="width">6%</property>
+            </column>
+            <column id="126">
+                <property name="width">25%</property>
+            </column>
+            <column id="842">
+                <property name="width">6%</property>
+            </column>
+            <column id="845">
+                <property name="width">25%</property>
+            </column>
+            <column id="851">
+                <property name="width">6%</property>
+            </column>
+            <column id="857">
+                <property name="width">25%</property>
+            </column>
+            <column id="854">
+                <property name="width">7%</property>
+            </column>
+            <header>
+                <row id="118">
+                    <property name="borderBottomColor">#D7D7D7</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="846"/>
+                    <cell id="119">
+                        <grid id="151">
+                            <property name="width">3.3229166666666665in</property>
+                            <column id="152">
+                                <property name="width">1in</property>
+                            </column>
+                            <column id="153"/>
+                            <row id="154">
+                                <cell id="155">
+                                    <image id="165">
+                                        <property name="height">0.9166666666666666in</property>
+                                        <property name="width">1.0104166666666667in</property>
+                                        <property name="source">file</property>
+                                        <expression name="uri" type="constant">Faces-Icon-Positive-sm.png</expression>
+                                    </image>
+                                </cell>
+                                <cell id="156">
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="120">
+                                        <property name="color">#909090</property>
+                                        <property name="marginLeft">10px</property>
+                                        <text-property name="text">Positive</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="840"/>
+                    <cell id="843">
+                        <grid id="170">
+                            <property name="width">3.3229166666666665in</property>
+                            <column id="171">
+                                <property name="width">1in</property>
+                            </column>
+                            <column id="172"/>
+                            <row id="173">
+                                <cell id="174">
+                                    <image id="175">
+                                        <property name="height">0.9166666666666666in</property>
+                                        <property name="width">0.9479166666666666in</property>
+                                        <property name="source">file</property>
+                                        <expression name="uri" type="constant">Faces-Icon-Neutral-sm.png</expression>
+                                    </image>
+                                </cell>
+                                <cell id="176">
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="177">
+                                        <property name="color">#909090</property>
+                                        <property name="marginLeft">10px</property>
+                                        <text-property name="text">Neutral</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="849"/>
+                    <cell id="855">
+                        <grid id="185">
+                            <property name="width">3.3229166666666665in</property>
+                            <column id="186">
+                                <property name="width">1in</property>
+                            </column>
+                            <column id="187"/>
+                            <row id="188">
+                                <cell id="189">
+                                    <image id="190">
+                                        <property name="height">0.90625in</property>
+                                        <property name="width">1.0104166666666667in</property>
+                                        <property name="source">file</property>
+                                        <expression name="uri" type="constant">Faces-Icon-Negative-sm.png</expression>
+                                    </image>
+                                </cell>
+                                <cell id="191">
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="192">
+                                        <property name="color">#909090</property>
+                                        <property name="marginLeft">10px</property>
+                                        <text-property name="text">Negative</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="852"/>
+                </row>
+                <row id="127">
+                    <cell id="847"/>
+                    <cell id="128">
+                        <data id="130">
+                            <property name="color">#909090</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Total Positive</property>
+                        </data>
+                    </cell>
+                    <cell id="841"/>
+                    <cell id="844">
+                        <data id="180">
+                            <property name="color">#909090</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Total Neutral</property>
+                        </data>
+                    </cell>
+                    <cell id="850"/>
+                    <cell id="856">
+                        <data id="195">
+                            <property name="color">#909090</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Total Negative</property>
+                        </data>
+                    </cell>
+                    <cell id="853"/>
+                </row>
+            </header>
+        </table>
+    </body>
+</report>

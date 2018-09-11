@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[importPackage(Packages.org.eclipse.birt.report.model.api);
+importPackage(Packages.org.eclipse.birt.report.model.api.elements.structures);
+importPackage(Packages.org.eclipse.birt.report.model.api.elements);
+importClass(Packages.org.eclipse.birt.report.model.api.elements.DesignChoiceConstants);
+importPackage(Packages.java.util);
+
+var articleTable = reportContext.getDesignHandle().findElement("DocumentTable");
+var myArray = new ArrayList();
+
+if (params["Language"].value) {
+	addTableFilter(articleTable,  "\"" + params["Language"].value + "\"", null, DesignChoiceConstants.FILTER_OPERATOR_EQ, "dataSetRow[\"name2\"]");
+}
+
+if (params["pDocumentType"].value) {
+    myArray.clear();
+	for (i = 0; i < params["pDocumentType"].value.length; i++) {
+		myArray.add("'" + params["pDocumentType"].value[i] + "'");
+	}		
+	addTableFilter(articleTable,  myArray, null, DesignChoiceConstants.FILTER_OPERATOR_IN, "dataSetRow[\"content_type\"]");
+}
+
+if (params["pTone"].value) {
+    myArray.clear();
+	for (i = 0; i < params["pTone"].value.length; i++) {
+		myArray.add("'" + params["pTone"].value[i] + "'");
+	}		
+	addTableFilter(articleTable,  myArray, null, DesignChoiceConstants.FILTER_OPERATOR_IN, "dataSetRow[\"tone\"]");
+}
+
+
+if (params["Categories"].value) {
+    myArray.clear();
+	for (i = 0; i < params["Categories"].value.length; i++) {
+		myArray.add("'" + params["Categories"].value[i] + "'");
+	}		
+	addTableFilter(articleTable,  myArray, null, DesignChoiceConstants.FILTER_OPERATOR_IN, "dataSetRow[\"category\"]");
+}
+
+//if (params["Category Threshold"].value &amp;&amp; params["Categories"].value) {
+if (params["Category Threshold"].value) {
+	addTableFilter(articleTable,  "\"" + params["Category Threshold"].value + "\"", null, DesignChoiceConstants.FILTER_OPERATOR_GE, "dataSetRow[\"weight\"]");
+}
+
+if (params["Concepts"].value) {
+    myArray.clear();
+	for (i = 0; i < params["Concepts"].value.length; i++) {
+		myArray.add("'" + params["Concepts"].value[i] + "'");
+	}		
+	addTableFilter(articleTable,  myArray, null, DesignChoiceConstants.FILTER_OPERATOR_IN, "dataSetRow[\"name1\"]");
+}
+
+//if (params["Concept Threshold"].value &amp;&amp; params["Concepts"].value) {
+if (params["Concept Threshold"].value) {
+	addTableFilter(articleTable,  "\"" + params["Concept Threshold"].value + "\"", null, DesignChoiceConstants.FILTER_OPERATOR_GE, "dataSetRow[\"relevancy\"]");
+}
+
+if (params["Places"].value || params["People"].value || params["Organizations"].value) {
+    myArray.clear();
+	if (params["Places"].value) {
+		for (i = 0; i < params["Places"].value.length; i++) {
+			myArray.add("'" + params["Places"].value[i] + "'");
+		}		
+	}
+
+	if (params["People"].value) {
+		for (i = 0; i < params["People"].value.length; i++) {
+			myArray.add("'" + params["People"].value[i] + "'");
+		}		
+	}
+
+	if (params["Organizations"].value) {
+ 		for (i = 0; i < params["Organizations"].value.length; i++) {
+			myArray.add("'" + params["Organizations"].value[i] + "'");
+		}		
+	}
+	addTableFilter(articleTable,  myArray, null, DesignChoiceConstants.FILTER_OPERATOR_IN, "dataSetRow[\"entity\"]");
+}
+
+//if (params["Entity Threshold"].value) {
+//	addTableFilter(articleTable,  "\"" + params["Entity Threshold"].value + "\"", null, DesignChoiceConstants.FILTER_OPERATOR_GE, "row[\"confidence_score\"]");
+//}
+
+// Set Filter for Crosstab Object
+function addXtabFilter(elemHandle,values1,values2,operator,colExpression) {
+	var filterhandle = elemHandle.getPropertyHandle("filter"); 
+	var ef = reportContext.getDesignHandle().getElementFactory();
+	var fc = ef.newFilterConditionElement();
+	fc.setOperator(operator);
+   
+ 	if (values1)
+    	fc.setValue1(values1);
+	if (values2)
+       fc.setValue2(values2);
+    
+  	var expression = new Expression(colExpression, ExpressionType.JAVASCRIPT);
+  	fc.setExpressionProperty( FilterCondition.EXPR_MEMBER, expression );
+  	filterhandle.add(fc);
+
+}
+
+// Add Filter to elememt (chart, table)
+function addTableFilter(elemHandle,values1,values2,operator,colExpression) {
+	var filterhandle = elemHandle.getPropertyHandle("filter"); 
+	var fc = StructureFactory.createFilterCond();
+	fc.setValue1(values1);
+	var expression = new Expression(colExpression, ExpressionType.JAVASCRIPT);
+	fc.setExpressionProperty( FilterCondition.EXPR_MEMBER, expression );
+	fc.setOperator(operator);
+	if (values2 != null)
+		fc.setValue2(values2);
+	filterhandle.addItem(fc); 
+}
+]]></method>
+    <property name="theme">ThemesReportItems31.Clean Blue</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <method name="onContentUpdate"><![CDATA[var allCells = $("#here").closest("table").find( "td" );
+
+allCells.parent().parent().parent().find("tr:odd").css("background-color", "#EEEEEE");
+allCells.parent().parent().parent().find("tr:even").css("background-color", "");
+     
+allCells
+  .on("mouseover", function() {
+    var el = $(this);
+    el.parent().css("background","#9da3b9");
+  })
+  .on("mouseout", function() {
+	allCells.parent().parent().parent().find("tr:odd").css("background-color", "#EEEEEE");
+	allCells.parent().parent().parent().find("tr:even").css("background-color", "");       
+  });
+  
+var allCells2 = $("#here2").closest("table").find( "td" );
+
+allCells2.parent().parent().parent().find("tr:odd").css("background-color", "#EEEEEE");
+allCells2.parent().parent().parent().find("tr:even").css("background-color", "");]]></method>
+    <parameters>
+        <scalar-parameter name="Language" id="262">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Category Threshold" id="259">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">float</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Categories" id="258">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Concept Threshold" id="280">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">float</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Concepts" id="278">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Entity Threshold" id="275">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">float</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Places" id="267">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="People" id="264">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Organizations" id="268">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pDocumentType" id="1421">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">Document</property>
+                </structure>
+                <structure>
+                    <property name="value">Twitter</property>
+                </structure>
+                <structure>
+                    <property name="value">Web</property>
+                </structure>
+            </list-property>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pTone" id="1422">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">negative</property>
+                </structure>
+                <structure>
+                    <property name="value">neutral</property>
+                </structure>
+                <structure>
+                    <property name="value">positive</property>
+                </structure>
+            </list-property>
+            <property name="paramType">multi-value</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="Text Analytics Data Source" id="4">
+            <property name="datamartURL">Data Objects/Text Analytics Data</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Text Analytics Data Model" id="5">
+            <property name="dataSource">Text Analytics Data Source</property>
+            <property name="dataObject">Text Analytics Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="DocumentTable" id="1102">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__ac_group_collapse_level</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="fontFamily">"Calibri"</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">doc_id</property>
+                    <text-property name="displayName">Internal Document ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">Document Name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["content_type"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">Document ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tone</property>
+                    <text-property name="displayName">Tone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tone"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">positive_tone_score</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>id</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["positive_tone_score"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">negative_tone_score</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>id</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["negative_tone_score"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">subjectivity_score</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>id</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">FIRST</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["subjectivity_score"]/100</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Sentiment Score</property>
+                    <expression name="expression" type="javascript">if (row["tone"]=="positive") {&#13;
+	row["positive_tone_score"]/100;&#13;
+}&#13;
+else if (row["tone"]=="negative") {&#13;
+	row["negative_tone_score"]/100;&#13;
+}&#13;
+else {null}</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">weight</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>id</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["weight"]/100</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">confidence_score</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>id</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["confidence_score"]/100</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Text Analytics Data Model</property>
+            <property name="pageBreakInterval">30</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">top-n</property>
+                    <expression name="expr" type="javascript">row["subjectivity_score"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">250</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <property name="isSummaryTable">true</property>
+            <column id="1114"/>
+            <column id="1115"/>
+            <column id="1175"/>
+            <column id="1215"/>
+            <column id="1207"/>
+            <column id="1199"/>
+            <header>
+                <row id="1254">
+                    <cell id="1255">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="989">
+                            <column id="990">
+                                <property name="width">56px</property>
+                            </column>
+                            <column id="991"/>
+                            <row id="992">
+                                <cell id="993">
+                                    <image id="999">
+                                        <property name="height">56px</property>
+                                        <property name="width">56px</property>
+                                        <property name="source">file</property>
+                                        <expression name="uri" type="constant">OTCA_Summary2.png</expression>
+                                    </image>
+                                </cell>
+                                <cell id="995">
+                                    <property name="paddingLeft">10pt</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <label id="996">
+                                        <property name="fontSize">14pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Document List</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="1103">
+                    <cell id="1104">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label id="1109">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Document ID</text-property>
+                        </label>
+                        <text id="1420">
+                            <property name="fontFamily">monospace</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<div id="here"></div>
+]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="1106">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label id="1107">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1168">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label name="NewLabel6" id="1247">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Sentiment</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1208">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label id="1241">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Sentiment Score</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1200">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label id="1250">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Category Weight</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1192">
+                        <property name="backgroundColor">#C2D7F8</property>
+                        <label id="1252">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Entity Confidence</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="1117">
+                <property name="groupName">id</property>
+                <expression name="keyExpr" type="javascript">row["id"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["id"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="1118">
+                        <cell id="1119">
+                            <data id="1257">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">3pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">2pt</property>
+                                <property name="resultSetColumn">doc_id</property>
+                                <list-property name="action">
+                                    <structure>
+                                        <property name="linkType">drill-through</property>
+                                        <property name="reportName">Document Detail.rptdesign</property>
+                                        <property name="targetWindow">_blank</property>
+                                        <property name="targetFileType">report-design</property>
+                                        <list-property name="paramBindings">
+                                            <structure>
+                                                <property name="paramName">Document ID</property>
+                                                <simple-property-list name="expression">
+                                                    <value type="javascript">row["doc_id"]</value>
+                                                </simple-property-list>
+                                            </structure>
+                                        </list-property>
+                                    </structure>
+                                </list-property>
+                            </data>
+                        </cell>
+                        <cell id="1121">
+                            <data id="1129">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">3pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">2pt</property>
+                                <property name="resultSetColumn">name</property>
+                            </data>
+                        </cell>
+                        <cell id="1170">
+                            <data id="1139">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">3pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">2pt</property>
+                                <list-property name="highlightRules">
+                                    <structure>
+                                        <property name="operator">eq</property>
+                                        <property name="color">#008040</property>
+                                        <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                        <simple-property-list name="value1">
+                                            <value type="javascript">"positive"</value>
+                                        </simple-property-list>
+                                    </structure>
+                                    <structure>
+                                        <property name="operator">eq</property>
+                                        <property name="color">#EC4F4F</property>
+                                        <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                        <simple-property-list name="value1">
+                                            <value type="javascript">"negative"</value>
+                                        </simple-property-list>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">tone</property>
+                            </data>
+                        </cell>
+                        <cell id="1210">
+                            <data id="1246">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">3pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Percent</property>
+                                    <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">subjectivity_score</property>
+                            </data>
+                        </cell>
+                        <cell id="1202">
+                            <data id="1251">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">3pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Percent</property>
+                                    <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">weight</property>
+                            </data>
+                        </cell>
+                        <cell id="1194">
+                            <data id="1253">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">2pt</property>
+                                <property name="paddingRight">3pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Percent</property>
+                                    <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">confidence_score</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+        </table>
+    </body>
+</report>

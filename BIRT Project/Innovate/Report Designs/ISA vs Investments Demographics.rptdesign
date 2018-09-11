@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/chart_listing.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.chartlisting</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <method name="onContentUpdate"><![CDATA[var allCells = $("#here").closest("table").find( "td" );
+
+allCells.parent().parent().parent().find("tr:odd").css("background-color", "#F1F1F1");
+allCells.parent().parent().parent().find("tr:even").css("background-color", "");
+     
+allCells
+  .on("mouseover", function() {
+    var el = $(this);
+    el.parent().css("background","#9da3b9");
+  })
+  .on("mouseout", function() {
+	allCells.parent().parent().parent().find("tr:odd").css("background-color", "#F1F1F1");
+	allCells.parent().parent().parent().find("tr:even").css("background-color", "");       
+  });]]></method>
+    <data-sources>
+        <data-mart-data-source name="BDA Data Source" id="267">
+            <property name="datamartURL">Data Objects/FS Data Object</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="BDA Profile Data Model" id="1422">
+            <property name="dataSource">BDA Data Source</property>
+            <property name="dataObject">BDA Profile Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <styles>
+        <style name="report" id="33">
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="title" id="200">
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">16pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#0072AA</property>
+        </style>
+        <style name="header_cell" id="204">
+            <property name="backgroundColor">#0072AA</property>
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">12pt</property>
+            <property name="color">#FFFFFF</property>
+            <property name="paddingTop">2pt</property>
+            <property name="paddingLeft">5pt</property>
+            <property name="paddingBottom">2pt</property>
+            <property name="paddingRight">5pt</property>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="detail_cell" id="205">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">10pt</property>
+            <property name="color">#333333</property>
+            <property name="paddingTop">2pt</property>
+            <property name="paddingLeft">5pt</property>
+            <property name="paddingBottom">2pt</property>
+            <property name="paddingRight">5pt</property>
+            <property name="textAlign">left</property>
+        </style>
+    </styles>
+    <themes>
+        <report-item-theme type="Chart" name="BDA Innovate Profile" id="396">
+            <xml-property name="customValues"><![CDATA[<type>1</type><ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" orientation="0" unitSpacing="22.0" reverseCategory="true">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,572.25,286.125"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <cursor type="0"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.glass.style" value="false"/>
+  <extendedProperties name="jschart.animation" value="false"/>
+  <extendedProperties name="theme.withoutaxes" value=""/>
+  <emptyMessage>
+   <caption value="Este diagrama no contiene datos."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title visible="true">
+    <caption value="Attribute">
+     <font size="10.0"/>
+     <color _body=",255,128,128,128"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" primaryAxis="true">
+    <title visible="true">
+     <caption value="Z Score">
+      <font size="9.0"/>
+      <color _body=",255,128,128,128"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="">
+      <grouping/>
+     </query>
+     <series _type="BarSeries" stacked="false" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&amp;quot;ZScore&amp;quot;]">
+       <grouping/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="row[&amp;quot;Column&amp;quot;].split(&amp;quot;.&amp;quot;)[2].split(&amp;quot;[&amp;quot;)[1].split(&amp;quot;]&amp;quot;)[0] + &amp;#039;: &amp;#039; + row[&amp;quot;Value&amp;quot;] + &amp;#039; | Z-Score: &amp;#039; + row[&amp;quot;ZScore&amp;quot;]" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="LineSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="AreaSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="PieSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <title>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </title>
+     </series>
+     <series _type="DialSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dial>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+       <majorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </majorGrid>
+       <minorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </minorGrid>
+       <label>
+        <background _nil="1"/>
+        <outline>
+         <color _nil="1"/>
+        </outline>
+       </label>
+      </dial>
+      <needle>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+      </needle>
+     </series>
+     <series _type="ScatterSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="StockSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="BubbleSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <accLineAttributes>
+       <color _nil="1"/>
+      </accLineAttributes>
+     </series>
+     <series _type="DifferenceSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <negativeMarkers>
+       <outline/>
+      </negativeMarkers>
+      <negativeLineAttributes>
+       <color _nil="1"/>
+      </negativeLineAttributes>
+     </series>
+     <series _type="GanttSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <connectionLine>
+       <color _nil="1"/>
+      </connectionLine>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+      <decorationLabel>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </decorationLabel>
+     </series>
+     <series _type="RadarSeries" seriesIdentifier="">
+      <label>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </label>
+      <dataPoint/>
+      <marker>
+       <outline/>
+      </marker>
+      <lineAttributes/>
+      <webLineAttributes/>
+      <webLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </webLabel>
+      <catLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </catLabel>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _body=",255,192,192,192"/>
+    </lineAttributes>
+    <label>
+     <caption>
+      <font size="8.0"/>
+      <color _body=",255,145,145,145"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <markerLines>
+     <lineAttributes style="2" visible="true">
+      <color _body=",255,145,145,145"/>
+     </lineAttributes>
+     <value _type="NumberDataElement" value="0.0"/>
+     <label visible="false">
+      <caption>
+       <font>
+        <alignment/>
+       </font>
+      </caption>
+      <outline/>
+      <insets/>
+     </label>
+    </markerLines>
+    <majorGrid>
+     <lineAttributes visible="true">
+      <color _body=",255,242,242,242"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale autoExpand="true">
+     <min _type="NumberDataElement" value="-50.0"/>
+     <max _type="NumberDataElement" value="225.0"/>
+    </scale>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <ancillaryAxes>
+    <title>
+     <caption value="Z-Axis Title"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _type="NumberDataElement" value="0.0"/>
+    </origin>
+   </ancillaryAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&amp;quot;Value&amp;quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping _nil="1"/>
+   </seriesDefinitions>
+   <lineAttributes visible="true">
+    <color _body=",255,192,192,192"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font name="Lato" size="9.0"/>
+     <color _body=",255,145,145,145"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="true">
+     <color _body=",255,242,242,242"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <scale tickBetweenCategories="true"/>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>]]></xml-property>
+        </report-item-theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">11in</property>
+            <property name="width">788px</property>
+            <property name="headerHeight">0.01in</property>
+            <property name="footerHeight">0.01in</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="397">
+            <property name="fontFamily">"Lato"</property>
+            <property name="fontSize">9pt</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Value</property>
+                    <text-property name="displayName">Value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Value"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Column</property>
+                    <text-property name="displayName">Column</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Column"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">In group</property>
+                    <text-property name="displayName">In group</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["In group"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Index</property>
+                    <text-property name="displayName">Index</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Index"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">ZScore</property>
+                    <text-property name="displayName">ZScore</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ZScore"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <property name="multiViews">
+                <multi-views id="442">
+                    <property name="index">0</property>
+                    <property name="views">
+                        <extended-item extensionName="Chart" id="443">
+                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <cursor type="0"/>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,211.5,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <cursor type="0"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value="beforeDrawDataPoint: function(point, pointOptions, chart, seriesIndex, pointIndex)&#13;&#10;{&#13;&#10;    if ((point.y &gt; -1.96) &amp;&amp; (point.y &lt; 1.96))&#13;&#10;        pointOptions.color = &#039;#666666&#039;;&#13;&#10;    else if (point.y &lt; -1.96)&#13;&#10;        pointOptions.color = &#039;#d7b5d8&#039;;&#13;&#10;    &#13;&#10;},"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="A, B, C"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Z Score">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;ZScore&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="row[&quot;Column&quot;].split(&quot;.&quot;)[2].split(&quot;[&quot;)[1].split(&quot;]&quot;)[0] + &#039;: &#039; + row[&quot;Value&quot;] + &#039; | Z-Score: &#039; + row[&quot;ZScore&quot;]" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Value&quot;] + &#039; | &#039; +  row[&quot;Column&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <markerLines>
+    <lineAttributes style="1" visible="true">
+     <color _body=",255,149,244,132"/>
+    </lineAttributes>
+    <value _type="NumberDataElement" value="7.5"/>
+    <label visible="false">
+     <caption>
+      <font>
+       <alignment/>
+      </font>
+     </caption>
+     <outline/>
+     <insets/>
+    </label>
+    <cursor type="0"/>
+   </markerLines>
+   <markerLines>
+    <lineAttributes style="1" visible="true">
+     <color _body=",255,240,206,241"/>
+    </lineAttributes>
+    <value _type="NumberDataElement" value="21.5"/>
+    <label visible="false">
+     <caption>
+      <font>
+       <alignment/>
+      </font>
+     </caption>
+     <outline/>
+     <insets/>
+    </label>
+   </markerLines>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                            <property name="outputFormat">JS</property>
+                            <property name="inheritColumns">false</property>
+                            <property name="height">372pt</property>
+                            <property name="width">552pt</property>
+                            <property name="theme">BDA Innovate Profile</property>
+                        </extended-item>
+                    </property>
+                </multi-views>
+            </property>
+            <property name="linkedDataModel">BDA Profile Data Model</property>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["ZScore"]</expression>
+                    <property name="direction">desc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <column id="435"/>
+            <column id="436"/>
+            <column id="437"/>
+            <column id="439"/>
+            <column id="440"/>
+            <column id="441"/>
+            <header>
+                <row id="398">
+                    <property name="backgroundColor">#E1E1E1</property>
+                    <property name="color">#000000</property>
+                    <property name="textAlign">left</property>
+                    <cell id="399">
+                        <label id="402">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <text-property name="text">Category</text-property>
+                        </label>
+                        <text id="1420">
+                            <property name="fontFamily">monospace</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<div id="here"></div>
+]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="401">
+                        <label id="400">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingBottom">2pt</property>
+                            <text-property name="text">Attribute</text-property>
+                        </label>
+                    </cell>
+                    <cell id="403">
+                        <label id="404">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Customers</text-property>
+                        </label>
+                    </cell>
+                    <cell id="406">
+                        <label id="407">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Index</text-property>
+                        </label>
+                    </cell>
+                    <cell id="408">
+                        <label id="409">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Z Score</text-property>
+                        </label>
+                    </cell>
+                    <cell id="410">
+                        <label id="411">
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Significant</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="412">
+                    <cell id="413">
+                        <data id="416">
+                            <property name="paddingLeft">2pt</property>
+                            <property name="resultSetColumn">Column</property>
+                        </data>
+                    </cell>
+                    <cell id="415">
+                        <data id="414">
+                            <property name="resultSetColumn">Value</property>
+                        </data>
+                    </cell>
+                    <cell id="417">
+                        <data id="418">
+                            <property name="paddingRight">3pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">In group</property>
+                        </data>
+                    </cell>
+                    <cell id="421">
+                        <data id="422">
+                            <property name="paddingRight">3pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Index</property>
+                        </data>
+                    </cell>
+                    <cell id="423">
+                        <data id="424">
+                            <property name="paddingRight">3pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">ZScore</property>
+                        </data>
+                    </cell>
+                    <cell id="425">
+                        <property name="verticalAlign">middle</property>
+                        <label id="445">
+                            <property name="fontFamily">"Wingdings"</property>
+                            <property name="textAlign">center</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">if ( (row["ZScore"] > -2) &amp;&amp; (row["ZScore"] &lt; 2) ) true;&#13;
+else false;</expression>
+                                </structure>
+                            </list-property>
+                            <text-property name="text">«</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="427">
+                    <cell id="428"/>
+                    <cell id="429"/>
+                    <cell id="430"/>
+                    <cell id="432"/>
+                    <cell id="433"/>
+                    <cell id="434"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">ot_logo.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAZAAAAAeCAYAAAACckjQAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMA
+                ABYlAAAWJQFJUiTwAAAAB3RJTUUH4QYVCw8UaFwX2QAAHE9JREFUeNrtnXl8FGWax79PdToHoNyXYqqT
+                DiCijIo76owjOo7jeoyOyhEBEUXBUcEkjqOOs2u8Rscdk3CoO+AFSjgdHVfG+x7HE89VXKVJdwgoAgpI
+                IEd3vfvH+3bS3alOOgessP37fOqTdNVbbz311lvP/bwlJEFBQQE0RFDigBKQ6BHV1EaAtaEQaSTHSUBN
+                bl6n+1lbXfUUcKbLIdkHh+VU4LmEfQ3ATcCdHe3U5/PhUcmP10fCZHkyUMC6UDDumN+2ASGQsD+NNNJI
+                Dsttpz83D9UYRokCERBBoQBluJUFCArBn+vDn5ubHskkWJebixLV6S2NthEMBunVry+9+vVFmRkb/R0r
+                GATw+/1Nv4f6fPuoHE4jjf9bZMT+OPTgg2n0eMEwLEGxNuhuYRTk5mnrRASwKLDttDXighylCEuz7SYI
+                SkVQHg/exkbqLC3DvSJxTKxROfoBZWRgRSL727A47dyfMlavXq3np8+Ho5p/x0IhWOFw0++IA4ggpAV1
+                Gml0SIDk5+fTGMOoREgqPIxLhYLcXJRI00vZhhA5EDgGyAP6mGvXA1uAtcD7QF0b1lJfwJPgvmkAtprf
+                w4HRwCDz+xvgQ+C/OzA2NvAj4CCgh7nWLmCDobW6lXMF6Ad4/mf9+mS05hpaDwZygFqgCnjVb9u7qqur
+                U6VzUJLnWuOyfxhwuDmnu9m3E1gPvAtsSmjfP2G8o/cRBjYnuW4fF8s20/Rdb34PSDJmPc086Wb6+NoI
+                FQF6mWMC7Dby+BtDX0/g25TNblEoJXEXFlGotPxII42OCRDLcZocVEqRki94bXW1sURUsxDJzWNtdVVs
+                syHA74CTjQA4wDAUC4gYprLDMJhVwJ/9tv29eL2sXbs2tp8DgGUJDDMTeAW4C7gROMEwsBxzvM4wlg+B
+                3/vtvM8DoSoZPXq0Wr16Nf7cXESspvsGCISqfgr8FhhpmFZ3M04CNBoh8h3wJvDv+T5fSFS8+yMQqvIC
+                jxghEYUXeAf4N+B6dHikj2GWHsOUdwI1gVBoNrAoxWf4UsLvHsB9wJ1+O08Zek4BrjECpJcZn+izDxvh
+                tdWMZanftjeZeMBw4D9dBEI34MKC3LzXE571vwPnJbSPCrML/LZvUyAU/J2hxW0uXgqcY84/EDjCb+d9
+                FwhViVEOrjJz5e9AKXClESYVwM9TnfRDgkHW2zZ+vx/HccBRWA2ZRLwNaY6QRhrtRb5t47d9TVtBQUE7
+                z/fFnT9q4MDooUmGeYSNxtjWFgGCwI/9to3fzmPIkCHRvvoYTTnxnM+NVRBppV/HWAxn+m0fI/uPjKM/
+                Ly+PAtsHOoC7zbRPhd7NwAl5eXlN956v+8kyVpUbrWtTGI9thjnG4qkUadoE+P2aDg/wZyP4Uh3/L4Ex
+                Pp8Pv50HsDhJ26+A7Bj6xpgxdmv7m7y8vKiFqNqx9fPbPvy5eeTn+gCKgXHm3v4b+BPwC2OJxLtYfU3P
+                ollwDBmCORe/T/db4PORn+tj2EHDmo6lkUYaKVrzo0ePJj6AqBI1/7aREH+szc4GuAh40LhoPKnSY1xH
+                bwdCoTGgyPJkRIVIMgfDcONmstqg8BCgIhAKHrM9a3vcwaqqKmttKHgXcJ1xhyRGVB3c/fP9gNeqqqpG
+                Ro2QmHi3SkKrP4Xx6AlMBTrC0X4PrAuEggLca7T9DJd2jguNFlAALAgGg8cEQlUAU4yAdnOdVcbQe5UZ
+                40SsAlZWVVUBPNb+21EEqqtYVx3ECMKGXv36Rq3LXsZS/Ljd3ToOGLeV8qQD6Gmk0SEX1nebv0Ni3h+l
+                PO3vJBwm4smIceGE/gWYY1xMLTmCdkM0GMbWO0m3zwVCwRF+27cuy5ORKim7jBso0zCXFoopcGVNTc1M
+                0y6KcUCRS/vvgQ+Aj4xr6Dgg31gYscJp1bpgcKjf9jXGDWZyNJq+o64aKwmtRxqLrDVsjnGRPQv8zW/7
+                VCAUvBKYTjR2H9/+U+PWG4COwxQkCLWhRpheZqyhc4G3XOg817iddgFjXWj7BphrrnmVETqbzfPp6TIv
+                ak1f0ZhHotDeDTSYwPg24J/GNfpee+dsoLq6KXW3qqqKYQcN6/hbVLzsPURGu8z0WmADot7AicynYuJb
+                LdrMWnI8HuuvCDXU153GPRd92+VveTL6dNTnW23ZqxeBRZQVfrzPc7WSZSeBvGx+lVI2/ub/U3qKl5yA
+                eF4HNlE2ftCevdbSU8GqRNSnbK4/g0em7NqjFogV944q6sJ17e7ki5qaGOER9KLz+Q9MwuzuBa4AJhoG
+                d69xhyQiE5jfDjLeMkxvPDANHYOod2l3AXBYzO8BxjXidWF+M/y2b4zfzpsFXAIcYVxCiZq7jY6bkEIi
+                z0bgDuBiYAaw0AiTRPQCBrbRV8SM40Rz39f6bd+WQCg4CPgPF/vwC9P2ZHPPk4xQfNSF8rHmmKAD7H9I
+                QsM8dDzCzcKpNEIN4BOg0Iz/H13ah81YnG9oPNtlXJ6LERa/B1YAtwMPtTA5lWqRVeU4Trx8F0EcvSM7
+                sj1F2d8uy7w7wjCQi7E8/6Rk+U0t2njkIkQGgRxDZuZpe5eziYD0BTkSrGtAPqR42UIuXNStS7qfOSeT
+                kuXbKV4+b6/eluLyGBl5KSeVetifULyshKIlZyR5ppch9AMZQ7/Mn+5xCyQh/svGjRs7PBVNFssI3Ave
+                dgPT/Lbvv0DXJq4LBgFWAi8A96PjHLE4NhAKnuy3fS+3cfnXgMlak2rCXw0DujxBc84yDPR9w4CPAY51
+                0Ybv8tu+JdGffjuPQKgqAtwKjAJ+lXDONOAOJW1mol5nGHYUy432P8Wlbbc2XxU9doD26xueWUJzIkGs
+                sLkCeDFh/zYzRqegEx5iUYgOrNcZQX8CkDhxs4zFkog1wC0xv19NoMVN4HwG/CPf9sVIvTghEPt83xk2
+                ZAh1lvWlW8baly7ZgIlzOxBsNu4+3rSpCxiXup3yCUbQlgpX+AbgzfkRFjch8hOglFmVLzBn4hsxJz2K
+                UucCGwjvfn4PM9Y/UT7++uYdpcL0YX3obh0NchHIBQhT6J99OJc8MIYHp+3snHrax5dEkdxzuHxRf20Z
+                K4WSrxAZwlGHnskrPLl/CI+FByFyN3juQSeTJM7BBxFOQfEZ22vf3OMCpIUU6OjcdJp03XFJmtwXFR4u
+                eALty77VhYGOA16m9UqvGxKYS+z+yS6T+OfGtdKAzhpKRK3f77+bcCTu7TNpyvXoDKlEATIgEAoen2/b
+                rT20DcAbSaynsS4Co60Hkuz4WS77njbj2AS/bYMSAtXBOuBJI2BicTYw0wiQ7cBt5jnZqeif6Gw1N3hT
+                mo/tsHx/eChV3Msm4Dmm/+Utuvdeg3AQnowL4uZA+QX/SMHS3HM0zmcr8DzwPEVLH0XkMZCj6dVjgbEW
+                O2HgZOTv9VvKybwEkUyUehtRr4FcC3K5md/7PiS7dV9rReEz6GzXvQIrQXp1RU8nJWlxVxua9CsuDMcy
+                Fk1UQ3XDG+jMJjfsAF532X+4YVYWOnuoBSMLBAL/CISCb8Zua0OhN9F+91uTMMVj2hilDUZoJWInOi7S
+                aQRCwREulhzAv6BTj5u2QCj0ZqA6+KYZw7NdzulNfNr0m8YSaYvWOYnC6v815s/YAcoIDeX7wdJZUfgM
+                Ss00nKqQq5f8uJPcbi8LkFIB6zLDURYRiTxi6DiNoqX2fjGXFMN/SORkxMdYO+EEVk39uN3gN7m5uW35
+                CL5BF9IlBtV7Gp9+smDQGmCX23IqjvJQtb7qAxeX2mAjPKJZR4nIBn7a/rHE30abxiSCsCtL2PJxT14Y
+                2EFN91B0am8Ud6NTZ09N0r6GaDwojVh4zCv2dbydtuRIvJ4PUNRSPr5H/LE5mXgGXoowA2QYEpc2HZ05
+                Lc/rDMo/f4iSEb8DGY7Hmo6uXTKqYamHIw+9BJEpCIejJBvUpyhVRkVhZVO7oqUTEesGROWbe76SkuXN
+                aelO/WAqLvy6XX2mgqtHnIrgR1FHfbiS+yZto2TZe4gcg7Kmo2vFElxCS36NeB7HUb+lYsLdFC05H8u6
+                BiWjEFWH4hki9TcwZ0q8h6OzdBctuwNLrgdeoGy8+7tUtPRQLFltPADXoZiJ4D6mLSdGPWUTWs6XWZUF
+                eDzXIvJLUIOBHShewYncyuyJnzS3WzqSDPkDcApIL5SqQViJs/t2KqZuj9HwpR0ek9aUjaZz3bKfvk6h
+                h13GTZKITHQGVDJ8C4QRi8TNslT0uJvrR8DlheycO7AtBu3sBUbVu72uoDZwcMLvCPA4yVcNeLSrrKn9
+                BsX390aMpavUspTOmTknk4xBr2LJPYiMchUeusPaLndrKXnC/GhmbFdXDuCoEW9gWfMROQGkF0I2IqOx
+                rMUULYspDpVeCIeDtB7Da1efKXlBZpgxeYz7Jm0zWuQDmiR1CdP/kvy9sOQIipfdhuVZCXI8QneQvohM
+                wpP9BsX39+5SuiON88x78gtKlh2b5H5mgnTDYT4OmYiMAum4snD1kl/hyfgEkemADyQLpD8i47A871G8
+                5NdacFWeTIb1AUghSH/Ai0geyLVIt9WxY2HFygzVGUVYxWnZiWgxkUQRV3xoGLqVpOdIG4xbGpVD7BZG
+                geOBlsHk2H6T1Y58j45LvNvObcMPRtNtiY3oDKb23M8nxKc7g671uKIV4Xs98LO01CgVrlzYh6Jl58CB
+                r4H0RakyygtTC5RnDJyGcByKjaDOoLHhQOp39wU1GdRuM4X/AxX+ZZeTLuqTpmcdzWCyPGNA/KDmoSLH
+                sO37A4iEB+KoO40CeTNFD+vU7IoJ91I2XnDUbPOm3UPZeGnaotZHe/psC1ctGdzkhlWRB5oP1C0BtRuR
+                QfTo+etWGNg5IFfgqCvZVTeA3Y29cZypoOoRDoEDmjO7uoLuuZM3gFoR1fdbKhCPHoCSC1EqTKRxXptj
+                Gt0cZ4Tr9a5cnIvHqkTIRqkXCUd+gqrJoXFnf3DGIfIajrXV3N9NgBfFy6iGI3Q7xw9OCYonKa/Z1jRN
+                JYb3C3pJ7GBMdkoH8JWLK8dfXV1t+W2fE2uwiFI4zXGXA9BrLyVit7EikplHg4HM6urq3UmOH+ayb4e5
+                7WTnhIDTaD2DpBGdJpwdo/HX/QA4144kls6T6BTk+jaswKjQjVpp2xKE9TXoGFJreAg4Hvf1svZfiNxI
+                yfIbXY5swnHOo6Lw8dT74gTDzG+ibMLTMUcWU7L0KJBrcJyPqZj0UZffR8TZgcej39KReT15hW8pn7AC
+                nTYdi53ADRQvOx+Roajs44FnUneXdWGfGdY0RDJAraPii1ea9ldM3U7x8scQJoM1A5316aZOCk7Dscye
+                /EXM3oUULx2NyEyQMej0+66jWzlliGciyDiKHrmmSbACeLwXInIAqKVa2HQSmd6Z2pOj1lKz5nRWlDbG
+                8KyV8eMiA8zcu4GyydF1BNcB5S2MJOU4LdT5djvd8+NiZR8lcRmdFT92OtUyUF1NQKdh2kmY/Wbj2kpm
+                LfyE1tNdT3bZFzBWTQT3RQdzDSOuSdwKfL4av23XoIPLlwFOXl5eTUFubo3f9m3ZyyxLJRF+boH6vug4
+                k9u9RLexwL8aS6oGndn2fcJYXpwCXX70elxpaAzEkgUULb+dqQ9npfhkdxkXTEvFKbqCqWXtmWwbj2UU
+                J6VorNuRgrCrMv6M/l0njNvR57hxFhbR4PmDUKoSLCpjkahTmFVZkOR6XycIj+j+d83f/l1Od/kFq0G9
+                DnixsmYkuK+iGZEVXWRV6hojh9kxwiMZjJtVSrhyYZ9W5Xagujq2fsB1vrZJWyTuef0d99TYP5E8la4b
+                8BuX/fW4p73GwjbWwsMuxy5JYtW8S3NA+3Vapiv2QC/FsjDxxLXaOvOiK7CvAn5XVVV1P3Cz3/btbQuk
+                hVD12773A6Fgrct9n4WO0XyfcC9RDEKnNofNfd1IfCZVX3QxYap5/WcY03zO/xsxEVcHAkx9OIse1mC8
+                mWcichMWv6d3zjCSp7rHvvBPgFyKJTdTtGQDkcjrOBEvmdlnIeZdcSJv75H7cDgcC1BSw/wZ4Ti3XPHw
+                X4J1DnC0Cej2AMkxzLsDBXtd0Och558OkovCQZwW7yxla16l+LAAIn4yPNPRi7umit3udHTRWDiqHEt+
+                BmoG40r/yIrSRoqWjgEZieItyid0zTNW6OIqS33WZtuyz26hZMRulFxLZvZXFC97HuFJGmv/ytxLtrTK
+                gATF8OHD201dDP5qmFAihgdCwScDoWBiTCLDuFZ+5XLOdmBJCgTMp2Ux4Gh0hbRbzcHTRkuP0LyeU+K4
+                3I6ueUiEF114d5X53Q/t998QCAV/sQfZUzgJndFxk0AwGJX+z7pYJznoFFw3DfgAdC1AphHmx6NX+V1g
+                2lvoepoTXc7diq76x+V6V6GXY2nhJHEzstHFjBZAIBS09nmB8vDUeuZNCVJeeA+OGmfcXGOTasFxL3Hh
+                KpRzB8hgLM8qvJk7yMrZishCkByUWuS6NEqnUSpYco750RyvKX7ET8lh7yGeZxD5DSLH6gCr5HT4Ul3V
+                p5LLDfOywLOekuUqfjvMQZrc6lOZOSezU0PUlWOx4bG/gVoHMpiDDx1nLEtjfTgVXc9F1O4U5oCibMJd
+                1H43GMUZoNah5Ha83UMUL53VQoAEgsG4AENjXerLWpsVW2PxPe51EmKYXSgQCs4NVAevNT619cb6cHPH
+                LAGqUiDDiw56rzDaxQPoyme3xf0+Az4qsH3RFV/fQdc3JOJgY/3cZBjqUcAEY0W5adW7krjvugpbkkju
+                J2lecXh2jLXnlvZ8KjowfjFwtBG6Jeg6Gre4xrPGCvQnMaUdoMwIVLfg8FDzPBIzRxqSzI+zgci6UFAB
+                a12UjX0X2+reaiq08og/xbO+RlGLUqtB7TLbO6BmULPy4j1CZ9GhU4jWXqnwgiYXkWSu0nNGvY5yLsZp
+                PJKd4X6s/ywT1bRcTeroqj5nLToE4fR2+Ev6k9H//A6PT1ePxYoVDsoExsWaaZIBzkWxntrtj3XZcxWp
+                Me7JUSmfM39GmIoJL1JeOIu6xqEo1iDWbG0hNWv/mvs1NpDj9WK+mYff54tb6sENQ/PycJyY5WdVk6Z8
+                L7ra261Ir3+M9p7IQGLxBu2vJxiL+6J+sVgAhJxmefUNusJ6iYt7pqexYkrb6LMOuM5v+zarPfdVu7fR
+                y6W0NmZ1xo1VFQgFbyMa9GvJ1B9M4Xr3G0vNg8taUwZv0byu1Z/QS7wkpjJfgC4SXRCjJGxHx1kObuX6
+                te63uI+iV84JTbnu4UjbXwubtfhoxJqNUs/TWD+dnc5XPDy1fo/SqBfiu8e8zCuaLJyDzh0JMhylvqZm
+                5UmsWBEfOC1e5m39OamW1mSn+zTwZF+m56jaxc5ILvMnbk3atmT5as34PZen6Nlgj9Ed52epfZCePW5B
+                5DgyrVsBL6LmxbsPUxjTVq005wXEGgFyLTPnPMTcWQ0tBGPivcTivknbKF72KTAaS0YZBb1ZgGzcuJFR
+                AwdSm53TJA0KfD569u3r+lnQAjtPf4wHncclyiLQ/HGhLeiFEueRvOCsNTxtzg+n6KNMVVNdCizy2z6n
+                e12cJfcMOrvoz7RcJbZN3RL4g9/2Ve5hFvSEEXQDUmmcn+u7c111sHc7/b2x43HbUNuu/TIUuhH3osra
+                BIH2olEcbnJxjd5irLxoemgVOlZ2Wap+0X0SJ5V6OKJgEJ6MMxD5o3mv/sncyWvafuHVbpQKI3IqmdlV
+                9AFKlmPWeNoK6iNE/SdlhSs75a66Mq83WVlHgjUFxYXaDaQ+JNzY/GwdqxYPOpB88HnnMv0XfyerewZe
+                72hgFkp+kuQC3xod4ESueHggmdnZCMdRXrisE302Q9d1TDNurIdaFR4AKvJnxFOJcCJFSw+lovDzdg9Z
+                V9CdiAen7aR4+QKtMMs0vYrz9wtSH1P5sckMS46IM4cMma7jQINe5eolV+Ns/hDPgTlIzjkgt1Fy/nLe
+                //w6jjrsSW3tOrMJRz4ioy4DepyDXhsPUJ/GubCi+HjTJgKhoNaTRFAKtm3ZSoHto8C28ef69Gb7mmpG
+                BHAsK/ErhKBXfp2Cjg98k+JQbjbtp+KeHeWGd4ygagtzgKv9tu9bJc2L540ePZoC23aMVn4eLRcbbA2r
+                0KvH3pOgdAjumWE5sSr1kCFDMB9a8tL8idlE11zs2ExCZ5AlQ1azxQrooPeF6A9ZpYI6dOznkgI7L/Rl
+                KHSSEQhu+K1Lv3cQv2hiFAPR64dFBf1O0/aJVmjpESMM8fl8P3yBodN4m33vRx8WxptZowvO6IfiC5Sa
+                mFpn3waIJoYotb15nSERhH6InALWCkqWTUqdPq5rERvIytkK1ovARYgSFI+ybefPmDu5OftubuE6lHoe
+                xIPlWUmP3rvwZu4AeRklDqJuTqICmCQMGUl2t6+xrCAiS7iqcniH+4xFt56/QjgIVISwU9Zm+9odK1DK
+                rLIpl3foGXcF3W5oaJwLysQG1SLKL/0u5TFFlnJVZeuB6zkT1wLTtFLCcXg8b+MdVI/VbZuOq9EHx1nF
+                sMGZoLyIjEU8r+PN3IEc+C1iPWTWGHuKssKXWriwYhHNzsk/JB+xVHOBoQhKKf3RJAsiSFs1I18bH/ki
+                9BpZZ6HXi8pF10/UG0HxAfqLey+h60jC7Rj63YYZ3W988aejM7MaDbN9wQiHz/0+3+5YX5s/N5dtW7aC
+                CH6fzwFeCgSD7xsfcCG6IK4AHWSOGMvqc8MkV5n/dwBkd+9O3c6mouCwYcSxy7J40N/22AFQcEgeyqOi
+                tLyLXvgxNsCdCbzit33m+/TBqJZ/ooldHGcYcwbN32r/e6wg8/t8jYFgcDF6GfSfGQH5Y3RsKMuM/0b0
+                B5meNfe0yW/76s1ninsBiS+EhUvgPN+2EZHGQDB4Ke6L8HkAO9+2P1+nV8qtMgrGKDM3bCN0G42wfAdo
+                QLQw9AD5dh6OqM7WKe096Jf1OxQfg3ocNj5ARUkKmXqlQsbAp/SzUmdQHlMHcsU93fH0GUqGdSMiY1Ey
+                Ef3VyA4RiF5/rhrFS4haSPkE9++BhGsn4u1+J4ozEQ5EsQbUvZQXPsisyp/i8bSMa82e8DpFS3+DWL9F
+                1BBgLQ63MW/i/3S4zziBaM0wTPUB5hauS8mnX7z0FhR/QWQK0/9yQ4eGrbN0u+GeSdUULw8iKp/GyOyk
+                7WLHFHUISBBRdzPviy/avEbZhMXMWrwGT8b1CCeh6Kn5rTxHY90fmTclaNxZ/8qQsZchXEpTaYV8jlKP
+                ULttXms+9D2qn7VyTZWC26K3YXSJS44/ZzTzLTQXvyX2rTpIr7TiXlEp3m+qrhlppxunve07ck/SQRdT
+                V9z7/uHG6giKFv8Iy/shqMcpm3BeknjF2Yj1N1CVlE2YRBr7NkqWngnWUyj1NOUTzthXyM7Yi9dSe4Ep
+                qC7sv7N9qR9Y+47ck/qB3vv+jXBkO5leUJxJyVL94azNDRvot8Whsd8gvFmnIybT0Yncnx6w/QGWtoYc
+                KvYlqvelFJdULJA00tg/ULz8ToTrWpG5ERyuo2LC3enB2tefdeWJSMarKPUZ5RNG7lNiL/300kjjB4jy
+                8dcTUaeh1EoU61GqAVS9LjpTD+CER6eFx34C8dwANIJzW3ow9hz6oIsOVcL2LLoaPI000kgjjb2IjH2I
+                VoWuYI7NcMjUkjvtQ08jjTTS2Nv4XzPZwVjoEI7PAAAAAElFTkSuQmCC
+</property>
+        </structure>
+    </list-property>
+</report>

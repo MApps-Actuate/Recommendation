@@ -1,0 +1,45 @@
+.actuate-dashboard-view-outerwrapper {
+	padding : 1px !important;
+	background: #E9E9E9;
+}
+.actuate-dashboard-tab-panel {
+   	border: 0px !important;
+}
+.actuate-dashboard-gadget-item {
+    border-width: 1px !important;
+}    
+.actuate-dashboard-ux-tab-inline-toolbar-wrap {
+    display: none;
+} 
+.actuate-dashboard-tab-panel-tool-plus-bis {
+    background: url(../images/newtab.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none !important;
+}    
+.actuate-dashboard-tab-panel-tool-plus {
+	display : none;
+}
+.actuate-widget-border-layout-ct {
+    background: transparent;
+}
+.dashboardOverlayHeader {
+    display: none !important;
+}
+.actuate-iv-overlay {
+	display : none !important
+}
+.actuate-tab-strip-active span.actuate-tab-strip-text {
+    border-bottom: 2px solid #37BEA1;
+}
+.actuate-dashboard-gadget-tab-content {
+    border-top: 0px solid #e1e1e1 !important;
+}
+ul.actuate-dashboard-tab-strip-top {
+    border-bottom: 1px solid #e1e1e1;
+}
+.actuate-widget-panel-header {
+    border-bottom: medium solid rgb(172, 184, 196) !important;
+	margin-bottom: 10px !important	    
+}
+.actuate-dashboard-gadget-item {
+    background: white;
+}

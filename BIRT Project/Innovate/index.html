@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+	
+    <title>Analytics App</title>
+
+	<link href="css/loading-page.css" rel="stylesheet">
+  </head>
+<!-- 
+*******************************************************************
+*   H T M L
+*******************************************************************
+-->  
+  <body>
+  	<div id="acContainer" style="visibility:hidden"></div>
+	<div id="loader-wrapper">
+	  <div id="loader"></div>
+	  <div id="loading" class="toTranslate">Loading...</div>
+	</div>
+	
+<!-- 
+*******************************************************************
+*   S C R I P T
+*******************************************************************
+-->
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Message Resources -->
+    <script src="js/messageResource.min.js"></script>
+    <!-- Custom Theme Scripts -->
+	<script src='js/all-contants.js'></script>
+	<script src='js/translation.js'></script>	
+	<script src='../../jsapi'></script>
+	<script>
+	var host = location.host;
+	var parameters = location.pathname.split("/");
+	var appName = parameters[3].split('%20').join(' ');
+	var fileName = "/Applications/" + appName  + "/Report Designs/getUserName.rptdesign";          
+	
+	
+	actuate.load('viewer');
+	var reqOps = new actuate.RequestOptions( );
+	reqOps.setRepositoryType('Enterprise');
+	reqOps.setVolume(acVolume);
+	reqOps.setCustomParameters({});
+	actuate.initialize( 'http://' + host + '/iportal/',reqOps==undefined?null:reqOps, null, null, myInit );	
+	
+	function myInit(){
+		var options = new actuate.viewer.UIOptions( );
+		options.enableToolBar(false);
+		viewer = new actuate.Viewer( 'acContainer' );
+		viewer.setReportDesign(fileName);
+		viewer.setSize(1,1);
+		viewer.setUIOptions( options );
+		viewer.submit();
+	};
+
+	function setActUserName(a) {
+		sessionStorage.actUserName = a;
+		document.location.href="main.html";
+	};
+	</script>	
+  </body>
+</html>

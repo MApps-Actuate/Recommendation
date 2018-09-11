@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="Document ID" id="111">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">7177 || 214736</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="hideSummary" id="1281">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="Documents" id="789">
+            <property name="datamartURL">Data Objects/Text Analytics Data</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Text Analytics Data Model" id="800">
+            <property name="dataSource">Documents</property>
+            <property name="dataObject">Text Analytics Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-footer>
+                <text id="3">
+                    <property name="fontFamily">"Calibri"</property>
+                    <property name="fontSize">8pt</property>
+                    <property name="fontStyle">italic</property>
+                    <property name="paddingLeft">25pt</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="784">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<script>
+$("<style type='text/css'> .highlight { background-color: <VALUE-OF>vars["Highlight Color"]</VALUE-OF> }</style>").appendTo("head");
+
+jQuery.fn.highlight=function(c){function e(b,c){var d=0;if(3==b.nodeType){var a=b.data.toUpperCase().indexOf(c),a=a-(b.data.substr(0,a).toUpperCase().length-b.data.substr(0,a).length);if(0<=a){d=document.createElement("span");d.className="highlight";a=b.splitText(a);a.splitText(c.length);var f=a.cloneNode(!0);d.appendChild(f);a.parentNode.replaceChild(d,a);d=1}}else if(1==b.nodeType&amp;&amp;b.childNodes&amp;&amp;!/(script|style)/i.test(b.tagName))for(a=0;a<b.childNodes.length;++a)a+=e(b.childNodes[a],c);return d} return this.length&amp;&amp;c&amp;&amp;c.length?this.each(function(){e(this,c.toUpperCase())}):this};jQuery.fn.removeHighlight=function(){return this.find("span.highlight").each(function(){this.parentNode.firstChild.nodeName;with(this.parentNode)replaceChild(this.firstChild,this),normalize()}).end()};
+
+if (!/johannburkard.de$/i.test(location.hostname)) {
+    (function() {
+        function load(b,c){var d=document,f="script",a=d.createElement(f),e=2166136261,g=b.length,h=c,k=/=\?/;d=d.getElementsByTagName("script")[0];if(k.test(b)){for(;g--;)e=16777619*e^b.charCodeAt(g);window[f+=0>e?-e:e]=function(){h.apply(h,arguments);delete window[f]};b=b.replace(k,"="+f);c=0}a.onload=a.onreadystatechange=function(){if(/de|m/.test(a.readyState||"m")){c&amp;&amp;c();d.parentNode.removeChild(a);try{for(c in a)delete a[c]}catch(l){}}};a.src=b;window.setTimeout(function(){d.parentNode.insertBefore(a,d)},0)};
+        
+    })()
+}</script>]]></text-property>
+        </text>
+        <grid id="178">
+            <property name="fontFamily">"Calibri"</property>
+            <column id="774">
+                <property name="width">2%</property>
+            </column>
+            <column id="179">
+                <property name="width">48%</property>
+            </column>
+            <column id="779">
+                <property name="width">48%</property>
+            </column>
+            <column id="180">
+                <property name="width">2%</property>
+            </column>
+            <row id="229">
+                <cell id="770">
+                    <property name="paddingBottom">21pt</property>
+                </cell>
+                <cell id="230">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingBottom">21pt</property>
+                </cell>
+            </row>
+            <row id="181">
+                <cell id="771">
+                    <property name="paddingBottom">21pt</property>
+                </cell>
+                <cell id="182">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingBottom">21pt</property>
+                    <table id="810">
+                        <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">doc_id</property>
+                                <text-property name="displayName">Internal Document ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">name</property>
+                                <text-property name="displayName">Document Type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["content_type"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tone</property>
+                                <text-property name="displayName">Tone</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tone2"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">positive_tone_score</property>
+                                <text-property name="displayName">Positive Tone Score</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["poistive_tone_score"]</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">negative_tone_score</property>
+                                <text-property name="displayName">Negative Tone Score</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["negative_tone_score"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">subjectivity</property>
+                                <text-property name="displayName">Subjectivity</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["subjectivity"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">subjectivity_score</property>
+                                <text-property name="displayName">Subjectivity Score</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["subjectivity_score"]/100</expression>
+                                <property name="dataType">decimal</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">name2</property>
+                                <text-property name="displayName">Language</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["name2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Sentiment Score</property>
+                                <expression name="expression" type="javascript">if (dataSetRow["tone2"]=="positive") {&#13;
+	dataSetRow["poistive_tone_score"]/100;&#13;
+}&#13;
+else if (dataSetRow["tone2"]=="negative") {&#13;
+	dataSetRow["negative_tone_score2"]/100;&#13;
+}&#13;
+else {null}</expression>
+                                <property name="dataType">float</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doc_date</property>
+                                <text-property name="displayName">Document Date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["doc_date"]</expression>
+                                <property name="dataType">date</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doc_name</property>
+                                <expression name="expression" type="javascript">if (row["name"] == 'Twitter')&#13;
+	dataSetRow["twitter_user_url"];&#13;
+else if (row["name"] == 'Web')&#13;
+	dataSetRow["web_content_url"];&#13;
+else dataSetRow["name"];</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Text Analytics Data Model</property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">eq</property>
+                                <expression name="expr" type="javascript">row["doc_id"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">params["Document ID"].value</value>
+                                </simple-property-list>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="859"/>
+                        <column id="860"/>
+                        <column id="861"/>
+                        <column id="862"/>
+                        <column id="863"/>
+                        <column id="864"/>
+                        <column id="865"/>
+                        <column id="866"/>
+                        <header>
+                            <row id="880">
+                                <cell id="881">
+                                    <property name="colSpan">8</property>
+                                    <property name="rowSpan">1</property>
+                                    <grid id="698">
+                                        <column id="699">
+                                            <property name="width">56px</property>
+                                        </column>
+                                        <column id="700"/>
+                                        <row id="701">
+                                            <cell id="702">
+                                                <image id="703">
+                                                    <property name="marginTop">5px</property>
+                                                    <property name="marginLeft">3px</property>
+                                                    <property name="marginBottom">5px</property>
+                                                    <property name="height">56px</property>
+                                                    <property name="width">56px</property>
+                                                    <property name="source">file</property>
+                                                    <expression name="uri" type="constant">OTCA_Details.png</expression>
+                                                </image>
+                                            </cell>
+                                            <cell id="704">
+                                                <property name="paddingLeft">10pt</property>
+                                                <property name="verticalAlign">middle</property>
+                                                <label id="890">
+                                                    <property name="fontSize">12pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Document Details</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                            <row id="870">
+                                <cell id="871">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="817">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Document ID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="872">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="815">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Document Type</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="873">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="829">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Document Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="874">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="868">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Language</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="875">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="819">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Sentiment</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="876">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="821">
+                                        <property name="paddingLeft">1pt</property>
+                                        <property name="paddingRight">3pt</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Sentiment Score</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="877">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="825">
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Subjectivity</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="878">
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="827">
+                                        <property name="paddingRight">3pt</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Subjectivity Score</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="830">
+                                <cell id="831">
+                                    <data id="1406">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="resultSetColumn">doc_id</property>
+                                    </data>
+                                </cell>
+                                <cell id="833">
+                                    <data id="834">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">name</property>
+                                    </data>
+                                </cell>
+                                <cell id="835">
+                                    <data id="1196">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <structure name="dateTimeFormat">
+                                            <property name="category">General Date</property>
+                                            <property name="pattern">General Date</property>
+                                        </structure>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">doc_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="837">
+                                    <data id="869">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="mapRules">
+                                            <structure>
+                                                <expression name="testExpr" type="javascript">row["name2"]</expression>
+                                                <property name="operator">is-null</property>
+                                                <text-property name="display">-</text-property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">name2</property>
+                                    </data>
+                                </cell>
+                                <cell id="839">
+                                    <data id="838">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">2pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="highlightRules">
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <property name="color">#008040</property>
+                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">"positive"</value>
+                                                </simple-property-list>
+                                            </structure>
+                                            <structure>
+                                                <property name="operator">eq</property>
+                                                <property name="color">#EC4F4F</property>
+                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                <simple-property-list name="value1">
+                                                    <value type="javascript">"negative"</value>
+                                                </simple-property-list>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">tone</property>
+                                    </data>
+                                </cell>
+                                <cell id="841">
+                                    <data id="891">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Percent</property>
+                                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <list-property name="mapRules">
+                                            <structure>
+                                                <expression name="testExpr" type="javascript">row["Sentiment Score"]</expression>
+                                                <property name="operator">is-null</property>
+                                                <text-property name="display">-</text-property>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">Sentiment Score</property>
+                                    </data>
+                                </cell>
+                                <cell id="843">
+                                    <data id="844">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">subjectivity</property>
+                                    </data>
+                                </cell>
+                                <cell id="845">
+                                    <data id="846">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">2pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">3pt</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Percent</property>
+                                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">subjectivity_score</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1522">
+                                <cell id="1523">
+                                    <property name="colSpan">8</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="backgroundColor">#C2D7F8</property>
+                                    <label id="1531">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">#353535</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">if ((row["name"] == 'Web') || (row["name"] == 'Twitter')) true;&#13;
+else false;</expression>
+                                            </structure>
+                                        </list-property>
+                                        <text-property name="text">Document Name</text-property>
+                                    </label>
+                                    <label id="1532">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">#353535</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="textAlign">left</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">if (row["name"] == 'Document') true;&#13;
+else false;</expression>
+                                            </structure>
+                                        </list-property>
+                                        <text-property name="text">Source</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="1533">
+                                <cell id="1534">
+                                    <property name="colSpan">8</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="1586">
+                                        <property name="paddingTop">2pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">2pt</property>
+                                        <property name="paddingRight">2pt</property>
+                                        <property name="resultSetColumn">doc_name</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+                <cell id="781">
+                    <property name="paddingBottom">21pt</property>
+                </cell>
+            </row>
+            <row id="184">
+                <cell id="772"/>
+                <cell id="185">
+                    <grid id="1234">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">params["hideSummary"].value</expression>
+                            </structure>
+                        </list-property>
+                        <column id="1235"/>
+                        <row id="1236">
+                            <cell id="1237">
+                                <property name="paddingBottom">11pt</property>
+                                <property name="paddingRight">11pt</property>
+                                <table id="1238">
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">doc_summary</property>
+                                            <expression name="expression" type="javascript">dataSetRow["summary"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Internal Doc ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id1"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="1267"/>
+                                    <header>
+                                        <row id="1239">
+                                            <cell id="1240">
+                                                <property name="colSpan">1</property>
+                                                <property name="rowSpan">1</property>
+                                                <grid id="1241">
+                                                    <column id="1242">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="1243"/>
+                                                    <row id="1244">
+                                                        <cell id="1245">
+                                                            <image id="1246">
+                                                                <property name="marginTop">5px</property>
+                                                                <property name="marginLeft">3px</property>
+                                                                <property name="marginBottom">5px</property>
+                                                                <property name="height">56px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">file</property>
+                                                                <expression name="uri" type="constant">OTCA_Summary2.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="1247">
+                                                            <property name="paddingLeft">10pt</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="1248">
+                                                                <property name="fontSize">12pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <text-property name="text">Summary</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="1258">
+                                            <cell id="1259">
+                                                <data id="1260">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">7pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">doc_summary</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="562">
+                        <column id="563"/>
+                        <row id="564">
+                            <cell id="565">
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">21pt</property>
+                                <property name="paddingRight">11pt</property>
+                                <table id="892">
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">doc_id</property>
+                                            <text-property name="displayName">Internal Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">kb_name</property>
+                                            <text-property name="displayName">Knowledgebase Name</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["kb_name"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">category</property>
+                                            <text-property name="displayName">Category</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["category"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">weight</property>
+                                            <text-property name="displayName">Category Weight</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["weight"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">kb_relevancy</property>
+                                            <text-property name="displayName">KB Relevancy</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["kb_relevancy"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="sort">
+                                        <structure>
+                                            <expression name="key" type="javascript">row["weight"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["doc_id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="928"/>
+                                    <column id="929"/>
+                                    <column id="930"/>
+                                    <column id="931"/>
+                                    <header>
+                                        <row id="939">
+                                            <cell id="940">
+                                                <property name="colSpan">4</property>
+                                                <property name="rowSpan">1</property>
+                                                <grid id="477">
+                                                    <column id="478">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="479"/>
+                                                    <row id="480">
+                                                        <cell id="481">
+                                                            <image id="475">
+                                                                <property name="marginTop">5px</property>
+                                                                <property name="marginLeft">3px</property>
+                                                                <property name="marginBottom">5px</property>
+                                                                <property name="height">56px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">file</property>
+                                                                <expression name="uri" type="constant">https://i.imgur.com/UJa1MOM.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="482">
+                                                            <property name="paddingLeft">10pt</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="483">
+                                                                <property name="fontSize">12pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <text-property name="text">Categories</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                        <row id="932">
+                                            <cell id="935">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="901">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Category</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="936">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="899">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">KB Name</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="937">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="905">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingRight">1pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">KB Relevancy</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="938">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="903">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Category Weight</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="906">
+                                            <cell id="911">
+                                                <data id="914">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">category</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="913">
+                                                <data id="912">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">kb_name</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="915">
+                                                <data id="918">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">kb_relevancy</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="917">
+                                                <data id="916">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Percent</property>
+                                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">weight</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="566">
+                        <column id="567"/>
+                        <row id="568">
+                            <cell id="569">
+                                <property name="paddingBottom">21pt</property>
+                                <property name="paddingRight">11pt</property>
+                                <table id="946">
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">doc_id</property>
+                                            <text-property name="displayName">Internal Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">cartridge</property>
+                                            <text-property name="displayName">Cartridge</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["cartridge"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">entity</property>
+                                            <text-property name="displayName">Entity</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["entity"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">confidence_score</property>
+                                            <text-property name="displayName">Confidence Score</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["confidence_score"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">relevancy_score</property>
+                                            <text-property name="displayName">Entity Relevancy</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["relevancy_score"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">frequency1</property>
+                                            <text-property name="displayName">Entity Fequency</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["frequency1"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="sort">
+                                        <structure>
+                                            <expression name="key" type="javascript">row["confidence_score"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["doc_id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="986"/>
+                                    <column id="987"/>
+                                    <column id="988"/>
+                                    <column id="989"/>
+                                    <column id="990"/>
+                                    <header>
+                                        <row id="992">
+                                            <cell id="993">
+                                                <property name="colSpan">5</property>
+                                                <property name="rowSpan">1</property>
+                                                <grid id="517">
+                                                    <column id="518">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="519"/>
+                                                    <row id="520">
+                                                        <cell id="521">
+                                                            <image id="522">
+                                                                <property name="marginTop">5px</property>
+                                                                <property name="marginLeft">3px</property>
+                                                                <property name="marginBottom">5px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">url</property>
+                                                                <expression name="uri" type="constant">https://i.imgur.com/9ozYevS.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="523">
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="524">
+                                                                <property name="fontSize">12pt</property>
+                                                                <property name="paddingLeft">10pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <text-property name="text">Entities</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                        <row id="947">
+                                            <cell id="950">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="955">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Entity</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="952">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="953">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Cartridge</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="954">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="959">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Relevancy</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="956">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="957">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Confidence Score</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="958">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="961">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Frequency</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="962">
+                                            <cell id="965">
+                                                <text id="785">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[<div onmouseover="$(this).parent().get(0).style.background='#DEDEDE';$('#container_theBody').removeHighlight();$('#container_theBody').highlight('<VALUE-OF>row["entity"]</VALUE-OF>');"  onmouseout="$(this).parent().get(0).style.background='#ffffff';$('#container_theBody').removeHighlight()" style="cursor: pointer;"><VALUE-OF>row["entity"]</VALUE-OF></div>
+]]></text-property>
+                                                </text>
+                                            </cell>
+                                            <cell id="967">
+                                                <property name="textAlign">center</property>
+                                                <data id="968">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">cartridge</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="969">
+                                                <data id="974">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Percent</property>
+                                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">relevancy_score</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="971">
+                                                <data id="972">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Percent</property>
+                                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">confidence_score</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="973">
+                                                <data id="976">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Unformatted</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">frequency1</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="570">
+                        <column id="571"/>
+                        <row id="572">
+                            <cell id="573">
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">21pt</property>
+                                <property name="paddingRight">11pt</property>
+                                <table id="1015">
+                                    <list-property name="userProperties">
+                                        <structure>
+                                            <property name="name">__ac_group_collapse_level</property>
+                                            <property name="type">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">doc_id</property>
+                                            <text-property name="displayName">Internal Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">name1</property>
+                                            <text-property name="displayName">Concept Name</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["name1"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">frequency</property>
+                                            <text-property name="displayName">Concept Frequency</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["frequency"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">relevancy</property>
+                                            <text-property name="displayName">Concept Relevancy</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["relevancy"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">is_complex</property>
+                                            <text-property name="displayName">Is Complex</text-property>
+                                            <expression name="expression" type="javascript">if (dataSetRow["is_complex"]==1) {&#13;
+	"Complex Concepts"&#13;
+}&#13;
+else {"Simple Concepts"}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="sort">
+                                        <structure>
+                                            <expression name="key" type="javascript">row["relevancy"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["doc_id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="1049"/>
+                                    <column id="1050"/>
+                                    <column id="1051"/>
+                                    <header>
+                                        <row id="1062">
+                                            <cell id="1063">
+                                                <property name="colSpan">3</property>
+                                                <property name="rowSpan">1</property>
+                                                <grid id="489">
+                                                    <column id="490">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="491"/>
+                                                    <row id="492">
+                                                        <cell id="493">
+                                                            <image id="494">
+                                                                <property name="height">56px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">file</property>
+                                                                <expression name="uri" type="constant">https://i.imgur.com/g9cOLfF.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="495">
+                                                            <property name="paddingLeft">10pt</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="496">
+                                                                <property name="fontSize">12pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <text-property name="text">Concepts</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                        <row id="1055">
+                                            <cell id="1056">
+                                                <property name="colSpan">3</property>
+                                                <property name="rowSpan">1</property>
+                                            </cell>
+                                        </row>
+                                        <row id="1016">
+                                            <cell id="1017">
+                                                <label id="1022">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Concept</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1019">
+                                                <label id="1026">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Relevancy</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1021">
+                                                <label id="1024">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Frequency</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <group id="1069">
+                                        <property name="groupName">NewTableGroup1</property>
+                                        <expression name="keyExpr" type="javascript">row["is_complex"]</expression>
+                                        <structure name="toc">
+                                            <expression name="expressionValue" type="javascript">row["is_complex"]</expression>
+                                        </structure>
+                                        <property name="hideDetail">false</property>
+                                        <header>
+                                            <row id="1070">
+                                                <cell id="1071">
+                                                    <property name="colSpan">3</property>
+                                                    <property name="rowSpan">1</property>
+                                                    <property name="backgroundColor">#DDE9FB</property>
+                                                    <data id="1084">
+                                                        <property name="fontStyle">italic</property>
+                                                        <property name="paddingTop">2pt</property>
+                                                        <property name="paddingLeft">3pt</property>
+                                                        <property name="paddingBottom">2pt</property>
+                                                        <property name="paddingRight">2pt</property>
+                                                        <property name="resultSetColumn">is_complex</property>
+                                                    </data>
+                                                </cell>
+                                            </row>
+                                        </header>
+                                    </group>
+                                    <detail>
+                                        <row id="1029">
+                                            <cell id="1030">
+                                                <text id="787">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">1pt</property>
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[<div onmouseover="$(this).parent().get(0).style.background='#DEDEDE';$('#container_theBody').removeHighlight();$('#container_theBody').highlight('<VALUE-OF>row["name1"]</VALUE-OF>');" onmouseout="$(this).parent().get(0).style.background='#ffffff';$('#container_theBody').removeHighlight()" style="cursor: pointer;"><VALUE-OF>row["name1"]</VALUE-OF></div>
+]]></text-property>
+                                                </text>
+                                            </cell>
+                                            <cell id="1032">
+                                                <data id="1039">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Percent</property>
+                                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">relevancy</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1034">
+                                                <data id="1037">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Fixed</property>
+                                                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">frequency</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="1197">
+                        <column id="1198"/>
+                        <row id="1199">
+                            <cell id="1200">
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">11pt</property>
+                                <property name="paddingRight">11pt</property>
+                                <table id="1201">
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">doc_id</property>
+                                            <text-property name="displayName">Internal Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">kb_name</property>
+                                            <text-property name="displayName">Knowledgebase Name</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["kb_name"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">category</property>
+                                            <text-property name="displayName">Category</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["category"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">weight</property>
+                                            <text-property name="displayName">Category Weight</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["weight"]/100</expression>
+                                            <property name="dataType">decimal</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">kb_relevancy</property>
+                                            <text-property name="displayName">KB Relevancy</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["kb_relevancy"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="sort">
+                                        <structure>
+                                            <expression name="key" type="javascript">row["weight"]</expression>
+                                            <property name="direction">desc</property>
+                                            <property name="strength">-1</property>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["doc_id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="1230"/>
+                                    <column id="1231"/>
+                                    <column id="1232"/>
+                                    <column id="1233"/>
+                                    <header>
+                                        <row id="1202">
+                                            <cell id="1203">
+                                                <property name="colSpan">4</property>
+                                                <property name="rowSpan">1</property>
+                                                <grid id="1204">
+                                                    <column id="1205">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="1206"/>
+                                                    <row id="1207">
+                                                        <cell id="1208">
+                                                            <image id="1209">
+                                                                <property name="marginTop">5px</property>
+                                                                <property name="marginLeft">3px</property>
+                                                                <property name="marginBottom">5px</property>
+                                                                <property name="height">56px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">file</property>
+                                                                <expression name="uri" type="constant">https://i.imgur.com/UJa1MOM.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="1210">
+                                                            <property name="paddingLeft">10pt</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="1211">
+                                                                <property name="fontSize">12pt</property>
+                                                                <text-property name="text">Categories</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                        <row id="1212">
+                                            <cell id="1213">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="1214">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">Category</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1215">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="1216">
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <text-property name="text">KB Name</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1217">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="1218">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">KB Relevancy</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="1219">
+                                                <property name="backgroundColor">#C2D7F8</property>
+                                                <label id="1220">
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <text-property name="text">Category Weight</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="1221">
+                                            <cell id="1222">
+                                                <data id="1223">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="resultSetColumn">category</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1224">
+                                                <data id="1225">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">3pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">2pt</property>
+                                                    <property name="resultSetColumn">kb_name</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1226">
+                                                <data id="1227">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">kb_relevancy</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1228">
+                                                <data id="1229">
+                                                    <property name="paddingTop">2pt</property>
+                                                    <property name="paddingLeft">2pt</property>
+                                                    <property name="paddingBottom">2pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Percent</property>
+                                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                                    </structure>
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">weight</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="777">
+                    <grid id="766">
+                        <column id="767"/>
+                        <row id="768">
+                            <cell id="769">
+                                <property name="paddingLeft">11pt</property>
+                                <property name="paddingBottom">21pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <table id="1156">
+                                    <property name="theme">ThemesReportItems31.Table-Clean Blue</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">Document ID</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["doc_id"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">body</property>
+                                            <expression name="expression" type="javascript">if (dataSetRow["content_type"] == 'Document') {&#13;
+&#13;
+String.prototype.replaceAll = function(search, replacement) {&#13;
+    var target = this;&#13;
+    return target.split(search).join(replacement);&#13;
+};&#13;
+&#13;
+var txt = dataSetRow["summary1"];&#13;
+txt = txt.replaceAll("To:","\nTo: ");&#13;
+txt = txt.replaceAll("From:","\nFrom: ");&#13;
+txt = txt.replaceAll("Subject:","\n\nSubject: ");&#13;
+txt = txt.replaceAll("SUBJECT:","\n\nSUBJECT: ");&#13;
+txt = txt.replaceAll("SOURCE:","\n\nSOURCE: ");&#13;
+txt = txt.replaceAll("Sent:","\nSent: ");&#13;
+txt = txt.replaceAll("CONFIDENTIAL","\nCONFIDENTIAL\n");&#13;
+txt = txt.replaceAll("For:","\nFor: ");&#13;
+txt = txt.replaceAll("Re:","\nRe: ");&#13;
+txt = txt.replaceAll("Ã¯Â¿","");&#13;
+txt = txt.replaceAll("¿½ï","");&#13;
+txt = txt.replaceAll("¿","");&#13;
+txt = txt.replaceAll("½","");&#13;
+txt = txt.replaceAll("ï","");&#13;
+txt = txt.replaceAll("Ã¢â‚¬Â¢","");&#13;
+txt = txt.replaceAll("Ã¢â‚¬â€�","");&#13;
+ //txt = txt.replaceAll(",",",\n");&#13;
+txt = txt.replaceAll(".",".\n");&#13;
+txt = txt.replaceAll("Regards,","\n\nRegards,\n");&#13;
+&#13;
+// For Doc ID 8&#13;
+txt = txt.replaceAll("SalehiAll,","Salehi\nAll,");&#13;
+txt = txt.replaceAll("All,","\nAll,\n");&#13;
+&#13;
+&#13;
+// For Doc ID 4&#13;
+txt = txt.replaceAll("Dear,","\nDear,\n");&#13;
+&#13;
+&#13;
+txt;&#13;
+&#13;
+}&#13;
+&#13;
+else if (dataSetRow["content_type"] == 'Twitter') {&#13;
+	dataSetRow["twitter_text"];&#13;
+}&#13;
+&#13;
+else {&#13;
+	dataSetRow["web_content_summary"];&#13;
+}</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">Text Analytics Data Model</property>
+                                    <list-property name="filter">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <expression name="expr" type="javascript">row["id"]</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">params["Document ID"].value</value>
+                                            </simple-property-list>
+                                            <property name="updateAggregation">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="1170"/>
+                                    <header>
+                                        <row id="1157">
+                                            <cell id="1158">
+                                                <grid id="758">
+                                                    <column id="759">
+                                                        <property name="width">56px</property>
+                                                    </column>
+                                                    <column id="760"/>
+                                                    <row id="761">
+                                                        <cell id="762">
+                                                            <image id="763">
+                                                                <property name="marginTop">5px</property>
+                                                                <property name="marginLeft">5px</property>
+                                                                <property name="marginBottom">5px</property>
+                                                                <property name="height">56px</property>
+                                                                <property name="width">56px</property>
+                                                                <property name="source">file</property>
+                                                                <expression name="uri" type="constant">OTCA_Body.png</expression>
+                                                            </image>
+                                                        </cell>
+                                                        <cell id="764">
+                                                            <property name="paddingLeft">10pt</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <label id="765">
+                                                                <property name="fontSize">12pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <text-property name="text">Article Body</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="1162">
+                                            <cell id="1163">
+                                                <data id="1185">
+                                                    <property name="fontFamily">monospace</property>
+                                                    <property name="fontSize">8pt</property>
+                                                    <property name="paddingTop">3pt</property>
+                                                    <property name="paddingLeft">10pt</property>
+                                                    <property name="paddingBottom">3pt</property>
+                                                    <property name="paddingRight">3pt</property>
+                                                    <property name="textAlign">left</property>
+                                                    <expression name="bookmark" type="javascript">'theBody'</expression>
+                                                    <property name="resultSetColumn">body</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="186"/>
+            </row>
+            <row id="187">
+                <cell id="773"/>
+                <cell id="188">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+                <cell id="783"/>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="Highlight Color">
+            <expression name="value" type="javascript">"yellow"</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

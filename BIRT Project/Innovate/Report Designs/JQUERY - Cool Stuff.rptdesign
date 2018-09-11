@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="units">in</property>
+    <property name="theme">SampleApplication.Demo 2015</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SampleApplication.rptlibrary</property>
+            <property name="namespace">SampleApplication</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.eclipse.birt.report.data.oda.sampledb.Driver</property>
+            <property name="odaURL">jdbc:classicmodels:sampledb</property>
+            <property name="odaUser">ClassicModels</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CUSTOMERNUMBER</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">CUSTOMERNUMBER</text-property>
+                    <text-property name="heading">CUSTOMERNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTOMERNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTOMERNAME</text-property>
+                    <text-property name="heading">CUSTOMERNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CONTACTLASTNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CONTACTLASTNAME</text-property>
+                    <text-property name="heading">CONTACTLASTNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CONTACTFIRSTNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CONTACTFIRSTNAME</text-property>
+                    <text-property name="heading">CONTACTFIRSTNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PHONE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PHONE</text-property>
+                    <text-property name="heading">PHONE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESSLINE1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESSLINE1</text-property>
+                    <text-property name="heading">ADDRESSLINE1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESSLINE2</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESSLINE2</text-property>
+                    <text-property name="heading">ADDRESSLINE2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CITY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CITY</text-property>
+                    <text-property name="heading">CITY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">STATE</text-property>
+                    <text-property name="heading">STATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">POSTALCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">POSTALCODE</text-property>
+                    <text-property name="heading">POSTALCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COUNTRY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COUNTRY</text-property>
+                    <text-property name="heading">COUNTRY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SALESREPEMPLOYEENUMBER</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">SALESREPEMPLOYEENUMBER</text-property>
+                    <text-property name="heading">SALESREPEMPLOYEENUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CREDITLIMIT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">CREDITLIMIT</text-property>
+                    <text-property name="heading">CREDITLIMIT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CUSTOMERNUMBER</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CUSTOMERNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CONTACTLASTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CONTACTFIRSTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">PHONE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ADDRESSLINE1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ADDRESSLINE2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CITY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">STATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">POSTALCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">COUNTRY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">SALESREPEMPLOYEENUMBER</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">CREDITLIMIT</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CUSTOMERNUMBER</property>
+                    <property name="nativeName">CUSTOMERNUMBER</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CUSTOMERNAME</property>
+                    <property name="nativeName">CUSTOMERNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CONTACTLASTNAME</property>
+                    <property name="nativeName">CONTACTLASTNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CONTACTFIRSTNAME</property>
+                    <property name="nativeName">CONTACTFIRSTNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">PHONE</property>
+                    <property name="nativeName">PHONE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ADDRESSLINE1</property>
+                    <property name="nativeName">ADDRESSLINE1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ADDRESSLINE2</property>
+                    <property name="nativeName">ADDRESSLINE2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CITY</property>
+                    <property name="nativeName">CITY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">STATE</property>
+                    <property name="nativeName">STATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">POSTALCODE</property>
+                    <property name="nativeName">POSTALCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">COUNTRY</property>
+                    <property name="nativeName">COUNTRY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">SALESREPEMPLOYEENUMBER</property>
+                    <property name="nativeName">SALESREPEMPLOYEENUMBER</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">CREDITLIMIT</property>
+                    <property name="nativeName">CREDITLIMIT</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from CLASSICMODELS.CUSTOMERS
+WHERE CLASSICMODELS.CUSTOMERS.COUNTRY in ('Belgium', 'UK', 'Australia')]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUSTOMERNUMBER</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CUSTOMERNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CUSTOMERNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUSTOMERNAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CUSTOMERNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CUSTOMERNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTACTLASTNAME</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CONTACTLASTNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTACTLASTNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTACTFIRSTNAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CONTACTFIRSTNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTACTFIRSTNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PHONE</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>PHONE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PHONE</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ADDRESSLINE1</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ADDRESSLINE1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ADDRESSLINE1</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ADDRESSLINE2</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ADDRESSLINE2</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ADDRESSLINE2</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CITY</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CITY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CITY</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>STATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>POSTALCODE</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>POSTALCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>POSTALCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COUNTRY</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>COUNTRY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COUNTRY</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SALESREPEMPLOYEENUMBER</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SALESREPEMPLOYEENUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SALESREPEMPLOYEENUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CREDITLIMIT</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CREDITLIMIT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CREDITLIMIT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="9">
+            <property name="fontFamily">"Tahoma"</property>
+            <column id="10">
+                <property name="textAlign">center</property>
+            </column>
+            <column id="11">
+                <property name="textAlign">center</property>
+            </column>
+            <row id="271">
+                <property name="style">tableHeaderBlue</property>
+                <property name="borderBottomColor">#EEEEEE</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <property name="borderLeftColor">#EEEEEE</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#EEEEEE</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <property name="borderTopColor">#EEEEEE</property>
+                <property name="borderTopStyle">solid</property>
+                <property name="borderTopWidth">thin</property>
+                <cell id="272">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="274">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">HIGHLIGHT</text-property>
+                    </label>
+                </cell>
+                <cell id="697">
+                    <property name="verticalAlign">middle</property>
+                    <label id="698">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">EXPAND / COLLAPSE</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="699">
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="700">
+                    <property name="verticalAlign">middle</property>
+                    <table id="160">
+                        <property name="width">5.15625in</property>
+                        <property name="dataSet">Data Set</property>
+                        <property name="theme">ThemesReportItems3.Modern Table</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CUSTOMERNAME</property>
+                                <text-property name="displayName">CUSTOMERNAME</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CUSTOMERNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CITY</property>
+                                <text-property name="displayName">CITY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CITY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">COUNTRY</property>
+                                <text-property name="displayName">COUNTRY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["COUNTRY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CREDITLIMIT</property>
+                                <text-property name="displayName">CREDITLIMIT</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CREDITLIMIT"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <column id="183">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="184">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="185">
+                            <property name="width">1.6354166666666667in</property>
+                        </column>
+                        <column id="186">
+                            <property name="width">0.84375in</property>
+                        </column>
+                        <header>
+                            <row id="161">
+                                <cell id="164">
+                                    <label id="165">
+                                        <text-property name="text">Country</text-property>
+                                    </label>
+                                    <text id="240">
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<div id="myTab11"></div>
+
+<script>
+var allCells11 = $("#myTab11").closest("table").find( "td" );
+var allHeaders11 = $("#myTab11").closest("table").find( "th" );
+
+allCells11
+  .on("mouseover", function() {
+    var el = $(this);
+    var pos = el.index();
+    
+/*** Highlight the row ***/  
+    el.parent().find("td").css("background-color","<VALUE-OF>vars["rowColor"]</VALUE-OF>");
+    
+/*** Highlight the col ***/  
+    allCells11.filter(":nth-child(" + (pos+1) + ")").css("background-color","<VALUE-OF>vars["colColor"]</VALUE-OF>");
+    
+/*** Highlight the header ***/  
+    allHeaders11.filter(":nth-child(" + (pos+1) + ")").css("background-color","<VALUE-OF>vars["headerColor"]</VALUE-OF>");
+    
+/*** Highlight the cell ***/  
+   	el.css("background-color","<VALUE-OF>vars["cellColor"]</VALUE-OF>");
+  })
+  
+  .on("mouseout", function() {
+    allCells11.css("background-color","");
+    allHeaders11.css("background-color","");
+  });
+</script>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="166">
+                                    <label id="167">
+                                        <text-property name="text">City</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="168">
+                                    <label id="169">
+                                        <text-property name="text">Customer</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="170">
+                                    <label id="171">
+                                        <text-property name="text">Credit Limit</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="172">
+                                <cell id="174">
+                                    <data id="175">
+                                        <property name="resultSetColumn">COUNTRY</property>
+                                    </data>
+                                </cell>
+                                <cell id="176">
+                                    <data id="177">
+                                        <property name="resultSetColumn">CITY</property>
+                                    </data>
+                                </cell>
+                                <cell id="178">
+                                    <data id="179">
+                                        <property name="resultSetColumn">CUSTOMERNAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="180">
+                                    <data id="181">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CREDITLIMIT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+                <cell id="701">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <table name="toto" id="133">
+                        <list-property name="userProperties">
+                            <structure>
+                                <property name="name">__ac_group_collapse_level</property>
+                                <property name="type">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="__ac_group_collapse_level">1,2</property>
+                        <property name="width">5.15625in</property>
+                        <property name="dataSet">Data Set</property>
+                        <property name="theme">ThemesReportItems3.Modern Table</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CUSTOMERNAME</property>
+                                <text-property name="displayName">CUSTOMERNAME</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CUSTOMERNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CITY</property>
+                                <text-property name="displayName">CITY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CITY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">COUNTRY</property>
+                                <text-property name="displayName">COUNTRY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["COUNTRY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CREDITLIMIT</property>
+                                <text-property name="displayName">CREDITLIMIT</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CREDITLIMIT"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <expression name="bookmark" type="javascript">"toto"</expression>
+                        <column id="156">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="157">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="158">
+                            <property name="width">1.6354166666666667in</property>
+                        </column>
+                        <column id="159">
+                            <property name="width">0.84375in</property>
+                        </column>
+                        <header>
+                            <row id="134">
+                                <cell id="137">
+                                    <label id="138">
+                                        <text-property name="text">Country</text-property>
+                                    </label>
+                                    <text id="101">
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<div id="myTab21"></div>
+
+<script>
+//*******************************************************************
+// add +/- sign depending of the collapse/expand statut of the group
+//*******************************************************************
+$(document).ready(function() {
+	$("#myTab21").closest("table").find("tr[row-type='group-header']").each(function() {
+			el= $(this).next();	
+			if($(el).css('display') == 'none') {
+				$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").prepend( "<span id='actCollapse'>+ </span>"); 
+			}
+			else {
+				$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").prepend( "<span id='actCollapse'>- </span>"); 	
+			}
+			$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").find("span#actCollapse").css('cursor','pointer')			
+	});
+});
+
+//*******************************************************************
+// Define the click area
+//*******************************************************************
+var clickArea21 = $("#myTab21").closest("table").find("span#actCollapse");	
+
+//*******************************************************************
+// Expand / Collapse the group
+//*******************************************************************
+clickArea21.click(function(){
+	var groupHeader = $(this).closest("tr[row-type='group-header']");
+	el= $(groupHeader).next();	
+	var myGroupId = $(groupHeader).attr("group-id").split('.', 1);
+	var nextGroupId = $(el).attr("group-id").split('.', 1);
+	var thisGroupId = $(el).attr("group-id").split('.', 1);
+	
+	if($(el).css('display') == 'none') var action = 'show';
+	else var action = 'hide';
+				
+	while(thisGroupId[0] != myGroupId[0]) {
+		if (thisGroupId[0] == nextGroupId[0]) {
+			if (action == 'show') {
+				$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").find("span#actCollapse").text("- ");   			
+				$(el).show(200); 
+			}
+			else {
+				$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").find("span#actCollapse").text("+ ");   			
+				$(el).hide(200); 
+			}				
+		}
+		else {
+			if (action == 'hide' &amp;&amp; parseInt(thisGroupId[0]) > parseInt(nextGroupId[0])) {
+				$(el).prev().find("img[element_type='GROUP']").parent().next().find("div").find("span#actCollapse").text("+ ");   
+				$(el).hide(200); 
+			}
+		};
+		el = $(el).next();	
+		thisGroupId = $(el).attr("group-id").split('.', 1);
+	};	
+});
+</script>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="139">
+                                    <label id="140">
+                                        <text-property name="text">City</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="141">
+                                    <label id="142">
+                                        <text-property name="text">Customer</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="143">
+                                    <label id="144">
+                                        <text-property name="text">Credit Limit</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="702">
+                            <property name="groupName">gpeCOUNTRY</property>
+                            <expression name="keyExpr" type="javascript">row["COUNTRY"]</expression>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="703">
+                                    <cell id="704">
+                                        <data id="713">
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">COUNTRY</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="705"/>
+                                    <cell id="706"/>
+                                    <cell id="707"/>
+                                </row>
+                            </header>
+                        </group>
+                        <group id="714">
+                            <property name="groupName">gpeCITY</property>
+                            <expression name="keyExpr" type="javascript">row["CITY"]</expression>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="715">
+                                    <cell id="716"/>
+                                    <cell id="717">
+                                        <data id="725">
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">CITY</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="718"/>
+                                    <cell id="719"/>
+                                </row>
+                            </header>
+                        </group>
+                        <detail>
+                            <row id="145">
+                                <cell id="147"/>
+                                <cell id="149"/>
+                                <cell id="151">
+                                    <data id="152">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">CUSTOMERNAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="153">
+                                    <data id="154">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CREDITLIMIT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="12">
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="339">
+                    <property name="verticalAlign">middle</property>
+                    <table id="241">
+                        <property name="width">5.15625in</property>
+                        <property name="dataSet">Data Set</property>
+                        <property name="theme">ThemesReportItems3.Modern Table</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CUSTOMERNAME</property>
+                                <text-property name="displayName">CUSTOMERNAME</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CUSTOMERNAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CITY</property>
+                                <text-property name="displayName">CITY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CITY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">COUNTRY</property>
+                                <text-property name="displayName">COUNTRY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["COUNTRY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CREDITLIMIT</property>
+                                <text-property name="displayName">CREDITLIMIT</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CREDITLIMIT"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <column id="264">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="265">
+                            <property name="width">1.2395833333333333in</property>
+                        </column>
+                        <column id="266">
+                            <property name="width">1.6354166666666667in</property>
+                        </column>
+                        <column id="267">
+                            <property name="width">0.84375in</property>
+                        </column>
+                        <header>
+                            <row id="242">
+                                <cell id="245">
+                                    <label id="246">
+                                        <text-property name="text">Country</text-property>
+                                    </label>
+                                    <text id="244">
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<div id="myTab12"></div>
+
+<script>
+var allRowOdd12 = $("#myTab12").closest("table").find( "tr:odd"); 
+var allCells12 = $("#myTab12").closest("table").find( "td" );
+var allHeaders12 = $("#myTab12").closest("table").find( "th" );
+
+$(document).ready(function(){
+  allRowOdd12.css("background-color","<VALUE-OF>vars["highLight"]</VALUE-OF>");
+});
+
+allCells12
+  .on("mouseover", function() {
+    var el = $(this);
+    var pos = el.index();
+    
+/*** Highlight the row ***/  
+    el.parent().find("td").css("background-color","<VALUE-OF>vars["rowColor"]</VALUE-OF>");
+    
+/*** Highlight the col ***/  
+    allCells12.filter(":nth-child(" + (pos+1) + ")").css("background-color","<VALUE-OF>vars["colColor"]</VALUE-OF>");
+    
+/*** Highlight the header ***/  
+    allHeaders12.filter(":nth-child(" + (pos+1) + ")").css("background-color","<VALUE-OF>vars["headerColor"]</VALUE-OF>");
+    
+/*** Highlight the cell ***/  
+   	el.css("background-color","<VALUE-OF>vars["cellColor"]</VALUE-OF>");
+  })
+  
+  .on("mouseout", function() {
+    allCells12.css("background-color","");
+    allHeaders12.css("background-color","");
+    allRowOdd12.css("background-color","<VALUE-OF>vars["highLight"]</VALUE-OF>");    
+  });
+</script>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="247">
+                                    <label id="248">
+                                        <text-property name="text">City</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="249">
+                                    <label id="250">
+                                        <text-property name="text">Customer</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="251">
+                                    <label id="252">
+                                        <text-property name="text">Credit Limit</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="253">
+                                <cell id="255">
+                                    <data id="256">
+                                        <property name="resultSetColumn">COUNTRY</property>
+                                    </data>
+                                </cell>
+                                <cell id="257">
+                                    <data id="258">
+                                        <property name="resultSetColumn">CITY</property>
+                                    </data>
+                                </cell>
+                                <cell id="259">
+                                    <data id="260">
+                                        <property name="resultSetColumn">CUSTOMERNAME</property>
+                                    </data>
+                                </cell>
+                                <cell id="261">
+                                    <data id="262">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CREDITLIMIT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="497">
+                <property name="borderBottomColor">#EEEEEE</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <property name="borderLeftColor">#EEEEEE</property>
+                <property name="borderLeftStyle">solid</property>
+                <property name="borderLeftWidth">thin</property>
+                <property name="borderRightColor">#EEEEEE</property>
+                <property name="borderRightStyle">solid</property>
+                <property name="borderRightWidth">thin</property>
+                <cell id="498">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+                <cell id="696"/>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="rowColor">
+            <expression name="value" type="javascript">'#DCDCDC'</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="colColor">
+            <expression name="value" type="javascript">'#CCCCFF'</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="cellColor">
+            <expression name="value" type="javascript">'#7979FF'</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="highLight">
+            <expression name="value" type="javascript">'#EEEEEE'</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="headerColor">
+            <expression name="value" type="javascript">'#7979FF'</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

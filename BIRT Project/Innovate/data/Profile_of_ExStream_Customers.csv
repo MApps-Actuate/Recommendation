@@ -1,0 +1,32 @@
+Value,Column,In group,Remainder,Index,ZScore,Significant
+Micro Plan,[Subscribed Plan],"38,319","363,347",194.28,160.06,1
+Advance Plan,[Subscribed Plan],"13,100","88,095",273.94,118.03,1
+30 to 45,[Age Band],"25,944","393,470",121.47,39.16,1
+Between 10 and 20,[Total Rides Ranges],"21,805","348,985",115.1,25.04,1
+Between 100 and 200 miles,[Milage Ranges],"16,221","254,846",117.25,22.83,1
+50k to 75k,[Income Band],"6,929","102,198",124.9,18.95,1
+35k to 50k,[Income Band],"12,759","203,647",115.42,17.64,1
+Senior Manager,[Occupation],"3,872","58,099",122.77,12.76,1
+Self Employed,[Occupation],"4,836","75,117",118.6,11.97,1
+M,[Gender],"38,031","682,493",102.65,8.83,1
+Between 50 and 100 miles,[Milage Ranges],"26,602","471,033",104.04,8.64,1
+Manager,[Occupation],"5,472","93,908",107.34,5.35,1
+over 75k,[Income Band],465,"6,985",122.64,4.28,1
+45 to 60,[Age Band],"2,869","49,540",106.68,3.46,1
+Retired,[Occupation],"5,837","104,897",102.51,1.95,0
+20k to 35k,[Income Band],"17,406","318,956",100.53,0.82,0
+over 75,[Age Band],50,847,108.75,0.58,0
+ ,[Gender],369,"7,212",94.25,-1.11,0
+Shop Worker,[Occupation],"10,106","201,188",92.53,-8.51,1
+F,[Gender],"15,884","310,295",94.3,-8.68,1
+Above 500 miles,[Milage Ranges],7,"2,274",5.67,-10.48,1
+Unemployed,[Occupation],"1,969","46,659",77.74,-11.24,1
+60 to 75,[Age Band],"24,114","472,245",94.07,-12.74,1
+Manual Worker,[Occupation],"5,488","120,083",84.19,-13.3,1
+under 20k,[Income Band],"5,099","119,409",78.66,-17.91,1
+Under 50 miles,[Milage Ranges],"11,396","249,432",84.16,-20.77,1
+Less than 5,[Total Rides Ranges],"7,053","166,940",77.83,-22.62,1
+Between 200 and 500 miles,[Milage Ranges],58,"22,415",4.77,-33.54,1
+Above 20,[Total Rides Ranges],73,"26,677",5.04,-36.55,1
+under 30,[Age Band],"1,307","83,898",28.7,-49.8,1
+No Plan,[Subscribed Plan],"2,865","284,355",18.56,-118.03,1
