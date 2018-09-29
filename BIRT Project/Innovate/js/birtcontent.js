@@ -402,7 +402,40 @@ $("#menu-export-xls").click(function(e) {
  * ***                       O T H E R
  * *****************************************************************************************************
  *
- * function for Custom toolBar
+ * Responsive 
+ */
+$(window).resize(function() {
+	wWidth = window.innerWidth - 70;
+	wHeight = window.innerHeight - 60;
+	if (window.innerWidth > 1680) {
+		leftPadding = Math.round((window.innerWidth - 1680)/2);
+		leftPadding = (leftPadding < 20 ? 20 : leftPadding);
+	} else {
+		leftPadding = 20;
+	};
+
+// report	
+	if(acType == "viewer" || acType == "parameter") {
+		$("#contentSection").css("padding-left", leftPadding + "px");
+		viewer.setSize(wWidth - 50 - leftPadding, wHeight - 5);
+		$("#acContainer").children().first().css("width", wWidth - 50 - leftPadding);
+		$("#acContainer").children().first().css("height", wHeight - 5);
+
+// dashboard		
+	} else if (acType == "dashboard") {
+		viewer.setSize(wWidth - 50, wHeight - 5);		
+		$("#acContainer").children().first().css("width", wWidth - 50);
+		$("#acContainer").children().first().css("height", wHeight - 5);	
+
+// iframe		
+	} else if (acType == "iframe") {
+		$("#acContainer").children().first().css("height", $(window).height() - 125);	
+		$("#acContainer").children().first().attr("height", ($(window).height() - 125) + "px");
+	}
+});	
+ 
+/*
+ * Function for Custom toolBar
  */
 function doAction(act) {
 	switch (act){

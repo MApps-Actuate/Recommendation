@@ -30,7 +30,7 @@
                     <property name="backgroundColor">RGB(75,90,116)</property>
                     <property name="sections">
                         <section id="17">
-                            <property name="width">52.489177489177486%</property>
+                            <property name="width">66.86486486486487%</property>
                             <property name="gadgets">
                                 <gadget name="7277a3b6-f8e5-44b1-830d-30bcc93e9e2d" id="19">
                                     <property name="zIndex">1</property>
@@ -155,7 +155,7 @@
                             </property>
                         </section>
                         <section id="18">
-                            <property name="width">23.17271250676773%</property>
+                            <property name="width">33.13513513513514%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_3949a4a2-577a-4088-b3c4-bd23c088f7a8" id="25">
                                     <property name="title">Company</property>
@@ -163,7 +163,7 @@
                                     <property name="showBorder">true</property>
                                     <property name="zIndex">3</property>
                                     <property name="showScrollBar">false</property>
-                                    <property name="height">269px</property>
+                                    <property name="height">297px</property>
                                     <property name="width">377px</property>
                                     <property name="caption">
                                         <gadget-caption id="26">
@@ -337,9 +337,6 @@
                                 </gadget>
                             </property>
                         </section>
-                        <section id="94">
-                            <property name="width">24.363833243096913%</property>
-                        </section>
                     </property>
                 </tab-element>
                 <tab-element name="9d4c57c4-be6e-44d7-8ee0-3ceebef63fa2" id="63">
@@ -347,7 +344,7 @@
                     <property name="backgroundColor">RGB(75,90,116)</property>
                     <property name="sections">
                         <section id="64">
-                            <property name="width">54.32900432900433%</property>
+                            <property name="width">71.37254901960785%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_8628d730-2bfd-4a7f-9819-60a92dfbd11e" id="78">
                                     <property name="title">Company Comparison by products</property>
@@ -456,7 +453,7 @@
                             </property>
                         </section>
                         <section id="65">
-                            <property name="width">22.564935064935064%</property>
+                            <property name="width">28.627450980392155%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_4700e813-6479-43bd-b83e-fdab46a8f045" id="88">
                                     <property name="title">Company</property>
@@ -464,7 +461,7 @@
                                     <property name="showBorder">true</property>
                                     <property name="zIndex">3</property>
                                     <property name="showScrollBar">false</property>
-                                    <property name="height">268px</property>
+                                    <property name="height">303px</property>
                                     <property name="caption">
                                         <gadget-caption id="89">
                                             <property name="showCaption">true</property>
@@ -521,7 +518,7 @@
                                     <property name="showBorder">true</property>
                                     <property name="zIndex">4</property>
                                     <property name="showScrollBar">false</property>
-                                    <property name="height">265px</property>
+                                    <property name="height">304px</property>
                                     <property name="caption">
                                         <gadget-caption id="92">
                                             <property name="showCaption">true</property>
@@ -574,9 +571,6 @@
                                 </gadget>
                             </property>
                         </section>
-                        <section id="97">
-                            <property name="width">23.106060606060606%</property>
-                        </section>
                     </property>
                 </tab-element>
                 <tab-element name="180a3b33-87c3-4efd-af27-ac689d7b111c" id="3">
@@ -584,7 +578,7 @@
                     <property name="backgroundColor">RGB(75,90,114)</property>
                     <property name="sections">
                         <section id="4">
-                            <property name="width">53.275109170305676%</property>
+                            <property name="width">100%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_e0825865-53bc-4972-be19-a4cb76d1b28b" id="10">
                                     <property name="title">Start of Campaign</property>
@@ -643,9 +637,6 @@
                                     </property>
                                 </gadget>
                             </property>
-                        </section>
-                        <section id="5">
-                            <property name="width">46.724890829694324%</property>
                         </section>
                     </property>
                 </tab-element>

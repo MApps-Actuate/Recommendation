@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201710020040</property>
     <property name="units">in</property>
     <method name="beforeFactory"><![CDATA[myDataSet = [];
 myNewDataSet = [];
@@ -9,10 +9,17 @@ maxTotal = 0;
 if (params["pCompany1"].value > params["pCompany2"].value){
   reportContext.getDesignHandle().findElement("myTempTable").getListProperty("sort").get(0).setProperty("direction","desc");
 }]]></method>
+    <property name="theme">Innovate.defaultTheme</property>
     <property name="iconFile">/templates/blank_report.gif</property>
-    <property name="layoutPreference">fixed layout</property>
+    <property name="layoutPreference">auto layout</property>
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">Report Libraries/Innovate.rptlibrary</property>
+            <property name="namespace">Innovate</property>
+        </structure>
+    </list-property>
     <parameters>
         <scalar-parameter name="pCompany1" id="212">
             <property name="valueType">static</property>
@@ -267,14 +274,14 @@ return true;]]></method>
         <simple-master-page name="Simple MasterPage" id="2">
             <property name="type">custom</property>
             <property name="orientation">landscape</property>
-            <property name="backgroundColor">#F5F3F3</property>
             <property name="height">19in</property>
             <property name="width">980px</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
         </simple-master-page>
     </page-setup>
     <body>
         <grid id="849">
-            <property name="width">980px</property>
             <expression name="bookmark" type="javascript">"candidateComparisonTopics"</expression>
             <column id="850"/>
             <row id="851">
@@ -467,9 +474,8 @@ myDataSet = [];]]></method>
                                 <property name="type">string</property>
                             </structure>
                         </list-property>
-                        <property name="fontFamily">"Lato"</property>
-                        <property name="fontSize">14pt</property>
-                        <property name="width">980px</property>
+                        <property name="fontFamily">"OpenText Sans"</property>
+                        <property name="fontSize">14px</property>
                         <property name="dataSet">CCT Data Set</property>
                         <list-property name="boundDataColumns">
                             <structure>
@@ -549,25 +555,23 @@ myDataSet = [];]]></method>
                             </structure>
                         </list-property>
                         <column id="422">
-                            <property name="width">459px</property>
+                            <property name="width">45%</property>
                         </column>
                         <column id="423">
-                            <property name="width">62px</property>
+                            <property name="width">10%</property>
                         </column>
                         <column id="424">
-                            <property name="width">459px</property>
+                            <property name="width">45%</property>
                         </column>
                         <header>
                             <row id="1372">
-                                <property name="backgroundColor">#411818</property>
+                                <property name="style">Header</property>
                                 <property name="verticalAlign">middle</property>
                                 <property name="height">0.342in</property>
                                 <cell id="1373">
                                     <data id="1376">
-                                        <property name="fontFamily">"Lato"</property>
-                                        <property name="fontSize">12pt</property>
-                                        <property name="fontWeight">bold</property>
-                                        <property name="color">white</property>
+                                        <property name="fontSize">16px</property>
+                                        <property name="fontWeight">normal</property>
                                         <property name="paddingLeft">10px</property>
                                         <property name="textAlign">right</property>
                                         <list-property name="boundDataColumns">
@@ -585,10 +589,8 @@ myDataSet = [];]]></method>
                                 <cell id="1374"/>
                                 <cell id="1375">
                                     <data id="1377">
-                                        <property name="fontFamily">"Lato"</property>
-                                        <property name="fontSize">12pt</property>
-                                        <property name="fontWeight">bold</property>
-                                        <property name="color">white</property>
+                                        <property name="fontSize">16px</property>
+                                        <property name="fontWeight">normal</property>
                                         <property name="paddingLeft">10px</property>
                                         <property name="textAlign">left</property>
                                         <list-property name="boundDataColumns">
@@ -616,10 +618,8 @@ myDataSet = [];]]></method>
                                     <property name="paddingBottom">0pt</property>
                                     <property name="paddingRight">0pt</property>
                                     <data id="403">
-                                        <property name="fontFamily">"Lato"</property>
-                                        <property name="fontSize">20px</property>
+                                        <property name="style">AlternatingRow</property>
                                         <property name="fontWeight">bold</property>
-                                        <property name="color">black</property>
                                         <property name="marginLeft">0px</property>
                                         <property name="marginBottom">0pt</property>
                                         <property name="paddingTop">5pt</property>
@@ -631,7 +631,8 @@ myDataSet = [];]]></method>
                                 </cell>
                             </row>
                             <row id="843">
-                                <property name="height">0.854in</property>
+                                <property name="style">AlternatingRow</property>
+                                <property name="height">80px</property>
                                 <cell id="844">
                                     <property name="paddingTop">0pt</property>
                                     <property name="paddingLeft">0pt</property>
@@ -639,8 +640,6 @@ myDataSet = [];]]></method>
                                     <property name="paddingRight">0pt</property>
                                     <property name="verticalAlign">middle</property>
                                     <text id="409">
-                                        <property name="fontFamily">"Lato"</property>
-                                        <property name="fontSize">18px</property>
                                         <property name="fontWeight">300</property>
                                         <property name="color">white</property>
                                         <property name="paddingTop">0pt</property>
@@ -649,14 +648,14 @@ myDataSet = [];]]></method>
                                         <property name="paddingRight">0pt</property>
                                         <property name="contentType">html</property>
                                         <text-property name="content"><![CDATA[<div style="float:right;padding-right:15px;">
-<div style="font-family:'Lato';float:left;font-size:16px;color:black;font-weight:600;margin-top:5px;"><VALUE-OF format="#,##0{RoundingMode=HALF_UP}">row["tot1"]*312</VALUE-OF></div>
-<div style="background-color:#D6DBE7;margin-left:12px;float:left;font-size:16px;text-align: right;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neu1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neu1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["neu1"]>0) &amp;&amp; (300*(row["neu1"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="float:left;color:#969696;font-weight:600;margin-top:12px;"><VALUE-OF format="#,##0{RoundingMode=HALF_UP}">row["tot1"]*312</VALUE-OF></div>
+<div style="background-color:#CECECE;margin-left:12px;float:left;text-align: right;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neu1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neu1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["neu1"]>0) &amp;&amp; (300*(row["neu1"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["neu1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
-<div style="background-color:#EC7171;float:left;font-size:16px;text-align:right;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neg1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neg1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["neg1"]>0) &amp;&amp; (300*(row["neg1"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="background-color:#F59D4C;float:left;text-align:right;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neg1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neg1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["neg1"]>0) &amp;&amp; (300*(row["neg1"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["neg1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
-<div style="background-color:#68D855;float:left;font-size:16px;text-align:right;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["pos1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["pos1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["pos1"]>0) &amp;&amp; (300*(row["pos1"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="background-color:#55CC7D;float:left;text-align:right;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["pos1"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["pos1"]>1) ";padding-right:5px"</VALUE-OF>"><VALUE-OF>if ((row["pos1"]>0) &amp;&amp; (300*(row["pos1"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["pos1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
 </div>]]></text-property>
@@ -669,7 +668,7 @@ else (Formatter.format((row["pos1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"
                                     <property name="paddingRight">0pt</property>
                                     <property name="verticalAlign">middle</property>
                                     <label id="1371">
-                                        <property name="color">silver</property>
+                                        <property name="color">#969696</property>
                                         <property name="textAlign">center</property>
                                         <text-property name="text">vs.</text-property>
                                     </label>
@@ -681,8 +680,6 @@ else (Formatter.format((row["pos1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"
                                     <property name="paddingRight">0pt</property>
                                     <property name="verticalAlign">middle</property>
                                     <text id="420">
-                                        <property name="fontFamily">"Lato"</property>
-                                        <property name="fontSize">18px</property>
                                         <property name="fontWeight">300</property>
                                         <property name="color">white</property>
                                         <property name="paddingTop">0pt</property>
@@ -691,16 +688,16 @@ else (Formatter.format((row["pos1"]/row["tot1"]),"###0%{RoundingMode=HALF_EVEN}"
                                         <property name="paddingRight">0pt</property>
                                         <property name="contentType">html</property>
                                         <text-property name="content"><![CDATA[<div style="float:left;padding-left:5px;">
-<div style="background-color:#68D855;margin-left:5px;float:left;font-size:16px;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["pos2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["pos2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["pos2"]>0) &amp;&amp; (300*(row["pos2"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="background-color:#55CC7D;margin-left:5px;float:left;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["pos2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["pos2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["pos2"]>0) &amp;&amp; (300*(row["pos2"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["pos2"]/row["tot2"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
-<div style="background-color:#EC7171;float:left;font-size:16px;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neg2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neg2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["neg2"]>0) &amp;&amp; (300*(row["neg2"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="background-color:#F59D4C;float:left;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neg2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neg2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["neg2"]>0) &amp;&amp; (300*(row["neg2"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["neg2"]/row["tot2"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
-<div style="background-color:#D6DBE7;float:left;font-size:16px;vertical-align:middle;padding-top:5px;height:28px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neu2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neu2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["neu2"]>0) &amp;&amp; (300*(row["neu2"]/maxTotal) < 34)) "&amp;nbsp;";
+<div style="background-color:#CECECE;float:left;vertical-align:middle;padding-top:12px;height:30px;width:<VALUE-OF format="###0{RoundingMode=HALF_UP}">300*(row["neu2"]/maxTotal)</VALUE-OF>px<VALUE-OF>if(row["neu2"]>1) ";padding-left:5px"</VALUE-OF>"><VALUE-OF>if ((row["neu2"]>0) &amp;&amp; (300*(row["neu2"]/maxTotal) < 34)) "&amp;nbsp;";
 else (Formatter.format((row["neu2"]/row["tot2"]),"###0%{RoundingMode=HALF_EVEN}"));
 </VALUE-OF></div>
-<div style="font-family:'Lato';float:left;margin-left:12px;font-size:16px;color:black;font-weight:600;margin-top:5px;"><VALUE-OF format="#,##0{RoundingMode=HALF_UP}">row["tot2"]*312</VALUE-OF></div>
+<div style="float:left;margin-left:12px;color:#969696;font-weight:600;margin-top:12px;"><VALUE-OF format="#,##0{RoundingMode=HALF_UP}">row["tot2"]*312</VALUE-OF></div>
 </div>]]></text-property>
                                     </text>
                                 </cell>

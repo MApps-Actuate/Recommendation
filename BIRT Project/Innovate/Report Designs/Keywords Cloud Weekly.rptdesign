@@ -2,7 +2,6 @@
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
     <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201710020040</property>
     <property name="units">in</property>
-    <property name="theme">mapcloud.mapcloud</property>
     <property name="layoutPreference">auto layout</property>
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">96</property>
@@ -10,10 +9,6 @@
         <structure>
             <property name="fileName">/ThemesReportItems31.rptlibrary</property>
             <property name="namespace">ThemesReportItems31</property>
-        </structure>
-        <structure>
-            <property name="fileName">Report Libraries/mapcloud.rptlibrary</property>
-            <property name="namespace">mapcloud</property>
         </structure>
     </list-property>
     <data-sources>
@@ -29,30 +24,48 @@
         </data-mart-linked-data-model>
     </property>
     <page-setup>
-        <simple-master-page name="USElectionsSimpleMasterPage" id="7" extends="mapcloud.USElectionsSimpleMasterPage"/>
+        <simple-master-page name="SimpleMasterPage" id="7">
+            <property name="type">custom</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0in</property>
+            <property name="leftMargin">0in</property>
+            <property name="bottomMargin">0in</property>
+            <property name="rightMargin">0in</property>
+            <property name="height">12in</property>
+            <property name="width">930px</property>
+            <property name="showHeaderOnFirst">false</property>
+            <property name="showFooterOnLast">false</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
     </page-setup>
     <body>
         <label id="279">
-            <property name="backgroundColor">#F5F3F3</property>
-            <property name="fontFamily">"Lato"</property>
-            <property name="fontSize">36pt</property>
-            <property name="fontWeight">bold</property>
-            <property name="color">#411818</property>
+            <property name="backgroundColor">#FAFAFB</property>
+            <property name="fontFamily">"OpenText Sans"</property>
+            <property name="fontSize">24px</property>
+            <property name="fontWeight">normal</property>
+            <property name="color">#221E6F</property>
             <text-property name="text">Most popular words</text-property>
         </label>
         <label id="280">
-            <property name="backgroundColor">#F5F3F3</property>
-            <property name="fontFamily">"Lato"</property>
-            <property name="fontSize">18pt</property>
-            <property name="color">#411818</property>
+            <property name="backgroundColor">#FAFAFB</property>
+            <property name="fontFamily">"OpenText Sans"</property>
+            <property name="fontSize">20px</property>
+            <property name="color">#969696</property>
+            <property name="textUnderline">none</property>
             <expression name="bookmark" type="javascript">"loopVizTitle"</expression>
             <text-property name="text">Week of</text-property>
         </label>
         <grid id="697">
-            <property name="backgroundColor">#F5F3F3</property>
+            <property name="backgroundColor">#FAFAFB</property>
+            <property name="fontFamily">"OpenText Sans"</property>
             <property name="height">5.541666666666667in</property>
             <column id="698"/>
             <row id="699">
+                <property name="borderTopColor">#E4E6E9</property>
+                <property name="borderTopStyle">solid</property>
+                <property name="borderTopWidth">medium</property>
                 <property name="height">5.541666666666667in</property>
                 <cell id="700">
                     <extended-item extensionName="HTMLControl" id="4">
@@ -94,7 +107,7 @@ var data = dataTransfrom(this.getDataCursor());
 
 window["__draw_word_cloud"] = function(containerId, data, min, max) {
 //	var colors = ["#4D4D4D", "#989898","#b8b8b8"];
-	var colors = ["#411818", "#a28686","#d9d1d1"];
+	var colors = ["#4F6A8D", "#A5B6CC","#BAC7D9"];
 //	var typeSize = [14, 18, 24, 32, 40, 48, 60, 72, 96, 128, 144];
 	var typeSize = [14, 18, 24, 32, 40, 48, 60, 72, 96];
 	var containerWidth = $("#" + containerId).width();
@@ -115,7 +128,7 @@ window["__draw_word_cloud"] = function(containerId, data, min, max) {
 				};
 			})).padding(5).rotate(function() {
 		return 0;
-	}).font("Lato").fontSize(function(d) {
+	}).font("OpenText Sans").fontSize(function(d) {
 		return d.size;
 	}).on("end", draw).start();
 
@@ -130,7 +143,7 @@ window["__draw_word_cloud"] = function(containerId, data, min, max) {
 								+ containerHeight / 2 + ")").selectAll("text")
 				.data(words).enter().append("text").style("font-size", function(d) {
 							return d.size + "px";
-						}).style("font-family", "Lato").style("font-size",function(d){
+						}).style("font-family", "OpenText Sans").style("font-size",function(d){
 							return d.size + "px";
 						}).style("fill", function(d, i) {
 							return fill(data[i].value);
@@ -169,7 +182,7 @@ head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL), 
                             </structure>
                         </list-property>
                         <property name="height">480px</property>
-                        <property name="width">980px</property>
+                        <property name="width">100%</property>
                         <expression name="bookmark" type="javascript">"MovingWordCloud"</expression>
                         <list-property name="boundDataColumns">
                             <structure>
@@ -196,23 +209,23 @@ head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL), 
                         <property name="linkedDataModel">Keywords Cloud Weekly DM</property>
                     </extended-item>
                     <extended-item extensionName="HTMLControl" id="47">
-                        <property name="html">&lt;div style="width:900px;">
+                        <property name="html">&lt;div style="width:100%;">
 	&lt;button class="loopVizButton loopVizPlayPause">&amp;#9658;&lt;/button>
-	&lt;div style="width:820px; float:right">
+	&lt;div style="width:95%; float:right">
 		&lt;div id="loopVizProgressBar" class="loopVizProgressBar">&lt;span id="loopVizProgressBarVal" style="width:0%">&lt;/span>&lt;/div>
 	&lt;/div>
 &lt;/div></property>
                         <property name="css">.loopVizProgressBar { 
 	height: 30px; 
 	position: relative;
-	background: #ddd;
+	background: #E5E5E5;
 	cursor: pointer;	
 }
 
 .loopVizProgressBar > span {
 	display: block;
 	height: 100%;
-	background-color: #411818;
+	background-color: #111B58;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;	
@@ -222,8 +235,8 @@ head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL), 
 
 .loopVizButton {
     height: 30px;
-    width: 50px;
-	background-color: #411818;
+    width: 4%;
+	background-color: #111B58;
 	border: none;
 	color: white;
 	margin-left:5px;
@@ -360,7 +373,7 @@ $this.find(".loopVizProgressBar").click(function(e) {
                             </structure>
                         </list-property>
                         <property name="height">30px</property>
-                        <property name="width">980px</property>
+                        <property name="width">100%</property>
                         <list-property name="boundDataColumns">
                             <structure>
                                 <property name="name">keyword5</property>
