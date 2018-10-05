@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="NewDataMartDataSource" id="24">
+            <property name="datamartURL">Data Objects/SuggestionBox</property>
+            <property name="datamartVersion">-1</property>
+            <property name="accessType">transient</property>
+        </data-mart-data-source>
+    </data-sources>
+    <data-sets>
+        <data-mart-data-set name="NewDataMartDataSource::ImprovementSuggestion" id="27">
+            <property name="dataSource">NewDataMartDataSource</property>
+            <property name="dataObject">ImprovementSuggestion</property>
+        </data-mart-data-set>
+    </data-sets>
+    <body>
+        <extended-item extensionName="Chart" name="Column Chart - ImprovementSuggestion_e090bebd-111b-4c1e-a0e4-32efefc983fd" id="28">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Column Chart" subType="SideBySide" orientation="1">
+  <block>
+   <children _type="TitleBlock" visible="true" auto="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="Number of Suggestions by Group">
+      <font size="16.0" bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false" orientation="1" position="3">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title visible="true">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body=",,461.25,"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.range.selector" value="false"/>
+  <extendedProperties name="jschart.navigator" value="false"/>
+  <extendedProperties name="jschart.scroll" value="true"/>
+  <extendedProperties name="keep.hierarchy.category" value="false"/>
+  <extendedProperties name="keep.hierarchy.series" value="false"/>
+  <extendedProperties name="enable.data.summarize" value="false"/>
+  <extendedProperties name="jschart.glass.style" value="false"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="QWER"/>
+   <orthogonalSampleData dataSetRepresentation="QWER" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="true" legendBehavior="1"/>
+  <emptyMessage visible="true">
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="2" gapWidth="0.5" labelPosition="1" staggered="false" interval="1" categoryAxis="true">
+   <title visible="false">
+    <caption value="">
+     <font size="14.0" bold="false" italic="false" underline="false"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" labelPosition="2" primaryAxis="true" percent="false">
+    <title visible="false">
+     <caption value="">
+      <font bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Business ID" stacked="false">
+      <label>
+       <caption value="Business ID"/>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;S_ITEM_BUSINESS_ID&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="0"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="true">
+     <caption>
+      <font size="10.0" bold="false" italic="false" underline="false" rotation="0.0"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale step="0.0" stepNumber="1"/>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <series seriesIdentifier="Group">
+     <label>
+      <caption value="Group"/>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Group&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupingInterval="0.0"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font size="10.0" bold="false" italic="false" underline="false" rotation="0.0"/>
+     <color _body=",255,0,0,0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">347pt</property>
+            <property name="width">461.25pt</property>
+            <property name="dataSet">NewDataMartDataSource::ImprovementSuggestion</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Group</property>
+                    <text-property name="displayName">Group</text-property>
+                    <expression name="expression">dataSetRow["Group"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <text-property name="displayName">Business ID</text-property>
+                    <expression name="expression">dataSetRow["S_ITEM_BUSINESS_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">ThemesReportItems.Chart-Magellan</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <extended-item extensionName="Chart" name="Line Chart - ImprovementSuggestion_b7d223fd-a381-4631-8748-6bb0effcc787" id="32">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Line Chart" subType="Overlay" orientation="1">
+  <block>
+   <children _type="TitleBlock" visible="true" auto="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="Number of Suggestions Over Time">
+      <font size="16.0" bold="false" italic="false" underline="false"/>
+      <color _body=",255,51,51,51"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false" orientation="1" position="3">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title visible="true">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.range.selector" value="true"/>
+  <extendedProperties name="jschart.navigator" value="true"/>
+  <extendedProperties name="jschart.scroll" value="true"/>
+  <extendedProperties name="keep.hierarchy.category" value="false"/>
+  <extendedProperties name="keep.hierarchy.series" value="false"/>
+  <extendedProperties name="enable.data.summarize" value="false"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/25/2005"/>
+   <orthogonalSampleData dataSetRepresentation="QWER" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity enable="true" legendBehavior="1"/>
+  <emptyMessage visible="true">
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3" gapWidth="0.5" labelPosition="1" staggered="false" interval="1" categoryAxis="true">
+   <title visible="false">
+    <caption value="">
+     <font size="14.0" bold="false" italic="false" underline="false"/>
+     <color _body=",255,51,51,51"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" labelPosition="2" primaryAxis="true" percent="false">
+    <title visible="false">
+     <caption value="">
+      <font bold="false" italic="false" underline="false"/>
+      <color _body=",255,0,0,0"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="LineSeries" seriesIdentifier="Business ID" stacked="false" paletteLineColor="true">
+      <label>
+       <caption value="Business ID"/>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;S_ITEM_BUSINESS_ID&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="0"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="true">
+     <caption>
+      <font size="10.0" bold="false" italic="false" underline="false" rotation="0.0"/>
+      <color _body=",255,51,51,51"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale step="0.0" stepNumber="1">
+     <min _type="NumberDataElement" value="0.0"/>
+    </scale>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <series seriesIdentifier="Created Date">
+     <label>
+      <caption value="Created Date"/>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;S_CREATEDDATE&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupingUnit="4" groupType="1"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font size="10.0" bold="false" italic="false" underline="false" rotation="0.0"/>
+     <color _body=",255,51,51,51"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+            <property name="outputFormat">JS</property>
+            <property name="height">347pt</property>
+            <property name="width">707.25pt</property>
+            <property name="dataSet">NewDataMartDataSource::ImprovementSuggestion</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">S_CREATEDDATE</property>
+                    <text-property name="displayName">Created Date</text-property>
+                    <expression name="expression">dataSetRow["S_CREATEDDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <text-property name="displayName">Business ID</text-property>
+                    <expression name="expression">dataSetRow["S_ITEM_BUSINESS_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="theme">ThemesReportItems.Chart-Magellan</property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">copyHyperlink</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="copyHyperlink">true</property>
+        </extended-item>
+        <grid name="SingleMetric_1ba6518b-23a7-4fc2-8463-dfc79e9ad9b8" id="37">
+            <text-property name="displayName" key="SingleMetric_Dashboard_SingleMetric_1ba6518b-23a7-4fc2-8463-dfc79e9ad9b8"></text-property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">image_position</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="image_position">right</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">none</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">37.5pt</property>
+            <property name="width">171pt</property>
+            <property name="dataSet">NewDataMartDataSource::ImprovementSuggestion</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <text-property name="displayName">S_ITEM_BUSINESS_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["S_ITEM_BUSINESS_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_Count</property>
+                    <property name="aggregateFunction">Count</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["S_ITEM_BUSINESS_ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">(true)</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="38"/>
+            <column id="39"/>
+            <row id="40">
+                <property name="backgroundColor">#BAC7D9</property>
+                <property name="color">#FFFFFF</property>
+                <cell id="41">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <label id="42">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Submitted</text-property>
+                    </label>
+                    <data id="43">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">Aggregation_Count</property>
+                    </data>
+                </cell>
+                <cell id="44">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <property name="textAlign">right</property>
+                    <property name="display">none</property>
+                    <image id="45">
+                        <property name="source">none</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <grid name="SingleMetric_b9982cc4-05bf-4a54-a437-243df3576418" id="49">
+            <text-property name="displayName" key="SingleMetric_Dashboard_SingleMetric_b9982cc4-05bf-4a54-a437-243df3576418"></text-property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">image_position</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="image_position">right</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">none</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">37.5pt</property>
+            <property name="width">171pt</property>
+            <property name="dataSet">NewDataMartDataSource::ImprovementSuggestion</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <text-property name="displayName">S_ITEM_BUSINESS_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["S_ITEM_BUSINESS_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SuggestionStatus</property>
+                    <text-property name="displayName">SuggestionStatus</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SuggestionStatus"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_Count</property>
+                    <property name="aggregateFunction">Count</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["S_ITEM_BUSINESS_ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">( BirtComp.equalTo( (""+row["SuggestionStatus"]) == null ? (""+row["SuggestionStatus"]) : (""+row["SuggestionStatus"]).toLowerCase(), "In Progress".toLowerCase() ))</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="50"/>
+            <column id="51"/>
+            <row id="52">
+                <property name="backgroundColor">#A5B6CC</property>
+                <property name="color">#FFFFFF</property>
+                <cell id="53">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <label id="54">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">In Progress</text-property>
+                    </label>
+                    <data id="55">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">Aggregation_Count</property>
+                    </data>
+                </cell>
+                <cell id="56">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <property name="textAlign">right</property>
+                    <property name="display">none</property>
+                    <image id="57">
+                        <property name="source">none</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <grid name="SingleMetric_ae477d68-588a-4d77-a793-d5dbb52ca8cf" id="61">
+            <text-property name="displayName" key="SingleMetric_Dashboard_SingleMetric_ae477d68-588a-4d77-a793-d5dbb52ca8cf"></text-property>
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">image_position</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="image_position">right</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">none</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36.75pt</property>
+            <property name="width">171pt</property>
+            <property name="dataSet">NewDataMartDataSource::ImprovementSuggestion</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <text-property name="displayName">S_ITEM_BUSINESS_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["S_ITEM_BUSINESS_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SuggestionStatus</property>
+                    <text-property name="displayName">SuggestionStatus</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SuggestionStatus"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_Count</property>
+                    <property name="aggregateFunction">Count</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["S_ITEM_BUSINESS_ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">( BirtComp.equalTo( (""+row["SuggestionStatus"]) == null ? (""+row["SuggestionStatus"]) : (""+row["SuggestionStatus"]).toLowerCase(), "Completed".toLowerCase() ))</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="62"/>
+            <column id="63"/>
+            <row id="64">
+                <property name="backgroundColor">#4F6A8D</property>
+                <property name="color">#FFFFFF</property>
+                <cell id="65">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <label id="66">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Completed</text-property>
+                    </label>
+                    <data id="67">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="textUnderline">none</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">Aggregation_Count</property>
+                    </data>
+                </cell>
+                <cell id="68">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <property name="textAlign">right</property>
+                    <property name="display">none</property>
+                    <image id="69">
+                        <property name="source">none</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="dashboardView">
+        <dashboard id="2">
+            <property name="activeTab">0b73077d-87d1-4693-b5de-7afac99fdfb2</property>
+            <property name="tabs">
+                <tab-element name="0b73077d-87d1-4693-b5de-7afac99fdfb2" id="18">
+                    <property name="title">Suggestion Status</property>
+                    <property name="sections">
+                        <section id="19">
+                            <property name="width">13.333333333333334%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_53894b6f-f020-4c9d-a139-343f4a652902" id="35">
+                                    <property name="title">ImprovementSuggestion</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">4</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">67px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="36">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="46">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">SingleMetric_1ba6518b-23a7-4fc2-8463-dfc79e9ad9b8</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="05c1e969-caaa-4928-acc5-6571b234da8d" id="21">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="23">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#000000</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="22"/>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79" id="47">
+                                    <property name="title">ImprovementSuggestion 1</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">5</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">67px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="48">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="58">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">SingleMetric_b9982cc4-05bf-4a54-a437-243df3576418</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666" id="59">
+                                    <property name="title">ImprovementSuggestion 2</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">6</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">66px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="60">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="70">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">SingleMetric_ae477d68-588a-4d77-a793-d5dbb52ca8cf</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="20">
+                            <property name="width">52.24932249322494%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227" id="30">
+                                    <property name="title">Line Chart - ImprovementSuggestion</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">500px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="31">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="33">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Line Chart - ImprovementSuggestion_b7d223fd-a381-4631-8748-6bb0effcc787</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="34">
+                            <property name="width">34.417344173441734%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_f7e98c63-c97c-43a1-ba45-7846cfff2563" id="25">
+                                    <property name="title">Column Chart - ImprovementSuggestion</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">500px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="26">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="29">
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="internalReportLetRef">Column Chart - ImprovementSuggestion_e090bebd-111b-4c1e-a0e4-32efefc983fd</property>
+                                        </data-view>
+                                    </property>
+                                    <property name="observers">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_02a94803-32e9-4f7d-94ac-bd50711f8227</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_53894b6f-f020-4c9d-a139-343f4a652902</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_d08ace27-3bd5-4550-8875-48aecf19ce79</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_f33e6a75-d824-4728-a432-0c61fd2a3666</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+                <tab-element name="6c5cc3b1-dbcc-4f36-8426-6ab265840d97" id="3">
+                    <property name="title">New%20Tab%201</property>
+                    <property name="backgroundColor">auto</property>
+                    <property name="sections">
+                        <section id="4">
+                            <property name="width">31.90709046454768%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_1dd87c24-9268-4642-8a5b-1f0949c40ae7" id="15">
+                                    <property name="title">Reportlet - Suggestions-status - SuggestionStatusBar</property>
+                                    <property name="externalGadgetURI">/Home/administrator/Suggestions-status.rptdesign</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">322px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="16">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="17">
+                                            <list-property name="userProperties">
+                                                <structure>
+                                                    <property name="name">showViewerToolbar</property>
+                                                    <property name="type">boolean</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="showViewerToolbar">true</property>
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="externalContentRef">
+                                                <external-element-ref>
+                                                    <property name="sourceFile">/Home/administrator/Suggestions-status.rptdesign</property>
+                                                    <property name="targetBookmark">SuggestionStatusBar</property>
+                                                </external-element-ref>
+                                            </property>
+                                        </data-view>
+                                    </property>
+                                </gadget>
+                                <gadget name="147c412f-8d3a-48d7-945a-99a7fbb4aeee" id="6">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="8">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">200</property>
+                                            <property name="color">#353535</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="7"/>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                        <section id="5">
+                            <property name="width">68.09290953545232%</property>
+                            <property name="gadgets">
+                                <gadget name="Gadget_5118e236-b799-41b2-9d20-c05f9b15675a" id="9">
+                                    <property name="title">Reportlet - Suggestions-by-group - Suggestion-Group-bars</property>
+                                    <property name="externalGadgetURI">/Home/administrator/Suggestions-by-group.rptdesign</property>
+                                    <property name="showTitle">true</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="height">322px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="10">
+                                            <property name="showCaption">false</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">18pt</property>
+                                            <property name="fontWeight">normal</property>
+                                            <property name="fontStyle">normal</property>
+                                            <property name="color">#353535</property>
+                                            <property name="textUnderline">none</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <data-view id="11">
+                                            <list-property name="userProperties">
+                                                <structure>
+                                                    <property name="name">showViewerToolbar</property>
+                                                    <property name="type">boolean</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="showViewerToolbar">true</property>
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="externalContentRef">
+                                                <external-element-ref>
+                                                    <property name="sourceFile">/Home/administrator/Suggestions-by-group.rptdesign</property>
+                                                    <property name="targetBookmark">Suggestion-Group-bars</property>
+                                                </external-element-ref>
+                                            </property>
+                                        </data-view>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+            </property>
+        </dashboard>
+    </property>
+</report>

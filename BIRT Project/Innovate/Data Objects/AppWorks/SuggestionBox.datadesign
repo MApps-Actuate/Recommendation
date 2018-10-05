@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <text-property name="title">MyCompanyMarketing 1.0.0</text-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Cordys System" id="2">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.actuate.jdbc.sqlserver.SQLServerDriver</property>
+            <property name="odaURL">jdbc:actuate:sqlserver://NKPROC16:1433;sendStringParametersAsUnicode=false;databasename=psuite</property>
+            <property name="odaUser">sa</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGVtby5kZW1v</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ImprovementSuggestion" id="3">
+            <text-property name="displayName">Improvement Suggestion</text-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LastModifiedBy_Id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">LastModifiedBy</text-property>
+                    <text-property name="heading">LastModifiedBy_Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CreatedBy_Id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">CreatedBy</text-property>
+                    <text-property name="heading">CreatedBy_Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">S_LASTMODIFIEDDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Last Modified Date</text-property>
+                    <text-property name="heading">S_LASTMODIFIEDDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">S_CREATEDDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Created Date</text-property>
+                    <text-property name="heading">S_CREATEDDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">S_ITEM_STATUS</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Item status</text-property>
+                    <text-property name="heading">S_ITEM_STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">S_ITEM_BUSINESS_ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Business ID</text-property>
+                    <text-property name="heading">S_ITEM_BUSINESS_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Department</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Department</text-property>
+                    <text-property name="heading">Department</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Group</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Group</text-property>
+                    <text-property name="heading">Group</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SuggestionStatus</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Suggestion Status</text-property>
+                    <text-property name="heading">SuggestionStatus</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Subject</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Subject</text-property>
+                    <text-property name="heading">Subject</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Details</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Details</text-property>
+                    <text-property name="heading">Details</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">LastModifiedBy_Id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CreatedBy_Id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">S_LASTMODIFIEDDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">S_CREATEDDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">S_ITEM_STATUS</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">S_ITEM_BUSINESS_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Department</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Group</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">SuggestionStatus</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Subject</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Details</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Cordys System</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Id</property>
+                    <property name="nativeName">Id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">LastModifiedBy_Id</property>
+                    <property name="nativeName">LastModifiedBy_Id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CreatedBy_Id</property>
+                    <property name="nativeName">CreatedBy_Id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">S_LASTMODIFIEDDATE</property>
+                    <property name="nativeName">S_LASTMODIFIEDDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">S_CREATEDDATE</property>
+                    <property name="nativeName">S_CREATEDDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">S_ITEM_STATUS</property>
+                    <property name="nativeName">S_ITEM_STATUS</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">S_ITEM_BUSINESS_ID</property>
+                    <property name="nativeName">S_ITEM_BUSINESS_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Department</property>
+                    <property name="nativeName">Department</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Group</property>
+                    <property name="nativeName">Group</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">SuggestionStatus</property>
+                    <property name="nativeName">SuggestionStatus</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Subject</property>
+                    <property name="nativeName">Subject</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">Details</property>
+                    <property name="nativeName">Details</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from dbo.O5MyCompanyMarketingImprovementSuggestion where (S_ITEM_STATUS = 1 Or S_ITEM_STATUS is null)]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <linked-data-model name="MyCompanyMarketing" id="4">
+            <property name="aliasDataSets">
+                <alias-data-set name="ImprovementSuggestion" id="5">
+                    <property name="originDataSet">ImprovementSuggestion</property>
+                </alias-data-set>
+            </property>
+            <property name="categories">
+                <category name="ImprovementSuggestion" id="6">
+                    <text-property name="displayName">ImprovementSuggestion</text-property>
+                    <property name="categoryColumns">
+                        <category-column name="Id::ImprovementSuggestion" id="7">
+                            <text-property name="displayName">ID</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">Id</property>
+                        </category-column>
+                        <category-column name="LastModifiedBy_Id::ImprovementSuggestion" id="8">
+                            <text-property name="displayName">LastModifiedBy</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">LastModifiedBy_Id</property>
+                        </category-column>
+                        <category-column name="CreatedBy_Id::ImprovementSuggestion" id="9">
+                            <text-property name="displayName">CreatedBy</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">CreatedBy_Id</property>
+                        </category-column>
+                        <category-column name="S_LASTMODIFIEDDATE::ImprovementSuggestion" id="10">
+                            <text-property name="displayName">Last Modified Date</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">S_LASTMODIFIEDDATE</property>
+                        </category-column>
+                        <category-column name="S_CREATEDDATE::ImprovementSuggestion" id="11">
+                            <text-property name="displayName">Created Date</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">S_CREATEDDATE</property>
+                        </category-column>
+                        <category-column name="S_ITEM_STATUS::ImprovementSuggestion" id="12">
+                            <text-property name="displayName">Item status</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">S_ITEM_STATUS</property>
+                        </category-column>
+                        <category-column name="S_ITEM_BUSINESS_ID::ImprovementSuggestion" id="13">
+                            <text-property name="displayName">Business ID</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">S_ITEM_BUSINESS_ID</property>
+                        </category-column>
+                        <category-column name="Department::ImprovementSuggestion" id="14">
+                            <text-property name="displayName">Department</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">Department</property>
+                        </category-column>
+                        <category-column name="Group::ImprovementSuggestion" id="15">
+                            <text-property name="displayName">Group</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">Group</property>
+                        </category-column>
+                        <category-column name="SuggestionStatus::ImprovementSuggestion" id="16">
+                            <text-property name="displayName">Suggestion Status</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">SuggestionStatus</property>
+                        </category-column>
+                        <category-column name="Subject::ImprovementSuggestion" id="17">
+                            <text-property name="displayName">Subject</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">Subject</property>
+                        </category-column>
+                        <category-column name="Details::ImprovementSuggestion" id="18">
+                            <text-property name="displayName">Details</text-property>
+                            <property name="aliasDataSet">MyCompanyMarketing/ImprovementSuggestion</property>
+                            <property name="resultSetColumnName">Details</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+        </linked-data-model>
+    </property>
+</datamart>
