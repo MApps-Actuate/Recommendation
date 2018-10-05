@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
     <themes>
         <report-item-theme type="Crosstab" name="Crosstab-Modern" id="10">
             <text-property name="displayName">Modern</text-property>
@@ -371,16 +371,12 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,229,107,46"/>
-      <entries _body=",255,102,176,209"/>
-      <entries _body=",255,244,215,96"/>
-      <entries _body=",255,201,17,47"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,244,172,69"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,242,150,130"/>
-      <entries _body=",255,44,142,60"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
@@ -776,18 +772,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,229,107,46"/>
-     <entries _body=",255,102,176,209"/>
-     <entries _body=",255,244,215,96"/>
-     <entries _body=",255,201,17,47"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,244,172,69"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,242,150,130"/>
-     <entries _body=",255,44,142,60"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -939,16 +931,12 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,102,176,209"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
@@ -1352,18 +1340,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,102,176,209"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -1427,7 +1411,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -1493,7 +1477,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -1504,7 +1488,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -1515,21 +1499,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,223,94,52"/>
-      <entries _body=",255,244,172,69"/>
-      <entries _body=",255,201,17,47"/>
-      <entries _body=",255,242,150,130"/>
-      <entries _body=",255,244,215,96"/>
-      <entries _body=",255,147,18,5"/>
-      <entries _body=",255,214,94,81"/>
-      <entries _body=",255,132,32,73"/>
-      <entries _body=",255,242,140,70"/>
-      <entries _body=",255,178,80,118"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1547,7 +1527,7 @@
      <series _type="LineSeries" seriesIdentifier="">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1570,7 +1550,7 @@
      <series _type="AreaSeries" seriesIdentifier="" stacked="false" curve="false">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1592,7 +1572,7 @@
      <series _type="PieSeries" seriesIdentifier="">
       <label>
        <caption>
-        <font name="Lato" size="10.0"/>
+        <font name="OpenText Sans" size="10.0"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1646,7 +1626,7 @@
        </minorGrid>
        <label>
         <caption>
-         <font name="Lato" size="10.0"/>
+         <font name="OpenText Sans" size="10.0"/>
          <color _body=",255,85,85,85"/>
         </caption>
         <background _nil="1"/>
@@ -1664,7 +1644,7 @@
      <series _type="ScatterSeries" seriesIdentifier="" paletteLineColor="true">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1686,7 +1666,7 @@
      <series _type="StockSeries" seriesIdentifier="">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1705,7 +1685,7 @@
      <series _type="BubbleSeries" seriesIdentifier="">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1730,7 +1710,7 @@
      <series _type="DifferenceSeries" seriesIdentifier="">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,85,85,85"/>
        </caption>
        <background _nil="1"/>
@@ -1789,7 +1769,7 @@
      <series _type="RadarSeries" seriesIdentifier="" paletteLineColor="true">
       <label>
        <caption>
-        <font name="Lato">
+        <font name="OpenText Sans">
          <alignment/>
         </font>
         <color _body=",255,85,85,85"/>
@@ -1809,7 +1789,7 @@
       </webLineAttributes>
       <webLabel>
        <caption>
-        <font name="Lato">
+        <font name="OpenText Sans">
          <alignment/>
         </font>
         <color _body=",255,85,85,85"/>
@@ -1819,7 +1799,7 @@
       </webLabel>
       <catLabel>
        <caption>
-        <font name="Lato" size="10.0">
+        <font name="OpenText Sans" size="10.0">
          <alignment/>
         </font>
         <color _body=",255,85,85,85"/>
@@ -1834,7 +1814,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -1865,7 +1845,7 @@
    <ancillaryAxes>
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -1893,7 +1873,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="12.0"/>
+      <font name="OpenText Sans" size="12.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -1923,18 +1903,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,223,94,52"/>
-     <entries _body=",255,244,172,69"/>
-     <entries _body=",255,201,17,47"/>
-     <entries _body=",255,242,150,130"/>
-     <entries _body=",255,244,215,96"/>
-     <entries _body=",255,147,18,5"/>
-     <entries _body=",255,214,94,81"/>
-     <entries _body=",255,132,32,73"/>
-     <entries _body=",255,242,140,70"/>
-     <entries _body=",255,178,80,118"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -1954,7 +1930,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -2086,16 +2062,12 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,53,53,53"/>
-      <entries _body=",255,195,195,195"/>
-      <entries _body=",255,93,93,93"/>
-      <entries _body=",255,164,164,164"/>
-      <entries _body=",255,74,74,74"/>
-      <entries _body=",255,134,134,134"/>
-      <entries _body=",255,215,215,215"/>
-      <entries _body=",255,53,53,53"/>
-      <entries _body=",255,195,195,195"/>
-      <entries _body=",255,164,164,164"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
@@ -2494,18 +2466,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,53,53,53"/>
-     <entries _body=",255,195,195,195"/>
-     <entries _body=",255,93,93,93"/>
-     <entries _body=",255,164,164,164"/>
-     <entries _body=",255,74,74,74"/>
-     <entries _body=",255,134,134,134"/>
-     <entries _body=",255,215,215,215"/>
-     <entries _body=",255,53,53,53"/>
-     <entries _body=",255,195,195,195"/>
-     <entries _body=",255,164,164,164"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -2978,7 +2946,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3007,7 +2975,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -3015,7 +2983,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3044,7 +3012,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -3055,7 +3023,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3066,21 +3034,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -3390,7 +3354,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -3479,18 +3443,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -3510,7 +3470,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -3554,7 +3514,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3583,7 +3543,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -3591,7 +3551,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3620,7 +3580,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -3631,7 +3591,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -3642,21 +3602,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -3966,7 +3922,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -4055,18 +4011,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -4086,7 +4038,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -4130,7 +4082,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4159,7 +4111,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -4167,7 +4119,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4196,7 +4148,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -4207,7 +4159,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4218,21 +4170,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -4542,7 +4490,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -4631,18 +4579,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -4662,7 +4606,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -4706,7 +4650,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4735,7 +4679,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -4743,7 +4687,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4772,7 +4716,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -4783,7 +4727,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -4794,21 +4738,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -5118,7 +5058,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -5207,18 +5147,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -5238,7 +5174,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -5282,7 +5218,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5311,7 +5247,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -5319,7 +5255,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5336,7 +5272,7 @@
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
   <extendedProperties name="theme.withoutaxes" value=""/>
-  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                        var d = new Date(this.x);&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+(d.getFullYear()+1)+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total revenue $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    //options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.2 ;&amp;#13;&amp;#10;    options.legend.itemDistance = 15;&amp;#13;&amp;#10;    options.legend.x = 25;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;    &amp;#13;&amp;#10;    switch (series.name) {&amp;#13;&amp;#10;        case &amp;quot;Competitor ETFs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#980043&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Competitor Investment ISAs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#dd1c77&amp;quot;;&amp;#13;&amp;#10;            break;      &amp;#13;&amp;#10;        case &amp;quot;Competitor Mutual funds&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#df65b0&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Competitor Stocks&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#d7b5d8&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;ETFs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#006d2c&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;ISAs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#2ca25f&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Mutual funds&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#66c2a4&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Stocks&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#b2e2e2&amp;quot;;&amp;#13;&amp;#10;            break;               &amp;#13;&amp;#10;        default: &amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#5fc9b7&amp;quot;;&amp;#13;&amp;#10;    } &amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;    &amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#6D65FF&amp;#039;,&amp;#039;#221E6F&amp;#039;,&amp;#039;#7E929F&amp;#039;,&amp;#039;#F59D4C&amp;#039;,&amp;#039;#C4C4C4&amp;#039;,&amp;#039;#4F3690&amp;#039;];&amp;#13;&amp;#10;    //options.colors = [&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                        var d = new Date(this.x);&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+(d.getFullYear()+1)+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total revenue $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    //options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.2 ;&amp;#13;&amp;#10;    options.legend.itemDistance = 15;&amp;#13;&amp;#10;    options.legend.x = 25;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;    &amp;#13;&amp;#10;    switch (series.name) {&amp;#13;&amp;#10;        case &amp;quot;Competitor ETFs&amp;quot;:&amp;#13;&amp;#10;        case &amp;quot;ETFs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#221E6F&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Competitor Investment ISAs&amp;quot;:&amp;#13;&amp;#10;        case &amp;quot;Investment ISAs&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#F59D4C&amp;quot;;&amp;#13;&amp;#10;            break;      &amp;#13;&amp;#10;        case &amp;quot;Competitor Mutual funds&amp;quot;:&amp;#13;&amp;#10;        case &amp;quot;Mutual funds&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#C4C4C4&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        case &amp;quot;Competitor Stocks&amp;quot;:&amp;#13;&amp;#10;        case &amp;quot;Stocks&amp;quot;:&amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#4F3690&amp;quot;;&amp;#13;&amp;#10;            break;&amp;#13;&amp;#10;        default: &amp;#13;&amp;#10;            seriesOptions.color = &amp;quot;#5fc9b7&amp;quot;;&amp;#13;&amp;#10;    } &amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;    &amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
   <extendedProperties name="jschart.animation" value="true"/>
   <emptyMessage>
    <caption value="This chart contains no data."/>
@@ -5348,7 +5284,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -5359,7 +5295,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5370,21 +5306,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -5690,11 +5622,11 @@
      </series>
     </seriesDefinitions>
     <lineAttributes>
-     <color _body=",255,145,145,145"/>
+     <color _body=",255,225,227,228"/>
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -5784,16 +5716,12 @@
    <seriesDefinitions>
     <query definition=""/>
     <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
+     <entries _body=",255,109,101,255"/>
+     <entries _body=",255,34,30,111"/>
+     <entries _body=",255,126,146,159"/>
+     <entries _body=",255,245,157,76"/>
+     <entries _body=",255,196,196,196"/>
+     <entries _body=",255,79,54,144"/>
     </seriesPalette>
     <series seriesIdentifier="">
      <label>
@@ -5810,11 +5738,11 @@
     </series>
    </seriesDefinitions>
    <lineAttributes>
-    <color _body=",255,145,145,145"/>
+    <color _body=",255,225,227,228"/>
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -5858,7 +5786,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5887,7 +5815,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -5895,7 +5823,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5912,7 +5840,7 @@
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
   <extendedProperties name="theme.withoutaxes" value=""/>
-  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                        var d = new Date(this.x);&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+(d.getFullYear()+1)+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total revenue $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;    options.legend.x = 80;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;    &amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#6D65FF&amp;#039;,&amp;#039;#221E6F&amp;#039;,&amp;#039;#7E929F&amp;#039;,&amp;#039;#F59D4C&amp;#039;,&amp;#039;#C4C4C4&amp;#039;,&amp;#039;#4F3690&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                        var d = new Date(this.x);&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+(d.getFullYear()+1)+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total revenue $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;    options.legend.x = 80;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;    &amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
   <extendedProperties name="jschart.animation" value="true"/>
   <emptyMessage>
    <caption value="This chart contains no data."/>
@@ -5924,7 +5852,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -5935,7 +5863,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -5946,21 +5874,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -6266,11 +6190,11 @@
      </series>
     </seriesDefinitions>
     <lineAttributes>
-     <color _body=",255,145,145,145"/>
+     <color _body=",255,225,227,228"/>
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -6360,16 +6284,12 @@
    <seriesDefinitions>
     <query definition=""/>
     <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
+     <entries _body=",255,109,101,255"/>
+     <entries _body=",255,34,30,111"/>
+     <entries _body=",255,126,146,159"/>
+     <entries _body=",255,245,157,76"/>
+     <entries _body=",255,196,196,196"/>
+     <entries _body=",255,79,54,144"/>
     </seriesPalette>
     <series seriesIdentifier="">
      <label>
@@ -6386,11 +6306,11 @@
     </series>
    </seriesDefinitions>
    <lineAttributes>
-    <color _body=",255,145,145,145"/>
+    <color _body=",255,225,227,228"/>
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -6434,7 +6354,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -6463,7 +6383,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -6471,7 +6391,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -6500,7 +6420,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -6511,7 +6431,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -6522,21 +6442,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -6846,7 +6762,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -6935,18 +6851,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -6966,7 +6878,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -7010,7 +6922,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7039,7 +6951,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -7047,7 +6959,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7076,7 +6988,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -7087,7 +6999,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7098,21 +7010,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -7422,7 +7330,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -7527,18 +7435,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -7558,7 +7462,7 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </caption>
     <background _nil="1"/>
@@ -7602,7 +7506,7 @@
     </outline>
     <label>
      <caption>
-      <font name="Lato" size="14.0" bold="false"/>
+      <font name="OpenText Sans" size="14.0" bold="false"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7631,7 +7535,7 @@
      </outline>
     </clientArea>
     <text>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
     </text>
     <separator>
@@ -7639,7 +7543,7 @@
     </separator>
     <title>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7668,7 +7572,7 @@
   <axes>
    <title>
     <caption>
-     <font name="Lato"/>
+     <font name="OpenText Sans"/>
      <color _body=",255,85,85,85"/>
     </caption>
     <background _nil="1"/>
@@ -7679,7 +7583,7 @@
    <associatedAxes primaryAxis="true">
     <title>
      <caption>
-      <font name="Lato"/>
+      <font name="OpenText Sans"/>
       <color _body=",255,85,85,85"/>
      </caption>
      <background _nil="1"/>
@@ -7690,21 +7594,17 @@
     <seriesDefinitions>
      <query definition=""/>
      <seriesPalette>
-      <entries _body=",255,0,129,157"/>
-      <entries _body=",255,53,120,173"/>
-      <entries _body=",255,158,204,76"/>
-      <entries _body=",255,46,152,140"/>
-      <entries _body=",255,44,142,60"/>
-      <entries _body=",255,140,234,156"/>
-      <entries _body=",255,0,83,119"/>
-      <entries _body=",255,147,214,226"/>
-      <entries _body=",255,12,107,23"/>
-      <entries _body=",255,117,198,177"/>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
      </seriesPalette>
      <series _type="BarSeries" seriesIdentifier="" riser="0">
       <label>
        <caption>
-        <font name="Lato"/>
+        <font name="OpenText Sans"/>
         <color _body=",255,145,145,145"/>
        </caption>
        <background _nil="1"/>
@@ -8014,7 +7914,7 @@
     </lineAttributes>
     <label>
      <caption>
-      <font name="Lato" size="10.0"/>
+      <font name="OpenText Sans" size="10.0"/>
       <color _body=",255,145,145,145"/>
      </caption>
      <background _nil="1"/>
@@ -8103,18 +8003,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-    <seriesPalette>
-     <entries _body=",255,0,129,157"/>
-     <entries _body=",255,53,120,173"/>
-     <entries _body=",255,158,204,76"/>
-     <entries _body=",255,46,152,140"/>
-     <entries _body=",255,44,142,60"/>
-     <entries _body=",255,140,234,156"/>
-     <entries _body=",255,0,83,119"/>
-     <entries _body=",255,147,214,226"/>
-     <entries _body=",255,12,107,23"/>
-     <entries _body=",255,117,198,177"/>
-    </seriesPalette>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -8134,8 +8030,451 @@
    </lineAttributes>
    <label>
     <caption>
-     <font name="Lato" size="10.0"/>
+     <font name="OpenText Sans" size="10.0"/>
      <color _body=",255,145,145,145"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>]]></xml-property>
+        </report-item-theme>
+        <report-item-theme type="Chart" name="Chart-Innovate Bank default" id="135">
+            <xml-property name="customValues"><![CDATA[<type>1</type><ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption>
+      <font name="OpenText Sans"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="theme.withoutaxes" value=""/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,109,101,255"/>
+      <entries _body=",255,34,30,111"/>
+      <entries _body=",255,126,146,159"/>
+      <entries _body=",255,245,157,76"/>
+      <entries _body=",255,196,196,196"/>
+      <entries _body=",255,79,54,144"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition=""/>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="LineSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="AreaSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="PieSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <title>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </title>
+     </series>
+     <series _type="DialSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dial>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+       <majorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </majorGrid>
+       <minorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </minorGrid>
+       <label>
+        <background _nil="1"/>
+        <outline>
+         <color _nil="1"/>
+        </outline>
+       </label>
+      </dial>
+      <needle>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+      </needle>
+     </series>
+     <series _type="ScatterSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="StockSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="BubbleSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <accLineAttributes>
+       <color _nil="1"/>
+      </accLineAttributes>
+     </series>
+     <series _type="DifferenceSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <negativeMarkers>
+       <outline/>
+      </negativeMarkers>
+      <negativeLineAttributes>
+       <color _nil="1"/>
+      </negativeLineAttributes>
+     </series>
+     <series _type="GanttSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <connectionLine>
+       <color _nil="1"/>
+      </connectionLine>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+      <decorationLabel>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </decorationLabel>
+     </series>
+     <series _type="RadarSeries" seriesIdentifier="">
+      <label>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </label>
+      <dataPoint/>
+      <marker>
+       <outline/>
+      </marker>
+      <lineAttributes/>
+      <webLineAttributes/>
+      <webLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </webLabel>
+      <catLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </catLabel>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _body=",255,225,227,228"/>
+    </lineAttributes>
+    <label>
+     <caption>
+      <font name="OpenText Sans" size="10.0"/>
+      <color _body=",255,119,119,119"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="true">
+      <color _body=",255,225,227,228"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin type="2">
+     <value _type="NumberDataElement" value="0.0"/>
+    </origin>
+   </associatedAxes>
+   <ancillaryAxes>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _body=",255,225,232,246"/>
+    </lineAttributes>
+    <label>
+     <caption>
+      <font name="OpenText Sans"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _type="NumberDataElement" value="0.0"/>
+    </origin>
+   </ancillaryAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,109,101,255"/>
+     <entries _body=",255,34,30,111"/>
+     <entries _body=",255,126,146,159"/>
+     <entries _body=",255,245,157,76"/>
+     <entries _body=",255,196,196,196"/>
+     <entries _body=",255,79,54,144"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition=""/>
+     <curveFitting _nil="1"/>
+    </series>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _body=",255,225,227,228"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font name="OpenText Sans" size="10.0"/>
+     <color _body=",255,119,119,119"/>
     </caption>
     <background _nil="1"/>
     <outline>

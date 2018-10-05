@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="layoutPreference">auto layout</property>
@@ -134,9 +134,9 @@
       <Maps:DisplayValue></Maps:DisplayValue>
       <Maps:Color>
         <Transparency>255</Transparency>
-        <Red>241</Red>
-        <Green>236</Green>
-        <Blue>235</Blue>
+        <Red>51</Red>
+        <Green>102</Green>
+        <Blue>255</Blue>
       </Maps:Color>
     </Maps:Elements>
     <Maps:Elements>
@@ -145,17 +145,17 @@
       <Maps:DisplayValue></Maps:DisplayValue>
       <Maps:Color>
         <Transparency>255</Transparency>
-        <Red>0</Red>
-        <Green>128</Green>
-        <Blue>0</Blue>
+        <Red>49</Red>
+        <Green>86</Green>
+        <Blue>185</Blue>
       </Maps:Color>
     </Maps:Elements>
     <Maps:Gradient>true</Maps:Gradient>
     <Maps:Color>
       <Transparency>255</Transparency>
-      <Red>255</Red>
-      <Green>0</Green>
-      <Blue>0</Blue>
+      <Red>32</Red>
+      <Green>56</Green>
+      <Blue>120</Blue>
     </Maps:Color>
     <Maps:StartLabel></Maps:StartLabel>
   </Maps:ColorRange>

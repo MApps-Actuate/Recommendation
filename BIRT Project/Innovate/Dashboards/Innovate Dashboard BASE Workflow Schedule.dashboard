@@ -97,6 +97,8 @@
   <extendedProperties name="enable.data.summarize" value="false"/>
   <extendedProperties name="jschart.zoom" value="xy"/>
   <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="drilled.filters_" value="_@,_row[&quot;product_category&quot;]eq&quot;Investments&quot;_@,_"/>
+  <extendedProperties name="enable.drill.proc_" value="true"/>
   <sampleData>
    <baseSampleData dataSetRepresentation="QWER"/>
    <orthogonalSampleData dataSetRepresentation="2.3" seriesDefinitionIndex="0"/>
@@ -132,7 +134,7 @@
      </outline>
     </title>
     <seriesDefinitions>
-     <query definition="row[&quot;product_category&quot;]"/>
+     <query definition="row[&quot;Products2&quot;]"/>
      <series _type="LineSeries" seriesIdentifier="Total" stacked="false" paletteLineColor="true">
       <label>
        <caption value="Total"/>
@@ -246,6 +248,15 @@
 </ActuateChart>
 ]]></xml-property>
             <property name="outputFormat">JS</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["product_category"]</expression>
+                    <simple-property-list name="value1">
+                        <value>"Investments"</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
             <property name="height">262.5pt</property>
             <property name="width">689.25pt</property>
             <list-property name="boundDataColumns">
@@ -263,6 +274,12 @@
                 <structure>
                     <property name="name">product_category</property>
                     <expression name="expression">dataSetRow["product_category"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Products2</property>
+                    <text-property name="displayName">Products</text-property>
+                    <expression name="expression">dataSetRow["Products2"]</expression>
                     <property name="dataType">string</property>
                 </structure>
             </list-property>
@@ -338,7 +355,6 @@
   <extendedProperties name="keep.hierarchy.series" value="true"/>
   <extendedProperties name="enable.data.summarize" value="false"/>
   <extendedProperties name="jschart.zoom" value="xy"/>
-  <extendedProperties name="jschart.series.shadow" value="false"/>
   <sampleData>
    <baseSampleData dataSetRepresentation="QWER"/>
    <orthogonalSampleData dataSetRepresentation="2.3" seriesDefinitionIndex="0"/>
@@ -523,7 +539,7 @@
                     <property name="dataType">string</property>
                 </structure>
             </list-property>
-            <property name="theme">ThemesReportItems31.Chart-Innovate Bank Wide Legend</property>
+            <property name="theme">ThemesReportItems31.Chart-Innovate Bank COMPETITOR</property>
             <property name="linkedDataModel">NewDataMartDataSource::Accounts Data Model</property>
             <list-property name="userProperties">
                 <structure>
@@ -835,6 +851,7 @@
      </outline>
     </title>
    </children>
+   <bounds _body=",,572.25,"/>
    <outline>
     <color _nil="1"/>
    </outline>
@@ -1000,7 +1017,7 @@
 ]]></xml-property>
             <property name="outputFormat">JS</property>
             <property name="height">311.25pt</property>
-            <property name="width">555pt</property>
+            <property name="width">572.25pt</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">Year1</property>
@@ -2061,7 +2078,6 @@ $(window.parent.document).find("#customDashboardSection").html(myDiv)
                                     <property name="content">
                                         <list-data-selector id="419">
                                             <property name="linkedDataModel">NewDataMartDataSource::Accounts Data Model</property>
-                                            <property name="operator">in</property>
                                             <simple-property-list name="columnNames">
                                                 <value>product_category</value>
                                                 <value>product_category</value>
@@ -2136,7 +2152,6 @@ $(window.parent.document).find("#customDashboardSection").html(myDiv)
                                     <property name="content">
                                         <list-data-selector id="804">
                                             <property name="linkedDataModel">NewDataMartDataSource::Accounts Data Model</property>
-                                            <property name="operator">in</property>
                                             <simple-property-list name="columnNames">
                                                 <value>Products2</value>
                                                 <value>Products2</value>
@@ -2199,6 +2214,24 @@ $(window.parent.document).find("#customDashboardSection").html(myDiv)
                         <section id="395">
                             <property name="width">42.38482384823848%</property>
                             <property name="gadgets">
+                                <gadget name="5edd6983-2ac6-4127-bf6e-10200c2f7f69" id="397">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="399">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#000000</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="398"/>
+                                    </property>
+                                </gadget>
                                 <gadget name="Gadget_ac9a6a02-ab5c-41ed-bdb1-99f3196265d3" id="400">
                                     <property name="title">Marketing Spend YOY Change</property>
                                     <property name="showTitle">true</property>
@@ -2223,24 +2256,6 @@ $(window.parent.document).find("#customDashboardSection").html(myDiv)
                                             <property name="gadgetType">viewer</property>
                                             <property name="internalReportLetRef">Column Chart - Marketing Spend Data Model_e046afa8-faf2-41fe-a25a-c16df695e39c</property>
                                         </data-view>
-                                    </property>
-                                </gadget>
-                                <gadget name="5edd6983-2ac6-4127-bf6e-10200c2f7f69" id="397">
-                                    <property name="zIndex">1</property>
-                                    <property name="isVisible">false</property>
-                                    <property name="height">150px</property>
-                                    <property name="caption">
-                                        <gadget-caption id="399">
-                                            <property name="showCaption">true</property>
-                                            <property name="horizontalAlignment">left</property>
-                                            <property name="fontFamily">"Lato"</property>
-                                            <property name="fontSize">24pt</property>
-                                            <property name="fontWeight">bold</property>
-                                            <property name="color">#000000</property>
-                                        </gadget-caption>
-                                    </property>
-                                    <property name="content">
-                                        <current-selections id="398"/>
                                     </property>
                                 </gadget>
                             </property>
