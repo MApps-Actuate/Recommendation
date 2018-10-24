@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
     <property name="units">in</property>
     <property name="iconFile">/templates/chart_listing.gif</property>
     <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.chartlisting</property>
@@ -121,7 +121,7 @@ allCells
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
   <extendedProperties name="jschart.series.shadow" value="false"/>
-  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#6D65FF&amp;#039;,&amp;#039;#221E6F&amp;#039;,&amp;#039;#7E929F&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;},"/>
   <extendedProperties name="jschart.glass.style" value="false"/>
   <extendedProperties name="jschart.animation" value="false"/>
   <extendedProperties name="theme.withoutaxes" value=""/>
@@ -644,7 +644,7 @@ allCells
   <extendedProperties name="enable.area.alt" value="false"/>
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
-  <extendedProperties name="jschart.client.script" value="beforeDrawDataPoint: function(point, pointOptions, chart, seriesIndex, pointIndex)&#13;&#10;{&#13;&#10;    if ((point.y &gt; -1.96) &amp;&amp; (point.y &lt; 1.96))&#13;&#10;        pointOptions.color = &#039;#666666&#039;;&#13;&#10;    else if (point.y &lt; -1.96)&#13;&#10;        pointOptions.color = &#039;#d7b5d8&#039;;&#13;&#10;    &#13;&#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeDrawDataPoint: function(point, pointOptions, chart, seriesIndex, pointIndex)&#13;&#10;{&#13;&#10;    if ((point.y &gt; -1.96) &amp;&amp; (point.y &lt; 1.96))&#13;&#10;        pointOptions.color = &#039;#221E6F&#039;;&#13;&#10;    else if (point.y &lt; -1.96)&#13;&#10;        pointOptions.color = &#039;#7E929F&#039;;&#13;&#10;    &#13;&#10;},"/>
   <extendedProperties name="jschart.series.shadow" value="false"/>
   <sampleData>
    <baseSampleData dataSetRepresentation="A, B, C"/>
@@ -692,7 +692,7 @@ allCells
      </series>
     </seriesDefinitions>
     <lineAttributes>
-     <color _nil="1"/>
+     <color _body=",255,225,227,228"/>
     </lineAttributes>
     <label>
      <background _nil="1"/>
@@ -734,7 +734,7 @@ allCells
     </series>
    </seriesDefinitions>
    <lineAttributes>
-    <color _nil="1"/>
+    <color _body=",255,225,227,228"/>
    </lineAttributes>
    <label>
     <background _nil="1"/>
@@ -744,7 +744,7 @@ allCells
    </label>
    <markerLines>
     <lineAttributes style="1" visible="true">
-     <color _body=",255,149,244,132"/>
+     <color _body=",255,109,101,255"/>
     </lineAttributes>
     <value _type="NumberDataElement" value="7.5"/>
     <label visible="false">
@@ -760,7 +760,7 @@ allCells
    </markerLines>
    <markerLines>
     <lineAttributes style="1" visible="true">
-     <color _body=",255,240,206,241"/>
+     <color _body=",255,126,146,159"/>
     </lineAttributes>
     <value _type="NumberDataElement" value="21.5"/>
     <label visible="false">
@@ -772,6 +772,7 @@ allCells
      <outline/>
      <insets/>
     </label>
+    <cursor type="0"/>
    </markerLines>
    <majorGrid>
     <lineAttributes>

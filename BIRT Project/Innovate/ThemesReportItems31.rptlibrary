@@ -4704,7 +4704,7 @@
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
   <extendedProperties name="theme.withoutaxes" value=""/>
-  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#66c2a4&amp;#039;,&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;    //options.colors = [&amp;#039;#6D594A&amp;#039;,&amp;#039;#CAC5B0&amp;#039;,&amp;#039;#96A399&amp;#039;,&amp;#039;#B88FC6&amp;#039;,&amp;#039;#8BA4B5&amp;#039;,&amp;#039;#454D37&amp;#039;,&amp;#039;#DED4BA&amp;#039;,&amp;#039;#232625&amp;#039;,&amp;#039;#6F9379&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+this.x+&amp;#039; - &amp;#039;+this.series.name+&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total spend $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.25;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;// seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;// seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;// seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;&amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    //options.colors = [&amp;#039;#66c2a4&amp;#039;,&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+this.x+&amp;#039; - &amp;#039;+this.series.name+&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;Total spend $&amp;#039;+this.y.toLocaleString()+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.25;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;// seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;// seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;// seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;&amp;#13;&amp;#10;        axisOptions.labels.formatter = function(){&amp;#13;&amp;#10;&amp;#13;&amp;#10;                                        var absValue = Math.abs(this.value);&amp;#13;&amp;#10;                                        if (absValue &amp;gt;= 1000000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000000) + &amp;#039;M&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        else if (absValue &amp;gt;= 1000) {&amp;#13;&amp;#10;                                            absValue = (absValue / 1000) + &amp;#039;K&amp;#039;;&amp;#13;&amp;#10;                                        }&amp;#13;&amp;#10;                                        return absValue;&amp;#13;&amp;#10;                                    };&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
   <extendedProperties name="jschart.animation" value="true"/>
   <emptyMessage>
    <caption value="This chart contains no data."/>
@@ -5147,14 +5147,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-     <seriesPalette>
-      <entries _body=",255,109,101,255"/>
-      <entries _body=",255,34,30,111"/>
-      <entries _body=",255,126,146,159"/>
-      <entries _body=",255,245,157,76"/>
-      <entries _body=",255,196,196,196"/>
-      <entries _body=",255,79,54,144"/>
-     </seriesPalette>
+    <seriesPalette>
+     <entries _body=",255,109,101,255"/>
+     <entries _body=",255,34,30,111"/>
+     <entries _body=",255,126,146,159"/>
+     <entries _body=",255,245,157,76"/>
+     <entries _body=",255,196,196,196"/>
+     <entries _body=",255,79,54,144"/>
+    </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -6976,7 +6976,7 @@
   <extendedProperties name="enable.drill.category" value="true"/>
   <extendedProperties name="enable.drill.series" value="true"/>
   <extendedProperties name="theme.withoutaxes" value=""/>
-  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.colors = [&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+this.x+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;% Change: &amp;#039;+this.y+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;        axisOptions.plotLines = [{color:&amp;#039;rgb(221, 28, 119)&amp;#039;, width:2, value:0}];&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
+  <extendedProperties name="jschart.client.script" value="beforeGeneration: function(options)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    //options.colors = [&amp;#039;#006d2c&amp;#039;,&amp;#039;#2ca25f&amp;#039;,&amp;#039;#66c2a4&amp;#039;,&amp;#039;#b2e2e2&amp;#039;,&amp;#039;#5fc9b7&amp;#039;,&amp;#039;#beaed4&amp;#039;,&amp;#039;#fdc086&amp;#039;,&amp;#039;#ffff99&amp;#039;,&amp;#039;#386cb0&amp;#039;];&amp;#13;&amp;#10;&amp;#13;&amp;#10;    var pointFormat =  &amp;#039;{point.y:.1f}&amp;#039;;&amp;#13;&amp;#10;    if(options.series &amp;amp;&amp;amp; options.series[0] &amp;amp;&amp;amp; options.series[0].type===&amp;#039;pie&amp;#039;){&amp;#13;&amp;#10;        pointFormat = &amp;#039;{point.y} ({point.percentage:.2f}%)&amp;#039;;&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;    options.tooltip={&amp;#13;&amp;#10;        animation:false,&amp;#13;&amp;#10;        backgroundColor: &amp;quot;#fff&amp;quot;,&amp;#13;&amp;#10;        borderRadius: 0,&amp;#13;&amp;#10;        borderColor: &amp;quot;#e1e1e1&amp;quot;,&amp;#13;&amp;#10;        borderWidth: 1,&amp;#13;&amp;#10;        style: {&amp;#13;&amp;#10;            color:&amp;quot;#363636&amp;quot;,&amp;#13;&amp;#10;            fontSize: &amp;quot;16px&amp;quot;,&amp;#13;&amp;#10;            fontWeight: 400,&amp;#13;&amp;#10;            padding: &amp;quot;12px&amp;quot;&amp;#13;&amp;#10;        },&amp;#13;&amp;#10;        useHTML: true,&amp;#13;&amp;#10;        formatter: function() {&amp;#13;&amp;#10;                       tooltip = &amp;#039;&amp;lt;div style=&amp;quot; color:#363636;font-size:12px;font-weight: 400;&amp;quot;&amp;gt;&amp;#039;+this.x+ &amp;#039; - &amp;#039;+ this.series.name +&amp;#039;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;font-size:14px;font-weight: 600;margin-top:4px;&amp;quot;&amp;gt;% Change: &amp;#039;+this.y+&amp;#039;&amp;lt;/div&amp;gt;&amp;#039;;&amp;#13;&amp;#10;                       return tooltip;&amp;#13;&amp;#10;                     }&amp;#13;&amp;#10;    };&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeRendering: function(options, chart)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    options.legend.width = chart.getChartWidth() / 1.5;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawSeries: function(series, seriesOptions, chart, seriesIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;    seriesOptions.marker.fillColor = &amp;#039;#FFFFFF&amp;#039;;&amp;#13;&amp;#10;    seriesOptions.marker.lineWidth = 3;&amp;#13;&amp;#10;    seriesOptions.marker.lineColor = null;&amp;#13;&amp;#10;},&amp;#13;&amp;#10;&amp;#13;&amp;#10;beforeDrawAxis: function(axis, axisOptions, chart, axisIndex)&amp;#13;&amp;#10;{&amp;#13;&amp;#10;&amp;#13;&amp;#10;    if ((axis.coll == &amp;quot;yAxis&amp;quot;) || (axis.xOrY == &amp;quot;y&amp;quot;)) {   // 16.4 vs. 16.2&amp;#13;&amp;#10;        axisOptions.plotLines = [{color:&amp;#039;rgb(221, 28, 119)&amp;#039;, width:2, value:0}];&amp;#13;&amp;#10;    }&amp;#13;&amp;#10;},"/>
   <extendedProperties name="jschart.animation" value="true"/>
   <emptyMessage>
    <caption value="This chart contains no data."/>
@@ -7326,7 +7326,7 @@
      </series>
     </seriesDefinitions>
     <lineAttributes>
-     <color _body=",255,145,145,145"/>
+     <color _body=",255,225,227,228"/>
     </lineAttributes>
     <label>
      <caption>
@@ -7435,14 +7435,14 @@
    </ancillaryAxes>
    <seriesDefinitions>
     <query definition=""/>
-     <seriesPalette>
-      <entries _body=",255,109,101,255"/>
-      <entries _body=",255,34,30,111"/>
-      <entries _body=",255,126,146,159"/>
-      <entries _body=",255,245,157,76"/>
-      <entries _body=",255,196,196,196"/>
-      <entries _body=",255,79,54,144"/>
-     </seriesPalette>
+    <seriesPalette>
+     <entries _body=",255,109,101,255"/>
+     <entries _body=",255,34,30,111"/>
+     <entries _body=",255,126,146,159"/>
+     <entries _body=",255,245,157,76"/>
+     <entries _body=",255,196,196,196"/>
+     <entries _body=",255,79,54,144"/>
+    </seriesPalette>
     <series seriesIdentifier="">
      <label>
       <background _nil="1"/>
@@ -7458,7 +7458,7 @@
     </series>
    </seriesDefinitions>
    <lineAttributes>
-    <color _body=",255,145,145,145"/>
+    <color _body=",255,225,227,228"/>
    </lineAttributes>
    <label>
     <caption>
