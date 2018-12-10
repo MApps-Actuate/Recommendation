@@ -348,6 +348,7 @@ myDiv +=          	"$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\
 myDiv +=          	"$(\"#customDashboardMessageContent\").html(\"Workflow has been initiated successfully and sent for approval.\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").css(\"display\",\"block\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").fadeOut(3500);";
+myDiv +=            "AWP_CreateSuggestion($(\"#sel3\")[0].value == \"Other\" ? $(\"#sel2\")[0].value + \" - \" + $(\"#sel4\")[0].value : $(\"#sel2\")[0].value + \" - \" + $(\"#sel3\")[0].value);";
 myDiv +=          	"}'>Ok</button>";
 myDiv += 		"</div>";
 myDiv += 	"</div>";
@@ -404,7 +405,7 @@ myDiv +=        			"<div class='form-group'>";
  * ***************************************************************
 */
 myDiv +=					"<select class='form-control' id='sel1'>";
-myDiv +=					    "<option value='default'>Systems</option>";
+myDiv +=					    "<option>Systems</option>";
 myDiv +=					    "<option>Web Team</option>";
 myDiv +=					"</select>";
 myDiv +=				"</div>";
@@ -425,7 +426,7 @@ myDiv +=		        "<div class='form-group'>";
  * ***************************************************************
 */
 myDiv +=				"<select class='form-control' id='sel2'>";
-myDiv += 					"<option value='default'>Insurance</option>";
+myDiv += 					"<option>Insurance</option>";
 myDiv += 					"<option>Systems Admin</option>";
 myDiv += 					"<option>Systems Developer</option>";
 myDiv += 					"<option>Web Admin</option>";
@@ -455,7 +456,7 @@ myDiv +=			 				"$(\"#sel4\").css(\"display\",\"block\")";
 myDiv +=				 	"} else {";
 myDiv +=			 				"$(\"#sel4\").css(\"display\",\"none\")";
 myDiv +=			 		"}}'>";
-myDiv +=			 			"<option value='default'>Bug Fix</option>";
+myDiv +=			 			"<option>Bug Fix</option>";
 myDiv +=				 		"<option>Other</option>";
 myDiv +=					"</select>";
 myDiv +=    	    	"</div>";

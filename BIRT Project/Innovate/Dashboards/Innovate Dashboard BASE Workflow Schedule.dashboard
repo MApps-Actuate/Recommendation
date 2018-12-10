@@ -1603,6 +1603,7 @@ myDiv +=          	"$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\
 myDiv +=          	"$(\"#customDashboardMessageContent\").html(\"Workflow has been initiated successfully and sent for approval.\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").css(\"display\",\"block\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").fadeOut(3500);";
+myDiv +=            "AWP_CreateCampaign($(\"#sel1\")[0].value + \" - \" + $(\"#sel2\")[0].value + \" Campaign\");";
 myDiv +=          	"}'>Ok</button>";
 myDiv += 		"</div>";
 myDiv += 	"</div>";
@@ -1659,7 +1660,7 @@ myDiv +=        "<div class='form-group'>";
  * ***************************************************************
 */
 myDiv +="<select class='form-control' id='sel1'>";
-myDiv +=    "<option value='default'>Corporate Bonds</option>";
+myDiv +=    "<option selected='selected'>Corporate Bonds</option>";
 myDiv +=    "<option>ETFs</option>";
 myDiv +=    "<option>Government Bonds</option>";
 myDiv +=    "<option>Investment ISA</option>";
@@ -1684,7 +1685,7 @@ myDiv +=        "<div class='form-group'>";
  * ***************************************************************
 */
 myDiv +="<select class='form-control' id='sel2'>";
-myDiv +=    "<option value='default'>Churners</option>";
+myDiv +=    "<option selected='selected'>Churners</option>";
 myDiv +=    "<option>Customer Survey</option>";
 myDiv +=    "<option>Loyal</option>";
 myDiv +=    "<option>Recommend Insurance</option>";
@@ -1714,7 +1715,7 @@ myDiv +=        "$(\"#sel4\").css(\"display\",\"block\")";
 myDiv +=    "} else {";
 myDiv +=        "$(\"#sel4\").css(\"display\",\"none\")";
 myDiv +=    "}}'>";
-myDiv +=    "<option value='default'>Now</option>";
+myDiv +=    "<option selected='selected'>Now</option>";
 myDiv +=    "<option>Tomorrow</option>";
 myDiv +=    "<option>Schedule Daily</option>";
 myDiv +=    "<option>Schedule Weekly</option>";
@@ -1733,7 +1734,7 @@ myDiv +=         "</tr>";
 myDiv +=     "</table>";
 myDiv +=     "<div>";
 myDiv +=         "<button class='btnCancel actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\")'>Cancel</button>";
-myDiv +=         "<button class='btnOk actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardConfirmationDiv\").toggleClass(\"isNotVisible\")'>Ok</button>";
+myDiv +=         "<button class='btnOk actuate-widget-btn-text' type='button' onClick='$(\"#customDashboardConfirmationDiv\").toggleClass(\"isNotVisible\");'>Ok</button>";
 myDiv +=     "</div>";
 myDiv += "</div>";
 myDiv += "</div>";
