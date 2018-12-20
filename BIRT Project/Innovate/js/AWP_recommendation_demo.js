@@ -6,10 +6,10 @@
 // since one of the aims here is to proceed without any dependencies, this file includes code that you'd typically use a library to make nicer for you
 
 
-const base_URL = 'http://ps-163-mf.eastus.cloudapp.azure.com';
+const base_URL = 'http://ps16.eastus.cloudapp.azure.com';
 const AUTHSOAP_part1 = '<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">' +
 						'<SOAP:Header>' +
-							'<OTAuthentication xmlns="urn:api.ecm.opentext.com">' +
+							'<OTAuthentication xmlns="urn:api.bpm.opentext.com">' +
 	 			  				'<AuthenticationToken>';
 const AUTHSOAP_part2 ='</AuthenticationToken>' +
 						'</OTAuthentication>' +
@@ -32,7 +32,7 @@ function GetOTDSTicket() {
 		var ticket='';
 		var request = new XMLHttpRequest();
 		request.open('POST', base_URL + ':80/otdsws/rest/authentication/credentials');
-		requestBodyJSON = '{"userName": "cpatel", "password": "chiragchirag", "targetResourceId": "872d7f43-49f2-4f63-8192-58eb2881d535"}';
+		requestBodyJSON = '{"userName": "cpatel", "password": "chiragchirag"}';
 		request.setRequestHeader("Content-Type", "application/json");
 		
 		request.onload = function() {
@@ -91,7 +91,7 @@ function GetSAML_Art(ticket) {
 function CreateNewCampaignEntityInstance( SAML_Art,campaignName) { 
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
-		request.open('POST', base_URL + '/home/Lab/app/entityRestService/Items?containerVersionId=47d198e5dcb032869ec7c66b3e8eb2fc&elementId=00155D110407A1E8ADDFE5509E09153F');
+		request.open('POST', base_URL + '/home/magellan/app/entityRestService/Items?containerVersionId=47d198e5dcb032869ec7c66b3e8eb2fc&elementId=00155D110407A1E8ADDFE5509E09153F');
 		request.setRequestHeader("SAMLart", SAML_Art);
 		request.setRequestHeader("Content-Type", "application/json");
 		requestBodyJSON = '{"item": {"Properties": { "Name": "' + campaignName + '"  }}}';
@@ -119,7 +119,7 @@ function CreateNewCampaignEntityInstance( SAML_Art,campaignName) {
 function CreateNewSuggestionEntityInstance( SAML_Art, suggestionSubject ) { 
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
-		request.open('POST', base_URL + '/home/Lab/app/entityRestService/Items?containerVersionId=47d198e5dcb032869ec7c66b3e8eb2fc&elementId=00155D110407A1E8AE080EAD97911540');
+		request.open('POST', base_URL + '/home/magellan/app/entityRestService/Items?containerVersionId=47d198e5dcb032869ec7c66b3e8eb2fc&elementId=00155D110407A1E8AE080EAD97911540');
 		request.setRequestHeader("SAMLart", SAML_Art);
 		request.setRequestHeader("Content-Type", "application/json");
 		requestBodyJSON = '{"item": {"Properties": { "Subject": "' + suggestionSubject + '"  }}}';
@@ -183,6 +183,3 @@ function AWP_CreateSuggestion( subject ) {
 	})
 	return p2;
 }
-
-function alertme(msg) { alert('You are now alerted with msg: ' + msg); }
-

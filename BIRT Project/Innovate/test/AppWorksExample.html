@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1250">
+	<title>Magellan Stand-in</title>
+	<style>
+		body {
+			padding-left:30px;
+			color: #0072AA;
+		}
+	</style>
+	<script src="./AWP_recommendation_demo.js"></script>    
+    <script type="text/javascript">
+	function CreateCampaign() { 
+		document.getElementById("output_message").innerHTML = '';
+		var campaignName = document.getElementById("Campaign_Name_Field").value;
+		//to use fire and forget method just call AWP_CreateCampaign( campaignName ) without assigning the return value to anything
+		//or simply omit the p.then block of code 
+		var p = AWP_CreateCampaign( campaignName );
+		p.then(function(result){
+			//put your code here to deal with results
+			//this code will not execute until the reult is known, but will not block any other code you are using
+			document.getElementById("output_message").innerHTML = result; 
+			})
+		}
+
+	function CreateSuggestion() { 
+		document.getElementById("output_message").innerHTML = '';
+		var subject = document.getElementById("Suggestion_Subject_Field").value;
+		//to use fire and forget method just call AWP_CreateSuggestion( subject ) without assigning the return value to anything
+		//or simply omit the p.then block of code 
+		var p = AWP_CreateSuggestion( subject );
+		p.then(function(result){document.getElementById("output_message").innerHTML = result; })
+		}
+	</script>
+  </head>
+  <body>
+	  <h1>Magellan + AppWorks Platform integration demo</h1>
+	  <p>Functions are currently hard-coded to execute as user cpatel.</p>
+	  <p>Access the live system <a href='http://ps16.eastus.cloudapp.azure.com:81/home/magellan/app/start' target='_blank'>here</a>.</p>
+	  <p></p>
+	  <p>To programatically create a Campaign or Improvement Suggestion either include the file <b>AWP_recommendation_demo.js</b> or copy the javascript code from that file into your own source.</p>
+	  <p>Once the code is accessible an instance of Campaign or Improvement Suggestion can be created with a javascript function call:</p>
+	  <ul>
+	  <li>AWP_CreateCampaign( campaignName )</li>
+	  <li>AWP_CreateSuggestion( suggestionSubject )</li>
+	  </ul>
+	  <p>You may either simply call the applicable function and move on, or you may use a non-blocking method to receive a response string from the call (view source of this file for details).</p>
+	  <p></p>
+	  <p>This file can be used to test the REST API calls that you will make from Magellan.</p>
+	  
+	  <p>Campaign Name: <input type="text" id="Campaign_Name_Field" > <button onclick="CreateCampaign()">Create Campaign</button> </p>
+	  <p>Suggestion Subject: <input type="text" id="Suggestion_Subject_Field" > <button onclick="CreateSuggestion()">Create Suggestion</button> </p>
+	  <p>Result: <span id="output_message"></span></p>
+  </body>
+</html>
