@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
     <simple-property-list name="includeResource">
         <value>Magellan_mashboard</value>
     </simple-property-list>
@@ -111,7 +111,7 @@ BirtStr.right("0" + BirtMath.mod(row["elapsedTime"],60) , 2)</expression>
 "&lt;tr>" +&#13;
 "&lt;td>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Type de véhicule : " : "Car type: ") + "&lt;/b>&lt;/td>  " +&#13;
 "&lt;td>" +  row["CarType1"]  + "&lt;/td>" +&#13;
-"&lt;td rowspan='3'>&lt;img src=  " + encodeURI("http://@@host@@:8700/iportal/servlet/DownloadFile?name=/Applications/@@app@@/images/" + row["VehicleID"] + ".jpg" + "&amp;showBanner=false&amp;userid=administrator")  + ">&lt;/td> " +&#13;
+"&lt;td rowspan='3'>&lt;img src=  " + encodeURI("'http://@@host@@/iportal/apps/@@app@@/images/" + row["VehicleID"] + ".jpg'")  + ">&lt;/td> " +&#13;
 "&lt;td>&lt;style='color:#f7cb09'>&lt;b>" + (reportContext.getLocale() == "fr_FR" ? "Départ : " : "Time Start:") + "&lt;/b>&lt;/td> " +&#13;
 "&lt;td style='background-color: #FFFFAE'>" +  Formatter.format(row["StartTime"],"hh:mm:ss") +  "&lt;/td> " +&#13;
 "&lt;/tr> " +&#13;
@@ -889,12 +889,12 @@ function createMap() {
 // create markers
 function createMarker() {
 	var data = getMarkerData();
-//debugger;
+	debugger;
 	if (!data || data.length == 0) {
 		return;
 	}
     var host = location.hostname;
-    var path = location.pathname.replace('%20', ' ').replace('main.html', '').replace('iportal/apps','Applications');
+    var path = location.pathname.replace('%20', ' ').replace('main.html', '');
     var app = location.pathname.split('/')[3]
 
 	for (var i = 0; i < data.length; i++) {
@@ -902,13 +902,20 @@ function createMarker() {
 	    var alertStatus = "";
 	    if (data[i][6] > 0.6 &amp;&amp; data[i][6] < 0.8) alertStatus = "Alert2"; // Check elapsedTime for alert conditions
 	    else if (data[i][6] > 0.8) alertStatus = "Alert1";
-    	myURL = encodeURI("http://" + host + ":8700/iportal/servlet/DownloadFile?name=" + path + "images/" +  data[i][3] + alertStatus + ".png&amp;showBanner=false&amp;userid=administrator");
+    	//myURL = encodeURI(host + path + "images/" +  data[i][3] + alertStatus + ".png");
+		if (alertStatus == "Alert2") {
+			myURL = encodeURI("http://maps.google.com/mapfiles/ms/icons/yellow-dot.png")
+		} else if (alertStatus == "Alert1") {
+			myURL = encodeURI("http://maps.google.com/mapfiles/ms/icons/red-dot.png")
+		} else {
+			myURL = encodeURI("http://maps.google.com/mapfiles/ms/icons/green-dot.png")
+		};
 		var image = {
     		url: myURL,
-    		size: new google.maps.Size(35, 47),
+    		size: new google.maps.Size(35, 35),
 	    	origin: new google.maps.Point(0, 0),
     		anchor: new google.maps.Point(0, 32),
-    		scaledSize: new google.maps.Size(35, 47)
+    		scaledSize: new google.maps.Size(35, 35)
 	    };
 	    var myInfo = data[i][2];    
 	   	myInfo = myInfo.replace("@@host@@",host);
@@ -1217,7 +1224,6 @@ while (cursor.hasNext()) {
 var customViz = this;
 	
 var callback = function() {
-console.log('1st');
 	var containerId = customViz.getId();
 	myDiv = '<div style="position:relative">';
 	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
@@ -1424,7 +1430,7 @@ while (cursor.hasNext()) {
 var customViz = this;
 	
 var callback = function() {
-	debugger;
+	//debugger;
 	var containerId = customViz.getId();
 	myDiv = '<div style="position:relative">';
 	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
@@ -1449,7 +1455,7 @@ var callback = function() {
 	var CustomTextRenderer = function(el){
     	this.el = el;
     	this.render = function(gauge){
-    		debugger;
+    		//debugger;
         	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
     	}
 	}
@@ -1633,7 +1639,7 @@ while (cursor.hasNext()) {
 var customViz = this;
 	
 var callback = function() {
-	debugger;
+	//debugger;
 	var containerId = customViz.getId();
 	myDiv = '<div style="position:relative">';
 	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
@@ -1658,7 +1664,7 @@ var callback = function() {
 	var CustomTextRenderer = function(el){
     	this.el = el;
     	this.render = function(gauge){
-    		debugger;
+    		//debugger;
         	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
     	}
 	}
@@ -1841,7 +1847,7 @@ while (cursor.hasNext()) {
 var customViz = this;
 	
 var callback = function() {
-	debugger;
+	//debugger;
 	var containerId = customViz.getId();
 	myDiv = '<div style="position:relative">';
 	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
@@ -1866,7 +1872,7 @@ var callback = function() {
 	var CustomTextRenderer = function(el){
     	this.el = el;
     	this.render = function(gauge){
-    		debugger;
+    		//debugger;
         	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
     	}
 	}
@@ -2048,7 +2054,7 @@ while (cursor.hasNext()) {
 var customViz = this;
 	
 var callback = function() {
-	debugger;
+	//debugger;
 	var containerId = customViz.getId();
 	myDiv = '<div style="position:relative">';
 	myDiv += '<canvas id="' + rowId[0] + '" class="canvas_gauge" style="width:200px;height:100px;position:absolute;left:-50px"></canvas>';
@@ -2073,7 +2079,7 @@ var callback = function() {
 	var CustomTextRenderer = function(el){
     	this.el = el;
     	this.render = function(gauge){
-    		debugger;
+    		//debugger;
         	this.el.innerHTML = gauge.displayedValue.toFixed(nbDec);
     	}
 	}
