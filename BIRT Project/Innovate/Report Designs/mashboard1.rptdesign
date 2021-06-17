@@ -1983,10 +1983,9 @@ var myPath = 'http://' + location.host + location.pathname.replace('main.html','
 var config = {
 	/*
 	 * The Google map key. You should provide your own key to use the Google Map
-	 * JSAPI. This key is Mica Block's developer key
+	 * JSAPI. This key is Dan Melcher's developer key
 	 */
-	//googleMapKey : "AIzaSyC6dvAiI7p6TzLOlTKhhAtMpRG3QMv9cqA",
-	googleMapKey : "AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A",
+	googleMapKey : "",
 
 	/* specify the default center coornidates for the map */
 	mapCenter : {
