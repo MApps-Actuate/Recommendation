@@ -82,6 +82,7 @@
      </outline>
     </title>
    </children>
+   <bounds _body=",,615.75,"/>
    <outline>
     <color _nil="1"/>
    </outline>
@@ -97,7 +98,7 @@
   <extendedProperties name="enable.data.summarize" value="false"/>
   <extendedProperties name="jschart.zoom" value="xy"/>
   <extendedProperties name="jschart.series.shadow" value="false"/>
-  <extendedProperties name="drilled.filters_" value="_@,_row[&quot;product_category&quot;]eq&quot;Investments&quot;_@,_"/>
+  <extendedProperties name="drilled.filters_" value="_@,_"/>
   <extendedProperties name="enable.drill.proc_" value="true"/>
   <sampleData>
    <baseSampleData dataSetRepresentation="QWER"/>
@@ -134,7 +135,7 @@
      </outline>
     </title>
     <seriesDefinitions>
-     <query definition="row[&quot;Products2&quot;]"/>
+     <query definition="row[&quot;product_category&quot;]"/>
      <series _type="LineSeries" seriesIdentifier="Total" stacked="false" paletteLineColor="true">
       <label>
        <caption value="Total"/>
@@ -248,17 +249,8 @@
 </ActuateChart>
 ]]></xml-property>
             <property name="outputFormat">JS</property>
-            <list-property name="filter">
-                <structure>
-                    <property name="operator">eq</property>
-                    <expression name="expr" type="javascript">row["product_category"]</expression>
-                    <simple-property-list name="value1">
-                        <value>"Investments"</value>
-                    </simple-property-list>
-                </structure>
-            </list-property>
             <property name="height">262.5pt</property>
-            <property name="width">689.25pt</property>
+            <property name="width">615.75pt</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">Account Date1</property>
@@ -341,6 +333,7 @@
      </outline>
     </title>
    </children>
+   <bounds _body=",,615.75,"/>
    <outline>
     <color _nil="1"/>
    </outline>
@@ -355,6 +348,7 @@
   <extendedProperties name="keep.hierarchy.series" value="true"/>
   <extendedProperties name="enable.data.summarize" value="false"/>
   <extendedProperties name="jschart.zoom" value="xy"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
   <sampleData>
    <baseSampleData dataSetRepresentation="QWER"/>
    <orthogonalSampleData dataSetRepresentation="2.3" seriesDefinitionIndex="0"/>
@@ -519,7 +513,7 @@
                 </structure>
             </list-property>
             <property name="height">261.75pt</property>
-            <property name="width">536.25pt</property>
+            <property name="width">615.75pt</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">Account Date1</property>
@@ -597,6 +591,7 @@
      </outline>
     </title>
    </children>
+   <bounds _body=",,558.75,"/>
    <outline>
     <color _nil="1"/>
    </outline>
@@ -775,7 +770,7 @@
                 </structure>
             </list-property>
             <property name="height">262.5pt</property>
-            <property name="width">625.5pt</property>
+            <property name="width">558.75pt</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">CompetitorDate</property>

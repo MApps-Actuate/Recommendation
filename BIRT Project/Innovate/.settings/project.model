@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.actuate.istudio.analysis.model:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.actuate.istudio.analysis.model="http:///com.actuate.istudio.analysis.model.ecore" name="Innovate">
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Sentiment Tracker_demouser@Magellan.dashboard" path="/Innovate/draft/Sentiment Tracker_demouser@Magellan.dashboard">
+    <dataMap key="//@files.10" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Customer Profile.rptdesign" path="/Innovate/Report Designs/Customer Profile.rptdesign">
+    <dataSets name="profile">
+      <columns name="Value"/>
+      <columns name="Column"/>
+      <columns name="In group"/>
+      <columns name="Remainder"/>
+      <columns name="Index"/>
+      <columns name="ZScore"/>
+      <columns name="Significant"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Classic Models FR.data" path="/Innovate/Data Objects/Classic Models FR.data">
+    <targetDashboardsMap key="//@files.27" value="1"/>
+    <targetDashboardsMap key="//@files.33" value="1"/>
+    <targetLibrariesMap key="//@files.8" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard EXP.dashboard" path="/Innovate/Dashboards/Text Analytics Dashboard EXP.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Forecast Toronto.data" path="/Innovate/Data Objects/Forecast Toronto.data">
+    <targetReportsMap key="//@files.84" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Toronto Trip Data.datadesign" path="/Innovate/Data Objects/Toronto Trip Data.datadesign">
+    <dataSets name="Toronto Data Set">
+      <columns name="TransactionID"/>
+      <columns name="City"/>
+      <columns name="TripDate"/>
+      <columns name="StartTime"/>
+      <columns name="EndTime"/>
+      <columns name="CustomerName"/>
+      <columns name="CustomerType"/>
+      <columns name="CarType"/>
+      <columns name="VehicleID"/>
+      <columns name="DriverID"/>
+      <columns name="StartLocationLat"/>
+      <columns name="StartLocationLong"/>
+      <columns name="EndLocationLat"/>
+      <columns name="EndLocationLong"/>
+      <columns name="Distance"/>
+      <columns name="Status"/>
+      <columns name="UnitPrice"/>
+      <columns name="Extras"/>
+      <columns name="Satisfaction"/>
+      <columns name="CommentID"/>
+      <columns name="RandomNumber"/>
+    </dataSets>
+    <dataSets name="Vehicle Data Set">
+      <columns name="VehicleID"/>
+      <columns name="VehicleMake"/>
+    </dataSets>
+    <dataSets name="Comments Data Set">
+      <columns name="CommentID"/>
+      <columns name="Comment"/>
+    </dataSets>
+    <dataSets name="Driver Data Set">
+      <columns name="DriverID"/>
+      <columns name="DriverName"/>
+      <columns name="DriverCat"/>
+    </dataSets>
+    <dataSets name="Vehicle Prediction">
+      <columns name="key"/>
+      <columns name="VehicleID"/>
+      <columns name="TrialID"/>
+      <columns name="ObsNum"/>
+      <columns name="P1"/>
+      <columns name="P2"/>
+      <columns name="P3"/>
+      <columns name="P5"/>
+      <columns name="P6"/>
+      <columns name="P7"/>
+      <columns name="E1"/>
+      <columns name="E3"/>
+      <columns name="E4"/>
+      <columns name="E5"/>
+      <columns name="E6"/>
+      <columns name="E7"/>
+      <columns name="E8"/>
+      <columns name="E10"/>
+      <columns name="E11"/>
+      <columns name="V1"/>
+      <columns name="V2"/>
+      <columns name="V3"/>
+      <columns name="V4"/>
+      <columns name="V5"/>
+      <columns name="V8"/>
+      <columns name="V11"/>
+      <columns name="pred_Failure"/>
+    </dataSets>
+    <dataSets name="Realtime Toronto Trips">
+      <columns name="TransactionID"/>
+      <columns name="City"/>
+      <columns name="TripDate"/>
+      <columns name="StartTime"/>
+      <columns name="EndTime"/>
+      <columns name="CustomerName"/>
+      <columns name="CustomerType"/>
+      <columns name="CarType"/>
+      <columns name="VehicleID"/>
+      <columns name="DriverID"/>
+      <columns name="StartLocationLat"/>
+      <columns name="StartLocationLong"/>
+      <columns name="EndLocationLat"/>
+      <columns name="EndLocationLong"/>
+      <columns name="Distance"/>
+      <columns name="Status"/>
+      <columns name="UnitPrice"/>
+      <columns name="Extras"/>
+      <columns name="Satisfaction"/>
+      <columns name="CommentID"/>
+      <columns name="RandomNumber"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard_ghess@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard_ghess@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Text Analytics Data.datadesign" path="/Innovate/Data Objects/Text Analytics Data.datadesign">
+    <dataSets name="ALL Content">
+      <columns name="doc_id"/>
+      <columns name="doc_date"/>
+      <columns name="filter_date"/>
+      <columns name="tone"/>
+      <columns name="poistive_tone_score"/>
+      <columns name="negative_tone_score"/>
+      <columns name="subjectivity"/>
+      <columns name="subjectivity_score"/>
+      <columns name="content_type"/>
+    </dataSets>
+    <dataSets name="Documents">
+      <columns name="doc_id"/>
+      <columns name="repository_id"/>
+      <columns name="object_type"/>
+      <columns name="normalized_file_type"/>
+      <columns name="name"/>
+      <columns name="id"/>
+      <columns name="path"/>
+      <columns name="creation_date"/>
+      <columns name="content_stream_length"/>
+    </dataSets>
+    <dataSets name="Twitter">
+      <columns name="doc_id"/>
+      <columns name="twitter_crawler_job_id"/>
+      <columns name="twitter_crawler_group_name"/>
+      <columns name="twitter_crawler_tweet_id"/>
+      <columns name="twitter_retweet_count"/>
+      <columns name="twitter_retweeted"/>
+      <columns name="twitter_favorite_count"/>
+      <columns name="twitter_favorited"/>
+      <columns name="twitter_in_reply_to_screen_name"/>
+      <columns name="twitter_in_reply_to_status_id"/>
+      <columns name="twitter_retweeted_status_id"/>
+      <columns name="twitter_coordinates"/>
+      <columns name="twitter_user_favorites_count"/>
+      <columns name="twitter_user_friends_count"/>
+      <columns name="twitter_user_followers_count"/>
+      <columns name="twitter_user_statuses_count"/>
+      <columns name="twitter_user_location"/>
+      <columns name="twitter_user_url"/>
+      <columns name="twitter_user_lang"/>
+      <columns name="twitter_user_created_at"/>
+      <columns name="twitter_user_description"/>
+      <columns name="twitter_user_time_zone"/>
+      <columns name="twitter_place_name"/>
+      <columns name="twitter_place_country"/>
+      <columns name="twitter_place_full_name"/>
+      <columns name="twitter_place_place_type"/>
+      <columns name="twitter_created_at"/>
+      <columns name="twitter_user_screen_name"/>
+      <columns name="twitter_user_name"/>
+      <columns name="twitter_text"/>
+      <columns name="twitter_lang"/>
+    </dataSets>
+    <dataSets name="Web">
+      <columns name="doc_id"/>
+      <columns name="web_crawler_job_id"/>
+      <columns name="web_crawler_group_name"/>
+      <columns name="web_crawler_object_id"/>
+      <columns name="web_content_url"/>
+      <columns name="web_created_at"/>
+      <columns name="web_modified_at"/>
+      <columns name="web_content_summary"/>
+      <columns name="web_content_title"/>
+      <columns name="web_content_lang"/>
+      <columns name="web_content_source"/>
+    </dataSets>
+    <dataSets name="Categories">
+      <columns name="doc_id"/>
+      <columns name="kb_name"/>
+      <columns name="categoryid"/>
+      <columns name="category"/>
+      <columns name="category_index"/>
+      <columns name="weight"/>
+      <columns name="kb_relevancy"/>
+    </dataSets>
+    <dataSets name="Concepts">
+      <columns name="doc_id"/>
+      <columns name="name"/>
+      <columns name="frequency"/>
+      <columns name="relevancy"/>
+      <columns name="is_complex"/>
+    </dataSets>
+    <dataSets name="Entities">
+      <columns name="doc_id"/>
+      <columns name="cartridge"/>
+      <columns name="entity"/>
+      <columns name="term_index"/>
+      <columns name="confidence_score"/>
+      <columns name="relevancy_score"/>
+      <columns name="frequency"/>
+    </dataSets>
+    <dataSets name="Sentiment">
+      <columns name="doc_id"/>
+      <columns name="tone"/>
+      <columns name="positive_tone_score"/>
+      <columns name="negative_tone_score"/>
+      <columns name="subjectivity"/>
+      <columns name="subjectivity_score"/>
+    </dataSets>
+    <dataSets name="Sentence Sentiments">
+      <columns name="doc_id"/>
+      <columns name="tone"/>
+      <columns name="sentiment_index"/>
+      <columns name="positive_tone_score"/>
+      <columns name="negative_tone_score"/>
+      <columns name="subjectivity"/>
+      <columns name="subjectivity_score"/>
+      <columns name="sentence"/>
+    </dataSets>
+    <dataSets name="Language">
+      <columns name="doc_id"/>
+      <columns name="name"/>
+      <columns name="confidence_score"/>
+    </dataSets>
+    <dataSets name="Summary">
+      <columns name="doc_id"/>
+      <columns name="summary"/>
+    </dataSets>
+    <dataSets name="All Text">
+      <columns name="doc_id"/>
+      <columns name="attribute_index"/>
+      <columns name="title"/>
+      <columns name="subject"/>
+      <columns name="author"/>
+      <columns name="keyword"/>
+      <columns name="comment"/>
+      <columns name="last_author"/>
+      <columns name="application_name"/>
+      <columns name="last_print_date"/>
+      <columns name="last_save_time"/>
+      <columns name="total_editing_time"/>
+      <columns name="content_creation_date"/>
+      <columns name="category"/>
+      <columns name="manager"/>
+      <columns name="company"/>
+      <columns name="template"/>
+      <columns name="number_of_pages"/>
+      <columns name="number_of_lines"/>
+      <columns name="number_of_words"/>
+      <columns name="number_of_characters"/>
+      <columns name="number_of_paragraphs"/>
+      <columns name="number_of_characters_with_spaces"/>
+      <columns name="summary"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="SampleApplication.rptlibrary" path="/Innovate/Report Libraries/SampleApplication.rptlibrary" reports="//@files.70 //@files.71 //@files.78 //@files.79 //@files.87">
+    <dataMap key="//@files.2" value="1"/>
+    <dataMap key="//@files.19" value="1"/>
+    <dataMap key="//@files.34" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="MarketingCampaign.datadesign" path="/Innovate/Data Objects/MarketingCampaign.datadesign">
+    <dataSets name="Keywords Cloud Weekly">
+      <columns name="weeknum"/>
+      <columns name="keyword"/>
+      <columns name="total"/>
+      <columns name="rank"/>
+    </dataSets>
+    <dataSets name="Country Sentiment Heatmap">
+      <columns name="country"/>
+      <columns name="total"/>
+      <columns name="positive"/>
+      <columns name="negative"/>
+      <columns name="neutral"/>
+    </dataSets>
+    <dataSets name="Top Products">
+      <columns name="company"/>
+      <columns name="name"/>
+      <columns name="count"/>
+      <columns name="positive"/>
+      <columns name="neutral"/>
+      <columns name="negative"/>
+    </dataSets>
+    <dataSets name="Innovate Data Set">
+      <columns name="company"/>
+      <columns name="name"/>
+      <columns name="count"/>
+      <columns name="positive"/>
+      <columns name="neutral"/>
+      <columns name="negative"/>
+    </dataSets>
+    <dataSets name="Products Union">
+      <columns name="company"/>
+      <columns name="name"/>
+      <columns name="count"/>
+      <columns name="positive"/>
+      <columns name="neutral"/>
+      <columns name="negative"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="MarketingCampaign.data" path="/Innovate/Data Objects/MarketingCampaign.data">
+    <targetReportsMap key="//@files.61" value="1"/>
+    <targetReportsMap key="//@files.85" value="1"/>
+    <targetReportsMap key="//@files.86" value="1"/>
+    <targetDashboardsMap key="//@files.21" value="1"/>
+    <targetDashboardsMap key="//@files.0" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard_ghess@Magellan.dashboard" path="/Innovate/draft/Text Analytics Dashboard_ghess@Magellan.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="CampaignDashboard.dashboard" path="/Innovate/Dashboards/AppWorks/CampaignDashboard.dashboard"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="myDashboard.dashboard" path="/Innovate/Home/myDashboard.dashboard">
+    <dataMap key="//@files.19" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Toronto Trip Data.data" path="/Innovate/Data Objects/Toronto Trip Data.data">
+    <targetReportsMap key="//@files.82" value="1"/>
+    <targetReportsMap key="//@files.83" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="MyCompanyMarketing.datadesign" path="/Innovate/Data Objects/AppWorks/MyCompanyMarketing.datadesign">
+    <dataSets name="Campaign">
+      <columns name="Id"/>
+      <columns name="Name"/>
+      <columns name="StartDate"/>
+      <columns name="CampaignType"/>
+      <columns name="Participants"/>
+      <columns name="CampaignStatus"/>
+      <columns name="EndDate"/>
+      <columns name="DataSegment"/>
+      <columns name="PercentComplete"/>
+      <columns name="NumberConversions"/>
+      <columns name="UsedPredictive"/>
+      <columns name="S_ITEM_STATUS"/>
+      <columns name="S_ITEM_BUSINESS_ID"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard_demouser@Magellan.dashboard" path="/Innovate/draft/Text Analytics Dashboard_demouser@Magellan.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Wokflow Schedule_demouser.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Wokflow Schedule_demouser.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="SuggestionBox.datadesign" path="/Innovate/Data Objects/AppWorks/SuggestionBox.datadesign">
+    <dataSets name="ImprovementSuggestion">
+      <columns name="Id"/>
+      <columns name="LastModifiedBy_Id"/>
+      <columns name="CreatedBy_Id"/>
+      <columns name="S_LASTMODIFIEDDATE"/>
+      <columns name="S_CREATEDDATE"/>
+      <columns name="S_ITEM_STATUS"/>
+      <columns name="S_ITEM_BUSINESS_ID"/>
+      <columns name="Department"/>
+      <columns name="Group"/>
+      <columns name="SuggestionStatus"/>
+      <columns name="Subject"/>
+      <columns name="Details"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Classic Models.data" path="/Innovate/Data Objects/Classic Models.data">
+    <targetReportsMap key="//@files.73" value="1"/>
+    <targetReportsMap key="//@files.74" value="1"/>
+    <targetReportsMap key="//@files.75" value="1"/>
+    <targetReportsMap key="//@files.77" value="1"/>
+    <targetReportsMap key="//@files.87" value="1"/>
+    <targetDashboardsMap key="//@files.13" value="1"/>
+    <targetDashboardsMap key="//@files.27" value="1"/>
+    <targetDashboardsMap key="//@files.33" value="1"/>
+    <targetLibrariesMap key="//@files.8" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="INNOVATE Sales Analysis.data" path="/Innovate/Data Objects/INNOVATE Sales Analysis.data">
+    <targetDashboardsMap key="//@files.32" value="1"/>
+    <targetDashboardsMap key="//@files.51" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Sentiment Tracker.dashboard" path="/Innovate/Dashboards/Sentiment Tracker.dashboard">
+    <dataMap key="//@files.10" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard.dashboard" path="/Innovate/Dashboards/Text Analytics Dashboard.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard BACKUP_demouser@Magellan.dashboard" path="/Innovate/draft/Text Analytics Dashboard BACKUP_demouser@Magellan.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule_demouser@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Workflow Schedule_demouser@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Toronto-bike-realtime.data" path="/Innovate/Data Objects/Toronto-bike-realtime.data">
+    <targetReportsMap key="//@files.81" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="ISA vs Investments Demographics.rptdesign" path="/Innovate/Report Designs/ISA vs Investments Demographics.rptdesign">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Analytics_fr.dashboard" path="/Innovate/Dashboards/Analytics_fr.dashboard">
+    <dataMap key="//@files.19" value="1"/>
+    <dataMap key="//@files.34" value="1"/>
+    <dataMap key="//@files.2" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Classic Models DE.data" path="/Innovate/Data Objects/Classic Models DE.data"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Revenue Percentage Map.rptdesign" path="/Innovate/Report Designs/Revenue Percentage Map.rptdesign">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard_administrator.dashboard" path="/Innovate/draft/Text Analytics Dashboard_administrator.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard BACKUP.dashboard" path="/Innovate/Dashboards/Text Analytics Dashboard BACKUP.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="CEM Salesforce.dashboard" path="/Innovate/Dashboards/CEM Salesforce.dashboard">
+    <dataMap key="//@files.20" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Analytics.dashboard" path="/Innovate/Dashboards/Analytics.dashboard">
+    <dataMap key="//@files.19" value="1"/>
+    <dataMap key="//@files.34" value="1"/>
+    <dataMap key="//@files.2" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="KPI.data" path="/Innovate/Data Objects/KPI.data">
+    <targetDashboardsMap key="//@files.27" value="1"/>
+    <targetDashboardsMap key="//@files.33" value="1"/>
+    <targetLibrariesMap key="//@files.8" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Customer Profile.dashboard" path="/Innovate/Dashboards/Customer Profile.dashboard"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="ThemesReportItems31.rptlibrary" path="/Innovate/ThemesReportItems31.rptlibrary" reports="//@files.59 //@files.61 //@files.62 //@files.63 //@files.64 //@files.65 //@files.66 //@files.67 //@files.68 //@files.80 //@files.81 //@files.82 //@files.83 //@files.84" targetLibraries="//@files.60 //@files.69"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Classic Models.datadesign" path="/Innovate/Data Objects/Classic Models.datadesign">
+    <dataSets name="Customers">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CONTACTLASTNAME"/>
+      <columns name="CONTACTFIRSTNAME"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="CITY"/>
+      <columns name="STATE"/>
+      <columns name="POSTALCODE"/>
+      <columns name="COUNTRY"/>
+      <columns name="SALESREPEMPLOYEENUMBER"/>
+      <columns name="CREDITLIMIT"/>
+      <columns name="Region" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'North America'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' ||  row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong') 'Asia'&#xD;&#xA;else if (row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'Oceania'&#xD;&#xA;else 'Europe'"/>
+    </dataSets>
+    <dataSets name="Orders">
+      <columns name="ORDERNUMBER"/>
+      <columns name="ORDERDATE"/>
+      <columns name="REQUIREDDATE"/>
+      <columns name="SHIPPEDDATE"/>
+      <columns name="STATUS"/>
+      <columns name="COMMENTS"/>
+      <columns name="CUSTOMERNUMBER"/>
+    </dataSets>
+    <dataSets name="Order Details">
+      <columns name="ORDERNUMBER"/>
+      <columns name="PRODUCTCODE"/>
+      <columns name="QUANTITYORDERED"/>
+      <columns name="PRICEEACH"/>
+      <columns name="ORDERLINENUMBER"/>
+    </dataSets>
+    <dataSets name="Employees">
+      <columns name="EMPLOYEENUMBER"/>
+      <columns name="LASTNAME"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="EXTENSION"/>
+      <columns name="EMAIL"/>
+      <columns name="OFFICECODE"/>
+      <columns name="REPORTSTO"/>
+      <columns name="JOBTITLE"/>
+    </dataSets>
+    <dataSets name="Offices">
+      <columns name="OFFICECODE"/>
+      <columns name="CITY"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="STATE"/>
+      <columns name="COUNTRY"/>
+      <columns name="POSTALCODE"/>
+      <columns name="TERRITORY"/>
+    </dataSets>
+    <dataSets name="Product Line">
+      <columns name="PRODUCTLINE"/>
+      <columns name="TEXTDESCRIPTION"/>
+      <columns name="HTMLDESCRIPTION"/>
+      <columns name="IMAGE"/>
+    </dataSets>
+    <dataSets name="Products">
+      <columns name="PRODUCTCODE"/>
+      <columns name="PRODUCTNAME"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="PRODUCTSCALE"/>
+      <columns name="PRODUCTVENDOR"/>
+      <columns name="PRODUCTDESCRIPTION"/>
+      <columns name="QUANTITYINSTOCK"/>
+      <columns name="BUYPRICE"/>
+      <columns name="MSRP"/>
+    </dataSets>
+    <dataSets name="Payments">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CHECKNUMBER"/>
+      <columns name="PAYMENTDATE"/>
+      <columns name="AMOUNT"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule_Marketing.DASHBOARD" path="/Innovate/Dashboards/Innovate Dashboard BASE Workflow Schedule_Marketing.DASHBOARD">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="ThemesReportItems3.rptlibrary" path="/Innovate/ThemesReportItems3.rptlibrary" reports="//@files.70 //@files.71 //@files.72 //@files.73 //@files.74 //@files.75 //@files.76 //@files.77 //@files.78 //@files.79 //@files.87"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule_ghess@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Workflow Schedule_ghess@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard Wokflow Schedule_ghess@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard Wokflow Schedule_ghess@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule old_demouser@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Workflow Schedule old_demouser@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Forecast Toronto.datadesign" path="/Innovate/Data Objects/Forecast Toronto.datadesign">
+    <dataSets name="Stations">
+      <columns name="Station ID"/>
+      <columns name="Station Name"/>
+      <columns name="lat"/>
+      <columns name="lon"/>
+    </dataSets>
+    <dataSets name="Forecast Data">
+      <columns name="Station ID"/>
+      <columns name="Weekday"/>
+      <columns name="Usage Date"/>
+      <columns name="Demand"/>
+      <columns name="Type"/>
+    </dataSets>
+    <dataSets name="Forecast Weather">
+      <columns name="Usage Date"/>
+      <columns name="Demand"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Suggestion Dashboard.dashboard" path="/Innovate/Dashboards/AppWorks/Suggestion Dashboard.dashboard"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Text Analytics Dashboard_demouser.dashboard" path="/Innovate/draft/Text Analytics Dashboard_demouser.dashboard">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Classic Models FR.datadesign" path="/Innovate/Data Objects/Classic Models FR.datadesign">
+    <dataSets name="Customers">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CONTACTLASTNAME"/>
+      <columns name="CONTACTFIRSTNAME"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="CITY"/>
+      <columns name="STATE"/>
+      <columns name="POSTALCODE"/>
+      <columns name="COUNTRY"/>
+      <columns name="SALESREPEMPLOYEENUMBER"/>
+      <columns name="CREDITLIMIT"/>
+      <columns name="Region" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'Amérique du Nord'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' ||  row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong') 'Asie'&#xD;&#xA;else if (row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'Océanie'&#xD;&#xA;else 'Europe'"/>
+    </dataSets>
+    <dataSets name="Orders">
+      <columns name="ORDERNUMBER"/>
+      <columns name="ORDERDATE"/>
+      <columns name="REQUIREDDATE"/>
+      <columns name="SHIPPEDDATE"/>
+      <columns name="STATUS"/>
+      <columns name="COMMENTS"/>
+      <columns name="CUSTOMERNUMBER"/>
+    </dataSets>
+    <dataSets name="Order Details">
+      <columns name="ORDERNUMBER"/>
+      <columns name="PRODUCTCODE"/>
+      <columns name="QUANTITYORDERED"/>
+      <columns name="PRICEEACH"/>
+      <columns name="ORDERLINENUMBER"/>
+    </dataSets>
+    <dataSets name="Employees">
+      <columns name="EMPLOYEENUMBER"/>
+      <columns name="LASTNAME"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="EXTENSION"/>
+      <columns name="EMAIL"/>
+      <columns name="OFFICECODE"/>
+      <columns name="REPORTSTO"/>
+      <columns name="JOBTITLE"/>
+    </dataSets>
+    <dataSets name="Offices">
+      <columns name="OFFICECODE"/>
+      <columns name="CITY"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="STATE"/>
+      <columns name="COUNTRY"/>
+      <columns name="POSTALCODE"/>
+      <columns name="TERRITORY"/>
+    </dataSets>
+    <dataSets name="Product Line">
+      <columns name="PRODUCTLINE"/>
+      <columns name="TEXTDESCRIPTION"/>
+      <columns name="HTMLDESCRIPTION"/>
+      <columns name="IMAGE"/>
+    </dataSets>
+    <dataSets name="Products">
+      <columns name="PRODUCTCODE"/>
+      <columns name="PRODUCTNAME"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="PRODUCTSCALE"/>
+      <columns name="PRODUCTVENDOR"/>
+      <columns name="PRODUCTDESCRIPTION"/>
+      <columns name="QUANTITYINSTOCK"/>
+      <columns name="BUYPRICE"/>
+      <columns name="MSRP"/>
+    </dataSets>
+    <dataSets name="Payments">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CHECKNUMBER"/>
+      <columns name="PAYMENTDATE"/>
+      <columns name="AMOUNT"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule.DASHBOARD" path="/Innovate/Dashboards/Innovate Dashboard BASE Workflow Schedule.DASHBOARD">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="Classic Models DE.datadesign" path="/Innovate/Data Objects/Classic Models DE.datadesign">
+    <dataSets name="Customers">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CONTACTLASTNAME"/>
+      <columns name="CONTACTFIRSTNAME"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="CITY"/>
+      <columns name="STATE"/>
+      <columns name="POSTALCODE"/>
+      <columns name="COUNTRY"/>
+      <columns name="SALESREPEMPLOYEENUMBER"/>
+      <columns name="CREDITLIMIT"/>
+      <columns name="Region" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'North America'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' ||  row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong') 'Asia'&#xD;&#xA;else if (row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'Oceania'&#xD;&#xA;else 'Europe'"/>
+    </dataSets>
+    <dataSets name="Orders">
+      <columns name="ORDERNUMBER"/>
+      <columns name="ORDERDATE"/>
+      <columns name="REQUIREDDATE"/>
+      <columns name="SHIPPEDDATE"/>
+      <columns name="STATUS"/>
+      <columns name="COMMENTS"/>
+      <columns name="CUSTOMERNUMBER"/>
+    </dataSets>
+    <dataSets name="Order Details">
+      <columns name="ORDERNUMBER"/>
+      <columns name="PRODUCTCODE"/>
+      <columns name="QUANTITYORDERED"/>
+      <columns name="PRICEEACH"/>
+      <columns name="ORDERLINENUMBER"/>
+    </dataSets>
+    <dataSets name="Employees">
+      <columns name="EMPLOYEENUMBER"/>
+      <columns name="LASTNAME"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="EXTENSION"/>
+      <columns name="EMAIL"/>
+      <columns name="OFFICECODE"/>
+      <columns name="REPORTSTO"/>
+      <columns name="JOBTITLE"/>
+    </dataSets>
+    <dataSets name="Offices">
+      <columns name="OFFICECODE"/>
+      <columns name="CITY"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="STATE"/>
+      <columns name="COUNTRY"/>
+      <columns name="POSTALCODE"/>
+      <columns name="TERRITORY"/>
+    </dataSets>
+    <dataSets name="Product Line">
+      <columns name="PRODUCTLINE"/>
+      <columns name="TEXTDESCRIPTION"/>
+      <columns name="HTMLDESCRIPTION"/>
+      <columns name="IMAGE"/>
+    </dataSets>
+    <dataSets name="Products">
+      <columns name="PRODUCTCODE"/>
+      <columns name="PRODUCTNAME"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="PRODUCTSCALE"/>
+      <columns name="PRODUCTVENDOR"/>
+      <columns name="PRODUCTDESCRIPTION"/>
+      <columns name="QUANTITYINSTOCK"/>
+      <columns name="BUYPRICE"/>
+      <columns name="MSRP"/>
+    </dataSets>
+    <dataSets name="Payments">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CHECKNUMBER"/>
+      <columns name="PAYMENTDATE"/>
+      <columns name="AMOUNT"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="FS Data Object.data" path="/Innovate/Data Objects/FS Data Object.data">
+    <targetReportsMap key="//@files.26" value="1"/>
+    <targetReportsMap key="//@files.29" value="1"/>
+    <targetDashboardsMap key="//@files.52" value="1"/>
+    <targetDashboardsMap key="//@files.53" value="1"/>
+    <targetDashboardsMap key="//@files.54" value="1"/>
+    <targetDashboardsMap key="//@files.56" value="1"/>
+    <targetDashboardsMap key="//@files.6" value="1"/>
+    <targetDashboardsMap key="//@files.17" value="1"/>
+    <targetDashboardsMap key="//@files.24" value="1"/>
+    <targetDashboardsMap key="//@files.38" value="1"/>
+    <targetDashboardsMap key="//@files.40" value="1"/>
+    <targetDashboardsMap key="//@files.41" value="1"/>
+    <targetDashboardsMap key="//@files.42" value="1"/>
+    <targetDashboardsMap key="//@files.47" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="KPI.datadesign" path="/Innovate/Data Objects/KPI.datadesign">
+    <dataSets name="KPI">
+      <columns name="COUNTRY"/>
+      <columns name="YEAR"/>
+      <columns name="NB OF ORDER"/>
+      <columns name="NB OF ORDER CANCELLED"/>
+      <columns name="NB OF ORDER SHIPPED"/>
+      <columns name="TURNOVER TARGET"/>
+      <columns name="CUSTOMER SATISFACTION"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="CEM Salesforce_fr.dashboard" path="/Innovate/Dashboards/CEM Salesforce_fr.dashboard">
+    <dataMap key="//@files.20" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE_ghess@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE_ghess@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule_ferdinand@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Workflow Schedule_ferdinand@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE Workflow Schedule_cpatel@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE Workflow Schedule_cpatel@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="ThemesReportItems3.rptlibrary" path="/Innovate/Report Libraries/AppWorks/ThemesReportItems3.rptlibrary"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Innovate Dashboard BASE_demouser@Magellan.dashboard" path="/Innovate/draft/Innovate Dashboard BASE_demouser@Magellan.dashboard">
+    <dataMap key="//@files.49" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="myCT.rptdesign" path="/Innovate/Home/myCT.rptdesign"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="Text Analytics Data.data" path="/Innovate/Data Objects/Text Analytics Data.data">
+    <targetReportsMap key="//@files.59" value="1"/>
+    <targetReportsMap key="//@files.62" value="1"/>
+    <targetReportsMap key="//@files.63" value="1"/>
+    <targetReportsMap key="//@files.65" value="1"/>
+    <targetReportsMap key="//@files.67" value="1"/>
+    <targetReportsMap key="//@files.80" value="1"/>
+    <targetDashboardsMap key="//@files.3" value="1"/>
+    <targetDashboardsMap key="//@files.11" value="1"/>
+    <targetDashboardsMap key="//@files.16" value="1"/>
+    <targetDashboardsMap key="//@files.22" value="1"/>
+    <targetDashboardsMap key="//@files.23" value="1"/>
+    <targetDashboardsMap key="//@files.30" value="1"/>
+    <targetDashboardsMap key="//@files.31" value="1"/>
+    <targetDashboardsMap key="//@files.45" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Document Detail.rptdesign" path="/Innovate/Report Designs/Document Detail.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+    <linkedFromReportsMap key="//@files.80" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="demo 2018.rptlibrary" path="/Innovate/Report Libraries/demo 2018.rptlibrary" reports="//@files.81 //@files.82 //@files.83 //@files.84" sourceLibraries="//@files.36"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Keywords Cloud Weekly.rptdesign" path="/Innovate/Report Designs/Keywords Cloud Weekly.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.10" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="TopicWordClouds.rptdesign" path="/Innovate/Report Designs/TopicWordClouds.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="EntityWordClouds.rptdesign" path="/Innovate/Report Designs/EntityWordClouds.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="iHub31 Custom Viz -- Custom HighCharts Horizontal Funnel__cwong.rptdesign" path="/Innovate/Report Designs/iHub31 Custom Viz -- Custom HighCharts Horizontal Funnel__cwong.rptdesign" libraries="//@files.36">
+    <dataSets name="Static Marketing Data Set">
+      <columns name="Phase"/>
+      <columns name="TotalCustomers"/>
+      <columns name="AllProducts"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="MetaData Stats.rptdesign" path="/Innovate/Report Designs/MetaData Stats.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="getUserName.rptdesign" path="/Innovate/Report Designs/getUserName.rptdesign" libraries="//@files.36"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Sentiment [Filter DocType and Date].rptdesign" path="/Innovate/Report Designs/Sentiment [Filter DocType and Date].rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="iHub31 Custom Viz -- Custom HighCharts Horizontal Funnel__cwong ISA.rptdesign" path="/Innovate/Report Designs/iHub31 Custom Viz -- Custom HighCharts Horizontal Funnel__cwong ISA.rptdesign" libraries="//@files.36">
+    <dataSets name="Static Marketing Data Set">
+      <columns name="Phase"/>
+      <columns name="TotalCustomers"/>
+      <columns name="AllProducts"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="Innovate.rptlibrary" path="/Innovate/Report Libraries/Innovate.rptlibrary" reports="//@files.85 //@files.86" sourceLibraries="//@files.36"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="secureReport.rptdesign" path="/Innovate/Report Designs/secureReport.rptdesign" libraries="//@files.8 //@files.39">
+    <dataSets name="Data Set">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CITY"/>
+      <columns name="COUNTRY"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="ORDERNUMBER"/>
+      <columns name="ORDERDATE"/>
+      <columns name="REQUIREDDATE"/>
+      <columns name="SHIPPEDDATE"/>
+      <columns name="STATUS"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="COMMENTS"/>
+      <columns name="AMOUNT"/>
+      <columns name="COST_BASIS"/>
+      <columns name="REGION" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'NA'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' || row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'APAC'&#xD;&#xA;else 'EMEA'"/>
+      <columns name="PROFIT" expression="row[&quot;AMOUNT&quot;] - row[&quot;COST_BASIS&quot;]"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="JQUERY - Cool Stuff.rptdesign" path="/Innovate/Report Designs/JQUERY - Cool Stuff.rptdesign" libraries="//@files.8 //@files.39">
+    <dataSets name="Data Set">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CONTACTLASTNAME"/>
+      <columns name="CONTACTFIRSTNAME"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="CITY"/>
+      <columns name="STATE"/>
+      <columns name="POSTALCODE"/>
+      <columns name="COUNTRY"/>
+      <columns name="SALESREPEMPLOYEENUMBER"/>
+      <columns name="CREDITLIMIT"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="JSAPICode.rptdesign" path="/Innovate/Report Designs/JSAPICode.rptdesign" libraries="//@files.39"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="chartExample2.rptdesign" path="/Innovate/Report Designs/chartExample2.rptdesign" libraries="//@files.39">
+    <dataMap key="//@files.19" value="1"/>
+    <dataSets name="Data Set">
+      <columns name="Metric"/>
+      <columns name="Amt"/>
+      <columns name="CurrentOrGoal"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="myReport.rptdesign" path="/Innovate/Home/myReport.rptdesign" libraries="//@files.39">
+    <dataMap key="//@files.19" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="chartExample1.rptdesign" path="/Innovate/Report Designs/chartExample1.rptdesign" libraries="//@files.39">
+    <dataMap key="//@files.19" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="chartExample4.rptdesign" path="/Innovate/Report Designs/chartExample4.rptdesign" libraries="//@files.39">
+    <dataSets name="Customers">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CONTACTLASTNAME"/>
+      <columns name="CONTACTFIRSTNAME"/>
+      <columns name="PHONE"/>
+      <columns name="ADDRESSLINE1"/>
+      <columns name="ADDRESSLINE2"/>
+      <columns name="CITY"/>
+      <columns name="STATE"/>
+      <columns name="POSTALCODE"/>
+      <columns name="COUNTRY"/>
+      <columns name="SALESREPEMPLOYEENUMBER"/>
+      <columns name="CREDITLIMIT"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="chartExample3.rptdesign" path="/Innovate/Report Designs/chartExample3.rptdesign" libraries="//@files.39">
+    <dataMap key="//@files.19" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="invoiceReport.rptdesign" path="/Innovate/Report Designs/invoiceReport.rptdesign" libraries="//@files.8 //@files.39">
+    <dataSets name="Data Set">
+      <columns name="CUSTOMERNUMBER"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="CUST_ADRESS1"/>
+      <columns name="CUST_ADRESS2"/>
+      <columns name="CUST_CITY"/>
+      <columns name="CUST_STATE"/>
+      <columns name="CUST_POSTALCODE"/>
+      <columns name="CUST_COUNTRY"/>
+      <columns name="SR_FIRSTNAME"/>
+      <columns name="SR_LASTNAME"/>
+      <columns name="SR_EMAIL"/>
+      <columns name="SR_ADRESS1"/>
+      <columns name="SR_ADRESS2"/>
+      <columns name="SR_CITY"/>
+      <columns name="SR_POSTALCODE"/>
+      <columns name="SR_STATE"/>
+      <columns name="ORDERNUMBER"/>
+      <columns name="ORDERDATE"/>
+      <columns name="SHIPPEDDATE"/>
+      <columns name="STATUS"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="PRODUCTCODE"/>
+      <columns name="PRODUCTNAME"/>
+      <columns name="QUANTITYORDERED"/>
+      <columns name="PRICEEACH"/>
+      <columns name="MSRP"/>
+    </dataSets>
+    <dataSets name="Data Set for parameter">
+      <columns name="CUSTOMERNAME"/>
+      <columns name="ORDERNUMBER"/>
+      <columns name="LIB" expression="row[&quot;ORDERNUMBER&quot;] + ' - ' + row[&quot;CUSTOMERNAME&quot;]"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="salesByRepDashboard.rptdesign" path="/Innovate/Report Designs/salesByRepDashboard.rptdesign" libraries="//@files.8 //@files.39">
+    <linkedFromReportsMap key="//@files.87" value="1"/>
+    <dataSets name="Data Set">
+      <columns name="COUNTRY"/>
+      <columns name="CITY"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="STATUS"/>
+      <columns name="CREDITLIMIT"/>
+      <columns name="NB_OF_ORDERS"/>
+      <columns name="AMOUNT_2012"/>
+      <columns name="AMOUNT_2013"/>
+      <columns name="BUY_AMOUNT_2012"/>
+      <columns name="BUY_AMOUNT_2013"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="Region" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'NA'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' || row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'APAC'&#xD;&#xA;else 'EMEA'"/>
+      <columns name="Total Orders" expression="row[&quot;NB_OF_ORDERS&quot;]"/>
+      <columns name="Rank" expression="row[&quot;AMOUNT_2013&quot;]"/>
+    </dataSets>
+    <dataSets name="Data Set Detail">
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="PRODUCTLINE"/>
+      <columns name="TYPE"/>
+      <columns name="MONTH"/>
+      <columns name="NB_OF_ORDERS"/>
+      <columns name="AMOUNT_2012"/>
+      <columns name="AMOUNT_2013"/>
+    </dataSets>
+    <dataSets name="Data Set for parameter">
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="FULLNAME" expression="row[&quot;FIRSTNAME&quot;] + ' ' + row[&quot;LASTNAME&quot;]"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Document List.rptdesign" path="/Innovate/Report Designs/Document List.rptdesign" libraries="//@files.36">
+    <dataMap key="//@files.58" value="1"/>
+    <linkedToReportsMap key="1257" value="//@files.59"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="mashboard1.rptdesign" path="/Innovate/Report Designs/mashboard1.rptdesign" libraries="//@files.60 //@files.36">
+    <dataMap key="//@files.25" value="1"/>
+    <dataSets name="chart1">
+      <columns name="X"/>
+      <columns name="Y"/>
+      <columns name="Y-1"/>
+    </dataSets>
+    <dataSets name="Table Data Set">
+      <columns name="Cat"/>
+      <columns name="Value"/>
+    </dataSets>
+    <dataSets name="chart2">
+      <columns name="Value"/>
+      <columns name="Delay"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="mashboard3_debug.rptdesign" path="/Innovate/Report Designs/mashboard3_debug.rptdesign" libraries="//@files.60 //@files.36">
+    <dataMap key="//@files.14" value="1"/>
+    <dataSets name="Gauge">
+      <columns name="ID"/>
+      <columns name="VALUE"/>
+      <columns name="MAX"/>
+      <columns name="COLOR"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="mashboard3.RPTDESIGN" path="/Innovate/Report Designs/mashboard3.RPTDESIGN" libraries="//@files.60 //@files.36">
+    <dataMap key="//@files.14" value="1"/>
+    <dataSets name="Gauge">
+      <columns name="ID"/>
+      <columns name="VALUE"/>
+      <columns name="MAX"/>
+      <columns name="COLOR"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="mashboard2.rptdesign" path="/Innovate/Report Designs/mashboard2.rptdesign" libraries="//@files.60 //@files.36">
+    <dataMap key="//@files.4" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Top Products.rptdesign" path="/Innovate/Report Designs/Top Products.rptdesign" libraries="//@files.69">
+    <dataMap key="//@files.10" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Company Comparison Products.rptdesign" path="/Innovate/Report Designs/Company Comparison Products.rptdesign" libraries="//@files.69">
+    <dataMap key="//@files.10" value="1"/>
+    <dataSets name="CCT Data Set">
+      <columns name="topic"/>
+      <columns name="c1"/>
+      <columns name="pos1"/>
+      <columns name="neg1"/>
+      <columns name="neu1"/>
+      <columns name="tot1"/>
+      <columns name="c2"/>
+      <columns name="pos2"/>
+      <columns name="neg2"/>
+      <columns name="neu2"/>
+      <columns name="tot2"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="salesOrderReport.rptdesign" path="/Innovate/Report Designs/salesOrderReport.rptdesign" libraries="//@files.8 //@files.39">
+    <dataMap key="//@files.19" value="1"/>
+    <linkedToReportsMap key="1571" value="//@files.79"/>
+    <dataSets name="Data Set">
+      <columns name="COUNTRY"/>
+      <columns name="CITY"/>
+      <columns name="CUSTOMERNAME"/>
+      <columns name="STATUS"/>
+      <columns name="CREDITLIMIT"/>
+      <columns name="NB_OF_ORDERS"/>
+      <columns name="AMOUNT_2012"/>
+      <columns name="AMOUNT_2013"/>
+      <columns name="BUY_AMOUNT_2012"/>
+      <columns name="BUY_AMOUNT_2013"/>
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="Region" expression="if(row[&quot;COUNTRY&quot;] == 'USA' || row[&quot;COUNTRY&quot;] == 'Canada') 'NA'&#xD;&#xA;else if(row[&quot;COUNTRY&quot;] == 'Japan' || row[&quot;COUNTRY&quot;] == 'Australia' || row[&quot;COUNTRY&quot;] == 'Singapore' || row[&quot;COUNTRY&quot;] == 'Philippines' || row[&quot;COUNTRY&quot;] == 'Hong Kong' || row[&quot;COUNTRY&quot;] == 'New Zealand') 'APAC'&#xD;&#xA;else 'EMEA'"/>
+      <columns name="Total Orders" expression="row[&quot;NB_OF_ORDERS&quot;]"/>
+    </dataSets>
+    <dataSets name="Data Set Detail">
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="MONTH"/>
+      <columns name="NB_OF_ORDERS"/>
+      <columns name="AMOUNT_2012"/>
+      <columns name="AMOUNT_2013"/>
+    </dataSets>
+    <dataSets name="Data Set grouped">
+      <columns name="FIRSTNAME"/>
+      <columns name="LASTNAME"/>
+      <columns name="NB_OF_CUSTOMERS"/>
+      <columns name="NB_OF_ORDERS"/>
+      <columns name="AMOUNT_2012"/>
+      <columns name="AMOUNT_2013"/>
+      <columns name="RANK" expression="row[&quot;AMOUNT_2013&quot;]"/>
+    </dataSets>
+  </files>
+</com.actuate.istudio.analysis.model:Project>

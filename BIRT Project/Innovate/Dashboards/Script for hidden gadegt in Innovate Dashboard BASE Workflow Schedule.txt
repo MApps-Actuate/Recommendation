@@ -59,10 +59,7 @@ myDiv +=          	"$(\"#customDashboardCustomDiv\").toggleClass(\"isNotVisible\
 myDiv +=          	"$(\"#customDashboardMessageContent\").html(\"Workflow has been initiated successfully and sent for approval.\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").css(\"display\",\"block\");";
 myDiv +=          	"$(\"#customDashboardMessageDiv\").fadeOut(3500);";
-myDiv +=            "AWP_CreateCampaign($(\"#sel1\")[0].value + \" - \" + $(\"#sel2\")[0].value + \" Campaign\");";
-
 myDiv +=          	"}'>Ok</button>";
-
 myDiv += 		"</div>";
 myDiv += 	"</div>";
 myDiv += 	"<div id='customDashboardCustomDiv' class='isNotVisible myCustomDiv'>";
